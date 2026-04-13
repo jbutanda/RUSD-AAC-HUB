@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AAC Program Hub &mdash; Rialto Unified School District</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--blue:#1A5294;--blue-dark:#0d3a6e;--blue-mid:#2a6abf;--blue-light:#e8f0fb;--white:#ffffff;--gray-light:#f5f7fa;--gray:#e2e8f0;--text:#1a202c;--text-muted:#64748b;--gold:#f0a500;--green:#059669;--red:#ef4444;--purple:#7c3aed;--teal:#0891b2;--orange:#ea580c;--slate:#475569;--amber:#d97706;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Nunito Sans",sans-serif;background:var(--gray-light);color:var(--text);min-height:100vh;}
+  header{background:var(--blue);position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.25);}
+  .header-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .header-brand{display:flex;align-items:center;gap:14px;}
+  .header-logo-box{background:white;border-radius:6px;padding:5px 12px;font-family:"Nunito",sans-serif;font-weight:900;font-size:13px;color:var(--blue);letter-spacing:.5px;white-space:nowrap;}
+  .header-divider{width:1px;height:32px;background:rgba(255,255,255,.3);}
+  .header-title{font-family:"Nunito",sans-serif;font-weight:800;font-size:17px;color:white;line-height:1.2;}
+  .header-title span{display:block;font-weight:600;font-size:11px;color:rgba(255,255,255,.65);letter-spacing:.5px;text-transform:uppercase;}
+  .header-contact{font-size:13px;color:rgba(255,255,255,.75);text-align:right;line-height:1.6;}
+  .header-contact a{color:var(--gold);text-decoration:none;font-weight:700;}
+  .hero{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 55%,var(--blue-mid) 100%);padding:36px 24px 44px;text-align:center;position:relative;overflow:hidden;}
+  .hero::before{content:"";position:absolute;top:-70px;right:-50px;width:260px;height:260px;background:rgba(255,255,255,.04);border-radius:50%;}
+  .hero::after{content:"";position:absolute;bottom:-90px;left:-50px;width:320px;height:320px;background:rgba(255,255,255,.03);border-radius:50%;}
+  .hero-badge{display:inline-block;background:var(--gold);color:var(--blue-dark);font-family:"Nunito",sans-serif;font-weight:800;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:12px;position:relative;z-index:1;}
+  .hero h1{font-family:"Nunito",sans-serif;font-weight:900;font-size:clamp(20px,4vw,34px);color:white;margin-bottom:8px;position:relative;z-index:1;}
+  .hero p{font-size:14px;color:rgba(255,255,255,.70);max-width:580px;margin:0 auto;line-height:1.6;position:relative;z-index:1;}
+  main{max-width:1200px;margin:0 auto;padding:40px 20px 72px;}
+  .section-label{display:flex;align-items:center;gap:10px;margin-bottom:18px;margin-top:48px;}
+  .section-label:first-child{margin-top:0;}
+  .section-label h2{font-family:"Nunito",sans-serif;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:1.2px;color:var(--blue);white-space:nowrap;}
+  .section-line{flex:1;height:2px;background:var(--gray);border-radius:2px;}
+  .section-badge{font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:.3px;white-space:nowrap;}
+  .badge-public{background:#dcfce7;color:#14532d;}
+  .badge-teacher{background:#dbeafe;color:#1e3a5f;}
+  .badge-slp{background:#fef3c7;color:#78350f;}
+  .sub-section{margin-top:28px;margin-bottom:12px;font-family:"Nunito",sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding-left:8px;border-left:3px solid var(--gray);}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:12px;}
+  .tile{background:white;border-radius:14px;padding:20px 12px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;cursor:pointer;transition:all .17s ease;border:2px solid transparent;box-shadow:0 2px 8px rgba(0,0,0,.06);text-decoration:none;color:inherit;position:relative;overflow:hidden;min-height:144px;}
+  .tile::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--tc,var(--blue));border-radius:12px 12px 0 0;}
+  .tile:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.12);border-color:var(--tc,var(--blue));}
+  .tile:active{transform:translateY(-1px);}
+  .tile.placeholder{opacity:.52;cursor:default;background:#fafafa;}
+  .tile.placeholder:hover{transform:none;box-shadow:0 2px 8px rgba(0,0,0,.06);border-color:transparent;}
+  .tile.placeholder::after{content:"Coming soon";position:absolute;bottom:8px;left:50%;transform:translateX(-50%);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);background:var(--gray-light);padding:2px 7px;border-radius:4px;white-space:nowrap;}
+  .tile.sites-pending{opacity:.58;cursor:default;background:#fafafa;}
+  .tile.sites-pending:hover{transform:none;box-shadow:0 2px 8px rgba(0,0,0,.06);border-color:transparent;}
+  .tile.sites-pending::after{content:"Google Sites";position:absolute;bottom:8px;left:50%;transform:translateX(-50%);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#2D6A2D;background:#EAF4EA;padding:2px 7px;border-radius:4px;white-space:nowrap;border:1px solid #2D6A2D;}
+  .tile-icon{width:46px;height:46px;border-radius:12px;background:var(--tb,var(--blue-light));display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:10px;flex-shrink:0;}
+  .tile-label{font-family:"Nunito",sans-serif;font-weight:800;font-size:12.5px;line-height:1.3;color:var(--text);margin-bottom:4px;}
+  .tile-sub{font-size:10.5px;color:var(--text-muted);line-height:1.4;flex:1;}
+  .tile-tag{margin-top:8px;font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;padding:3px 9px;border-radius:6px;background:var(--tb,var(--blue-light));color:var(--tc,var(--blue));}
+  .c-blue{--tc:#1A5294;--tb:#dbeafe;}.c-green{--tc:#059669;--tb:#d1fae5;}.c-gold{--tc:#b45309;--tb:#fef3c7;}.c-red{--tc:#dc2626;--tb:#fee2e2;}.c-purple{--tc:#7c3aed;--tb:#ede9fe;}.c-teal{--tc:#0891b2;--tb:#cffafe;}.c-orange{--tc:#c2410c;--tb:#ffedd5;}.c-slate{--tc:#475569;--tb:#f1f5f9;}.c-amber{--tc:#d97706;--tb:#fef9c3;}.c-pink{--tc:#be185d;--tb:#fce7f3;}.c-indigo{--tc:#4338ca;--tb:#e0e7ff;}
+  .locked-wrapper{position:relative;}
+  .locked-wrapper.locked .grid{filter:blur(4px);pointer-events:none;user-select:none;}
+  .locked-wrapper.locked .sub-section{filter:blur(4px);pointer-events:none;}
+  .lock-gate{display:none;position:absolute;inset:-8px;align-items:center;justify-content:center;z-index:10;}
+  .locked-wrapper.locked .lock-gate{display:flex;}
+  .lock-card{background:white;border:2px solid var(--border-color,var(--blue));border-radius:16px;padding:28px 32px;text-align:center;box-shadow:0 8px 40px rgba(26,82,148,.18);max-width:320px;width:90%;}
+  .lock-card .lock-emoji{font-size:36px;margin-bottom:10px;}
+  .lock-card h3{font-family:"Nunito",sans-serif;font-weight:800;font-size:17px;color:var(--border-color,var(--blue));margin-bottom:6px;}
+  .lock-card p{font-size:13px;color:var(--text-muted);margin-bottom:18px;line-height:1.5;}
+  .lock-btn{padding:11px 28px;background:var(--border-color,var(--blue));color:white;border:none;border-radius:8px;font-family:"Nunito",sans-serif;font-weight:800;font-size:14px;cursor:pointer;transition:filter .15s;width:100%;}
+  .lock-btn:hover{filter:brightness(.88);}
+  .teacher-lock{--border-color:#1A5294;}.slp-lock{--border-color:#b45309;}
+  .modal-overlay{display:none;position:fixed;inset:0;background:rgba(5,15,40,.6);z-index:300;align-items:center;justify-content:center;backdrop-filter:blur(6px);}
+  .modal-overlay.open{display:flex;}
+  .modal{background:white;border-radius:20px;padding:38px 34px 30px;width:90%;max-width:370px;text-align:center;box-shadow:0 24px 80px rgba(0,0,0,.28);animation:popUp .22s ease;}
+  @keyframes popUp{from{transform:translateY(14px) scale(.97);opacity:0;}to{transform:translateY(0) scale(1);opacity:1;}}
+  .modal-emoji{font-size:42px;margin-bottom:12px;}
+  .modal h3{font-family:"Nunito",sans-serif;font-weight:800;font-size:19px;color:var(--blue);margin-bottom:6px;}
+  .modal .modal-desc{font-size:13px;color:var(--text-muted);margin-bottom:20px;line-height:1.6;}
+  .modal-context{display:inline-block;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin-bottom:18px;}
+  .ctx-teacher{background:var(--blue-light);color:var(--blue);}.ctx-slp{background:#fef3c7;color:#78350f;}
+  .pw-input{width:100%;padding:13px 16px;border:2px solid var(--gray);border-radius:10px;font-size:18px;font-family:"Nunito Sans",sans-serif;text-align:center;letter-spacing:4px;outline:none;transition:border-color .15s;margin-bottom:8px;}
+  .pw-input:focus{border-color:var(--blue);}
+  .pw-input.shake{border-color:var(--red);animation:shake .32s ease;}
+  @keyframes shake{0%,100%{transform:translateX(0);}20%,60%{transform:translateX(-7px);}40%,80%{transform:translateX(7px);}}
+  .pw-error{min-height:18px;font-size:12px;color:var(--red);font-weight:700;margin-bottom:14px;}
+  .pw-submit{width:100%;padding:12px;background:var(--blue);color:white;border:none;border-radius:10px;font-family:"Nunito",sans-serif;font-weight:800;font-size:15px;cursor:pointer;transition:filter .15s;}
+  .pw-submit:hover{filter:brightness(.88);}
+  .modal-cancel{margin-top:12px;font-size:13px;color:var(--text-muted);cursor:pointer;text-decoration:underline;}
+  .link-guide{background:#fffbeb;border:2px dashed #f0a500;border-radius:12px;padding:18px 22px;margin-bottom:32px;font-size:13px;color:#78350f;line-height:1.7;}
+  .link-guide strong{font-weight:800;}.link-guide code{background:#fde68a;padding:1px 5px;border-radius:3px;font-family:monospace;font-size:12px;}
+  footer{background:var(--blue-dark);padding:28px 24px;text-align:center;color:rgba(255,255,255,.55);font-size:13px;line-height:1.8;}
+  footer a{color:var(--gold);text-decoration:none;font-weight:700;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="header-logo-box">RIALTO USD</div>
+      <div class="header-divider"></div>
+      <div class="header-title">AAC Program Hub<span>Special Education Department</span></div>
+    </div>
+    <div class="header-contact">District Lead AAC SLP<br><a href="mailto:jbutanda@rialtousd.org">jbutanda@rialtousd.org</a></div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-badge">Rialto Unified School District &middot; AAC Program &middot; 2026&ndash;27</div>
+  <h1>AAC Program Resource Hub</h1>
+  <p>Resources for families, classroom staff, and SLPs. Some areas require a password for staff access.</p>
+</div>
+
+<main>
+  <div class="link-guide">
+    <strong>&#9881;&#65039; Setup note &mdash; remove before publishing:</strong>
+    <em>Coming soon</em> tiles need a Drive or Form URL.
+    <em>Google Sites</em> tiles will link to Sites pages once built.
+    To activate: replace <code>href="#"</code> with the real URL and remove the <code>placeholder</code> class.
+  </div>
+
+PUBLIC SECTION
+  &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; -->
+  <div class="section-label">
+    <h2>&#127760; For Families &amp; the Community</h2>
+    <div class="section-line"></div>
+    <span class="section-badge badge-public">No password needed</span>
+  </div>
+
+  <div class="grid">
+
+    <a href="https://drive.google.com/file/d/1dFC7IyJIR0gMosf1VdO6Cmghzd38JhZV/view?usp=sharing" target="_blank" class="tile c-blue">
+      <div class="tile-icon">&#128214;</div>
+      <div class="tile-label">What AAC Looks Like</div>
+      <div class="tile-sub">A day in our classrooms &#8212; plain language, bilingual</div>
+    </a>
+
+    <a href="#" class="tile c-teal sites-pending" onclick="return false">
+      <div class="tile-icon">&#10067;</div>
+      <div class="tile-label">FAQ &#8212; English</div>
+      <div class="tile-sub">Common questions about the AAC program</div>
+    </a>
+
+    <a href="https://drive.google.com/file/d/11M-y5qluPfj9JKlgQ_xsQNSXNMS1XmEZ/view?usp=sharing" target="_blank" class="tile c-purple">
+      <div class="tile-icon">&#127474;&#127485;</div>
+      <div class="tile-label">FAQ &#8212; Espa&#241;ol</div>
+      <div class="tile-sub">Preguntas frecuentes sobre el programa de CAA</div>
+    </a>
+
+    <a href="https://forms.gle/iWxvHnWrPn5M2YAt7" target="_blank" class="tile c-green">
+      <div class="tile-icon">&#128236;</div>
+      <div class="tile-label">Contact / Request a Meeting</div>
+      <div class="tile-sub">Reach the AAC team &#183; Bilingual form &#183; EN + ES</div>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1RHzZZmFWgGZTuiY_7o_DVEbh18ACZJRU/view?usp=sharing" target="_blank" class="tile c-gold">
+      <div class="tile-icon">&#127916;</div>
+      <div class="tile-label">Video Resources</div>
+      <div class="tile-sub">Curated AAC explainer videos for families</div>
+    </a>
+
+    <a href="https://drive.google.com/file/d/1N6sfSmsnkfyFThv-3hcbDIzDJy6hgEAE/view?usp=sharing" target="_blank" class="tile c-orange">
+      <div class="tile-icon">&#128196;</div>
+      <div class="tile-label">Family Orientation Letter</div>
+      <div class="tile-sub">General program launch letter &#183; EN + ES</div>
+    </a>
+
+  </div>
+
+  <!-- &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;
+
+TEACHER / STAFF SECTION
+  &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; -->
+  <div class="section-label">
+    <h2>&#128105;&#8205;&#127979; For Teachers &amp; Classroom Staff</h2>
+    <div class="section-line"></div>
+    <span class="section-badge badge-teacher">Staff password required</span>
+  </div>
+
+  <div class="locked-wrapper locked" id="teacher-wrapper">
+    <div class="lock-gate">
+      <div class="lock-card teacher-lock">
+        <div class="lock-emoji">&#128274;</div>
+        <h3>Staff Resources</h3>
+        <p>This section is for RUSD classroom teachers and paraeducators. Enter the staff password to access.</p>
+        <button class="lock-btn" onclick="openModal('teacher')">Enter Password</button>
+      </div>
+    </div>
+
+    <!-- Device & Daily Operations -->
+    <div class="sub-section">Device &amp; Daily Operations</div>
+    <div class="grid">
+
+      <a href="https://drive.google.com/file/d/10imPGM1ikyGcyBXGbG7NxuHHlSCT_I1F/view?usp=sharing" target="_blank" class="tile c-blue">
+        <div class="tile-icon">&#128203;</div>
+        <div class="tile-label">Sub Protocol Card</div>
+        <div class="tile-sub">What to do on substitute days &#183; Laminated card</div>
+      </a>
+
+      <a href="https://drive.google.com/file/d/1owednPkb5zA81r8lmb4kVAH3Jf8q1V_F/view?usp=sharing" target="_blank" class="tile c-teal">
+        <div class="tile-icon">&#128295;</div>
+        <div class="tile-label">Troubleshooting Card</div>
+        <div class="tile-sub">What to do when things go wrong &#183; 6 scenarios</div>
+      </a>
+
+      <a href="https://forms.gle/3tqcqw8gtduMpdvT7" target="_blank" class="tile c-slate">
+        <div class="tile-icon">&#9881;&#65039;</div>
+        <div class="tile-label">Device Replacement Request</div>
+        <div class="tile-sub">Submit when a device is broken or lost</div>
+        <div class="tile-tag">Google Form</div>
+      </a>
+
+      <a href="https://forms.gle/kyBQCrtwTUYWCBvL8" target="_blank" class="tile c-orange">
+        <div class="tile-icon">&#128267;</div>
+        <div class="tile-label">Device Setup Checklist</div>
+        <div class="tile-sub">Initial configuration record for each classroom</div>
+      </a>
+
+    </div>
+
+    <!-- Modeling & Communication -->
+    <div class="sub-section">Modeling &amp; Communication Support</div>
+    <div class="grid">
+
+      <a href="https://drive.google.com/file/d/1Q8HAxVv5y0kA0OR2vZIVNUM2uMAK1IIp/view?usp=sharing" target="_blank" class="tile c-green">
+        <div class="tile-icon">&#128483;&#65039;</div>
+        <div class="tile-label">Core Vocabulary Word Wall</div>
+        <div class="tile-sub">Most-used Proloquo2Go words &#183; Print at 11&#215;17 &#183; EN + ES</div>
+      </a>
+
+      <a href="https://drive.google.com/file/d/16c76XtHuf1LjSNQ--4VZ9pMcLla8qqV_/view?usp=sharing" target="_blank" class="tile c-amber">
+        <div class="tile-icon">&#128197;</div>
+        <div class="tile-label">October Tip Sheet</div>
+        <div class="tile-sub">Wait Time &#8212; the 10-second count</div>
+      </a>
+
+      <a href="https://drive.google.com/file/d/18nMSDpJ6qcgtoWQEbta3dosJP0BGvkJl/view?usp=sharing" target="_blank" class="tile c-amber">
+        <div class="tile-icon">&#128197;</div>
+        <div class="tile-label">November Tip Sheet</div>
+        <div class="tile-sub">Communication Temptation</div>
+      </a>
+
+      <a href="https://drive.google.com/file/d/12Hz3ry4VnikLbXgFyonHNpLznsZ-wuuX/view?usp=sharing" target="_blank" class="tile c-amber">
+        <div class="tile-icon">&#128197;</div>
+        <div class="tile-label">December Tip Sheet</div>
+        <div class="tile-sub">Modeling Beyond Requesting</div>
+      </a>
+
+      <a href="https://drive.google.com/file/d/11uy5uUVsK6QJlx9jNG-aCB_lTReUrMEQ/view?usp=sharing" target="_blank" class="tile c-amber">
+        <div class="tile-icon">&#128197;</div>
+        <div class="tile-label">January Tip Sheet</div>
+        <div class="tile-sub">Core Vocabulary: Why We Start Here</div>
+      </a>
+
+    </div>
+
+    <!-- Data & Family Communication -->
+    <div class="sub-section">Data &amp; Family Communication</div>
+    <div class="grid">
+
+      <a href="https://drive.google.com/file/d/1Gm4bMeWstPtQcdWT3DZYu09shvyjZfSwDqUiZFuxq-E/view?usp=sharing" target="_blank" class="tile c-blue">
+        <div class="tile-icon">&#128202;</div>
+        <div class="tile-label">Tier 1 Weekly Data Sheet</div>
+        <div class="tile-sub">Weekly classroom AAC tracking form</div>
+      </a>
+
+      <a href="https://forms.gle/e7Q6pY9M1TMbe5wq8" target="_blank" class="tile c-purple">
+        <div class="tile-icon">&#9989;</div>
+        <div class="tile-label">Classroom Self-Audit</div>
+        <div class="tile-sub">Weekly self-check &#183; Bring to coaching visits</div>
+      </a>
+
+      <a href="https://forms.gle/9YbjnuNrKy1epLCo9" target="_blank" class="tile c-teal">
+        <div class="tile-icon">&#128140;</div>
+        <div class="tile-label">Individualized Family Letter</div>
+        <div class="tile-sub">Template for site SLP or case carrier &#183; EN + ES</div>
+      </a>
+
+      <a href="https://drive.google.com/file/d/1KgF9uVnMgLTMZ6Knaw-g83mpN-p924WW/view?usp=sharing" target="_blank" class="tile c-green">
+        <div class="tile-icon">&#127979;</div>
+        <div class="tile-label">Roles &amp; Responsibilities</div>
+        <div class="tile-sub">Who does what across all program roles</div>
+      </a>
+
+    </div>
+
+    <!-- Proloquo2Go -->
+    <div class="sub-section">Proloquo2Go Reference</div>
+    <div class="grid">
+
+      <a href="https://drive.google.com/file/d/1KSI-dvZ8-hXP9s4wCDEWYGzz0V6Q3_It/view?usp=sharing" target="_blank" class="tile c-blue">
+        <div class="tile-icon">&#128241;</div>
+        <div class="tile-label">P2G Quick Reference Card</div>
+        <div class="tile-sub">Setup sequence, folder structure, vocab guide &#183; Landscape</div>
+      </a>
+
+      <a href="https://drive.google.com/file/d/1dw4xYA27wd_4E3oYBiB4dG8I6sFB8oorAJEpZ8Hv7IE/view?usp=sharing" target="_blank" class="tile c-indigo">
+        <div class="tile-icon">&#128215;</div>
+        <div class="tile-label">P2G Full Customization Guide</div>
+        <div class="tile-sub">Vocabulary setup, backups, troubleshooting for SLPs</div>
+      </a>
+
+    </div>
+
+  </div><!-- end teacher locked-wrapper -->
+
+  <!-- &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;
+
+SLP SECTION
+  &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; -->
+  <div class="section-label">
+    <h2>&#129658; For Speech-Language Pathologists</h2>
+    <div class="section-line"></div>
+    <span class="section-badge badge-slp">SLP password required</span>
+  </div>
+
+  <div class="locked-wrapper locked" id="slp-wrapper">
+    <div class="lock-gate">
+      <div class="lock-card slp-lock">
+        <div class="lock-emoji">&#128272;</div>
+        <h3>SLP Resources</h3>
+        <p>This section is for RUSD site SLPs and the District Lead AAC SLP. Enter the SLP password to access.</p>
+        <button class="lock-btn" onclick="openModal('slp')">Enter Password</button>
+      </div>
+    </div>
+
+    <!-- Referral & Clinical Authorization -->
+    <div class="sub-section">Referral &amp; Authorization Forms</div>
+    <div class="grid">
+
+      <a href="https://forms.gle/AkaNm5wA4AwQPgpf8" target="_blank" class="tile c-blue">
+        <div class="tile-icon">&#128221;</div>
+        <div class="tile-label">Tier 2 Referral Form</div>
+        <div class="tile-sub">Initiate Tier 2 individualized plan</div>
+        <div class="tile-tag">Google Form</div>
+      </a>
+
+      <a href="https://forms.gle/g3nvekf76YMod2H9A" target="_blank" class="tile c-red">
+        <div class="tile-icon">&#128314;</div>
+        <div class="tile-label">Tier 3 Referral Form</div>
+        <div class="tile-sub">Initiate formal AAC evaluation</div>
+        <div class="tile-tag">Google Form</div>
+      </a>
+
+      <a href="https://drive.google.com/file/d/1yOMx9CcGqDhzihYpHREf32SLTWQElZBQ/view?usp=sharing" target="_blank" class="tile c-amber">
+        <div class="tile-icon">&#9997;&#65039;</div>
+        <div class="tile-label">AAC Clinical Authorization</div>
+        <div class="tile-sub">Expedited device provision &#183; Co-signed by Lead SLP</div>
+      </a>
+
+      <a href="#" class="tile c-teal placeholder">
+        <div class="tile-icon">&#128652;</div>
+        <div class="tile-label">Student Transfer Summary</div>
+        <div class="tile-sub">AAC communication handoff at school transitions</div>
+      </a>
+
+      <a href="https://forms.gle/h8vDsjUFEAotqory7" target="_blank" class="tile c-purple">
+        <div class="tile-icon">&#128101;</div>
+        <div class="tile-label">Student Communication Profile</div>
+        <div class="tile-sub">Submit or update a student AAC profile</div>
+        <div class="tile-tag">Google Form</div>
+      </a>
+
+    </div>
+
+    <!-- Evaluation & Assessment -->
+    <div class="sub-section">Evaluation &amp; Assessment</div>
+    <div class="grid">
+
+      <a href="#" class="tile c-purple placeholder">
+        <div class="tile-icon">&#128269;</div>
+        <div class="tile-label">Tier 3 Auto-Referral Criteria</div>
+        <div class="tile-sub">5 triggers &#183; Parallel access framing</div>
+      </a>
+
+      <a href="https://drive.google.com/file/d/1efuc3KwQZE7re5GMY3WWAqMRIDs_Xk22/view?usp=sharing" target="_blank" class="tile c-indigo">
+        <div class="tile-icon">&#129514;</div>
+        <div class="tile-label">Dynamic Assessment Template</div>
+        <div class="tile-sub">Structured documentation for Tier 3 device trials</div>
+      </a>
+
+      <a href="https://drive.google.com/file/d/13FDNo9lIe8ptkQYQJUCqdUcyy2WgWlq9/view?usp=sharing" target="_blank" class="tile c-orange">
+        <div class="tile-icon">&#127991;&#65039;</div>
+        <div class="tile-label">GLP Clinical Reference</div>
+        <div class="tile-sub">5 stages &#183; AAC implications &#183; Peer-review caveat</div>
+      </a>
+
+      <a href="https://drive.google.com/file/d/1g20AVBzOuK29nt1LbD-9826vcUMQn6B3/view?usp=sharing" target="_blank" class="tile c-red">
+        <div class="tile-icon">&#128682;</div>
+        <div class="tile-label">Dismissal &amp; Discontinuation Criteria</div>
+        <div class="tile-sub">Clinical + legal standards &#183; IEP team decision framework</div>
+      </a>
+
+    </div>
+
+    <!-- Progress Monitoring & Data -->
+    <div class="sub-section">Progress Monitoring &amp; Data</div>
+    <div class="grid">
+
+      <a href="https://drive.google.com/file/d/1xUBC_Idq_S6DxNo-8yIuN7QE6I8Kycug/view?usp=sharing" target="_blank" class="tile c-green">
+        <div class="tile-icon">&#128200;</div>
+        <div class="tile-label">Session Progress Monitoring</div>
+        <div class="tile-sub">Tier 2 direct session data sheet &#183; One per session</div>
+      </a>
+
+      <a href="https://forms.gle/VimQ4c5aJ2ChPEsT6" target="_blank" class="tile c-teal">
+        <div class="tile-icon">&#128065;&#65039;</div>
+        <div class="tile-label">Observation Checklist</div>
+        <div class="tile-sub">5-domain fidelity rubric &#183; Coaching visits</div>
+      </a>
+
+      <a href="https://drive.google.com/file/d/1xmnLkPMITJH_LC6idaWxzv8gqV7aT2hV/view?usp=sharing" target="_blank" class="tile c-blue">
+        <div class="tile-icon">&#128198;</div>
+        <div class="tile-label">Annual Program Data Summary</div>
+        <div class="tile-sub">Year-end metrics template &#183; Report to Director</div>
+      </a>
+
+    </div>
+
+    <!-- Coaching & Training -->
+    <div class="sub-section">Coaching &amp; Professional Learning</div>
+    <div class="grid">
+
+      <a href="https://drive.google.com/file/d/1NgjaSQQRBCaUDPfQ4YTI3DCb-brpDSVY/view?usp=sharing" target="_blank" class="tile c-gold">
+        <div class="tile-icon">&#128467;&#65039;</div>
+        <div class="tile-label">Coaching Calendar</div>
+        <div class="tile-sub">Oct&#8211;June coaching visit schedule</div>
+      </a>
+
+      <a href="#" class="tile c-amber placeholder">
+        <div class="tile-icon">&#128506;&#65039;</div>
+        <div class="tile-label">Coaching Depth Map</div>
+        <div class="tile-sub">3-phase progression &#183; Fidelity thresholds</div>
+      </a>
+
+      <a href="https://drive.google.com/file/d/1vh_KuVYTJ3n_e9VKfkOzKjz8xCx7ZmAW/view?usp=sharing" target="_blank" class="tile c-orange">
+        <div class="tile-icon">&#128203;</div>
+        <div class="tile-label">Coaching Visit Guide</div>
+        <div class="tile-sub">Before / during / after checklists &#183; 9 visits</div>
+      </a>
+
+      <a href="https://forms.gle/nWWFR7SExfdzwaqZA" target="_blank" class="tile c-green">
+        <div class="tile-icon">&#128587;</div>
+        <div class="tile-label">Request a Coaching Visit</div>
+        <div class="tile-sub">Schedule a classroom visit with the Lead AAC SLP</div>
+        <div class="tile-tag">Google Form</div>
+      </a>
+
+    </div>
+
+    <!-- IEP & Legal Reference -->
+    <div class="sub-section">IEP &amp; Legal Reference</div>
+    <div class="grid">
+
+      <a href="https://drive.google.com/file/d/19iJ-ZuEZlPNyGoM2WufSUq2LOsCx6iBh/view?usp=sharing" target="_blank" class="tile c-blue">
+        <div class="tile-icon">&#128218;</div>
+        <div class="tile-label">IEP Language Bank</div>
+        <div class="tile-sub">Goals, present levels, service descriptions &#183; Searchable</div>
+      </a>
+
+      <a href="https://drive.google.com/file/d/1AijJndooRVw4eRzT04_hug54XHnD2Tfm/view?usp=sharing" target="_blank" class="tile c-slate">
+        <div class="tile-icon">&#9878;&#65039;</div>
+        <div class="tile-label">FERPA / IDEA Reference</div>
+        <div class="tile-sub">Privacy, consent, records, and procedural timelines</div>
+      </a>
+
+      <a href="https://drive.google.com/file/d/11kZX2cX7ake8a0CTXyUTKYHj1SyAIrfDAm7gJwtFEzc/view?usp=sharing" target="_blank" class="tile c-purple">
+        <div class="tile-icon">&#128101;</div>
+        <div class="tile-label">Roles &amp; Responsibilities</div>
+        <div class="tile-sub">Full 7-column role matrix including case carrier</div>
+      </a>
+
+    </div>
+
+    <!-- Teacher Self-Assessment (SLPs also need access) -->
+    <div class="sub-section">Teacher Self-Assessment</div>
+    <div class="grid">
+
+      <a href="https://forms.gle/hTR6zL3nMFLtZBet7" target="_blank" class="tile c-teal">
+        <div class="tile-icon">&#128221;</div>
+        <div class="tile-label">Teacher Self-Assessment</div>
+        <div class="tile-sub">10-item confidence scale &#183; SLP reviews before coaching</div>
+      </a>
+
+    </div>
+
+  </div><!-- end slp locked-wrapper -->
+
+
+  <!-- &#9552;&#9552; ADMIN SECTION &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; -->
+  <div class="section-label">
+    <h2>&#128274; Program Administration</h2>
+    <div class="section-line"></div>
+    <span class="section-badge" style="background:#EAF4EA;color:#14532d;">Admin password required</span>
+  </div>
+
+  <div class="locked-wrapper locked" id="admin-wrapper">
+    <div class="lock-gate">
+      <div class="lock-card admin-lock">
+        <div class="lock-emoji">&#128272;</div>
+        <h3>Program Administration</h3>
+        <p>This section is for the District Lead AAC SLP and Special Education Director only.</p>
+        <button class="lock-btn" onclick="openModal('admin')">Enter Password</button>
+      </div>
+    </div>
+
+    <div class="sub-section">Program Documents</div>
+    <div class="grid">
+
+      <a href="https://drive.google.com/file/d/1xmnLkPMITJH_LC6idaWxzv8gqV7aT2hV/view?usp=sharing" target="_blank" class="tile c-blue">
+        <div class="tile-icon">&#128200;</div>
+        <div class="tile-label">Annual Program Data Summary</div>
+        <div class="tile-sub">Year-end metrics template &#183; Report to Director</div>
+      </a>
+
+      <a href="https://drive.google.com/file/d/1yOMx9CcGqDhzihYpHREf32SLTWQElZBQ/view?usp=sharing" target="_blank" class="tile c-indigo">
+        <div class="tile-icon">&#9989;</div>
+        <div class="tile-label">AAC Clinical Authorization</div>
+        <div class="tile-sub">Expedited device provision protocol</div>
+      </a>
+
+      <a href="#" class="tile c-slate placeholder">
+        <div class="tile-icon">&#128196;</div>
+        <div class="tile-label">Program Proposal v5</div>
+        <div class="tile-sub">Final program proposal &#183; SLS First model</div>
+      </a>
+
+      <a href="#" class="tile c-slate placeholder">
+        <div class="tile-icon">&#128196;</div>
+        <div class="tile-label">Device Loan Agreement</div>
+        <div class="tile-sub">Temporary home loan authorization &#183; Signatures required</div>
+      </a>
+
+    </div>
+
+    <div class="sub-section">Coaching and Program Management</div>
+    <div class="grid">
+
+      <a href="https://drive.google.com/file/d/1NgjaSQQRBCaUDPfQ4YTI3DCb-brpDSVY/view?usp=sharing" target="_blank" class="tile c-gold">
+        <div class="tile-icon">&#128197;</div>
+        <div class="tile-label">Coaching Calendar</div>
+        <div class="tile-sub">Oct&#8211;June visit schedule</div>
+      </a>
+
+      <a href="#" class="tile c-amber placeholder">
+        <div class="tile-icon">&#128506;</div>
+        <div class="tile-label">Coaching Depth Map</div>
+        <div class="tile-sub">3-phase progression &#183; Fidelity thresholds</div>
+      </a>
+
+      <a href="#" class="tile c-slate placeholder">
+        <div class="tile-icon">&#128196;</div>
+        <div class="tile-label">Student Communication Profile</div>
+        <div class="tile-sub">District-wide student AAC snapshots</div>
+      </a>
+
+      <a href="#" class="tile c-slate placeholder">
+        <div class="tile-icon">&#128196;</div>
+        <div class="tile-label">Operations Forms</div>
+        <div class="tile-sub">Device replacement &#183; Setup checklist &#183; Transfer summary</div>
+      </a>
+
+    </div>
+
+  </div><!-- end admin locked-wrapper -->
+
+</main>
+
+<footer>
+  <strong style="color:rgba(255,255,255,.85);">RUSD AAC Program</strong> &middot; Special Education Department &middot; Rialto Unified School District<br>
+  District Lead AAC SLP: <a href="mailto:jbutanda@rialtousd.org">jbutanda@rialtousd.org</a> &middot; 2026&ndash;2027
+</footer>
+
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <div class="modal-emoji" id="modal-emoji">&#128274;</div>
+    <h3 id="modal-title">Staff Access</h3>
+    <p class="modal-desc" id="modal-desc">Enter the password for this section.</p>
+    <div class="modal-context" id="modal-ctx"></div>
+    <input type="password" class="pw-input" id="pw-input" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" autocomplete="off">
+    <div class="pw-error" id="pw-error"></div>
+    <button class="pw-submit" onclick="checkPassword()">Unlock</button>
+    <div class="modal-cancel" onclick="closeModal()">Cancel</div>
+  </div>
+</div>
+
+<script>
+  var PASSWORDS = { teacher: 'rusdteacher', slp: 'AACess', admin: 'AACadmin' };
+  var currentSection = null;
+
+  function openModal(section) {
+    currentSection = section;
+    var overlay = document.getElementById('modal-overlay');
+    var ctx   = document.getElementById('modal-ctx');
+    var title = document.getElementById('modal-title');
+    var desc  = document.getElementById('modal-desc');
+    var emoji = document.getElementById('modal-emoji');
+    if (section === 'teacher') {
+      title.textContent = 'Teacher & Staff Resources';
+      desc.textContent  = 'Enter the classroom staff password to access teaching resources, data forms, and device guides.';
+      ctx.textContent   = 'Teacher / Staff Section';
+      ctx.className     = 'modal-context ctx-teacher';
+      emoji.textContent = String.fromCodePoint(0x1F512);
+    } else if (section === 'slp') {
+      title.textContent = 'SLP Resources';
+      desc.textContent  = 'Enter the SLP password to access evaluation tools, referral forms, and clinical documentation.';
+      ctx.textContent   = 'SLP Section';
+      ctx.className     = 'modal-context ctx-slp';
+      emoji.textContent = String.fromCodePoint(0x1F510);
+    } else {
+      title.textContent = 'Program Administration';
+      desc.textContent  = 'This section is for the District Lead AAC SLP and Special Education Director only.';
+      ctx.textContent   = 'Admin Section';
+      ctx.className     = 'modal-context ctx-slp';
+      emoji.textContent = String.fromCodePoint(0x1F511);
+    }
+    document.getElementById('pw-input').value = '';
+    document.getElementById('pw-error').textContent = '';
+    overlay.classList.add('open');
+    setTimeout(function() { document.getElementById('pw-input').focus(); }, 120);
+  }
+
+  function closeModal() {
+    document.getElementById('modal-overlay').classList.remove('open');
+    currentSection = null;
+  }
+
+  function checkPassword() {
+    var input   = document.getElementById('pw-input');
+    var entered = input.value.trim();
+    var error   = document.getElementById('pw-error');
+    if (entered === PASSWORDS.admin) {
+      unlockSection('teacher');
+      unlockSection('slp');
+      unlockSection('admin');
+      closeModal();
+      return;
+    }
+    if (entered === PASSWORDS.slp) {
+      unlockSection('teacher');
+      unlockSection('slp');
+      closeModal();
+      return;
+    }
+    if (currentSection === 'teacher' && entered === PASSWORDS.teacher) {
+      unlockSection('teacher');
+      closeModal();
+      return;
+    }
+    error.textContent = 'Incorrect password. Try again.';
+    input.classList.add('shake');
+    setTimeout(function() { input.classList.remove('shake'); }, 400);
+    input.value = '';
+    input.focus();
+  }
+
+  function unlockSection(section) {
+    var wrapper = document.getElementById(section + '-wrapper');
+    if (wrapper) { wrapper.classList.remove('locked'); }
+  }
+
+  document.getElementById('pw-input').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') { checkPassword(); }
+  });
+
+  document.getElementById('modal-overlay').addEventListener('click', function(e) {
+    if (e.target === this) { closeModal(); }
+  });
+</script>
+</body>
+</html>
