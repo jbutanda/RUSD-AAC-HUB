@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RUSD AAC Program — Parent Contact Form Builder</title>
+<style>
+  :root {
+    --blue: #1A5294; --blue-light: #E8EFF8; --blue-mid: #2E6DB8;
+    --charcoal: #555555; --green: #2D6A2D; --green-light: #EAF4EA;
+    --amber: #7A5000; --amber-light: #FFF8E1;
+    --border: #d0d8e4; --gray: #F4F4F4; --white: #fff; --black: #1a1a1a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 14px; color: var(--black); background: #f0f4f9; }
+  .topbar { background: var(--blue); color: #fff; padding: 18px 32px; }
+  .topbar h1 { font-size: 22px; margin-bottom: 4px; }
+  .topbar p { font-size: 13px; opacity: 0.8; }
+  .page { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
+  .intro { background: var(--blue-light); border-left: 5px solid var(--blue); padding: 16px 20px; margin-bottom: 28px; border-radius: 0 6px 6px 0; font-size: 14px; line-height: 1.75; }
+  .intro strong { color: var(--blue); }
+  .how-to { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; margin-bottom: 28px; }
+  .how-to h2 { color: var(--blue); font-size: 17px; margin-bottom: 12px; }
+  .how-to ol { margin-left: 20px; line-height: 2.2; font-size: 14px; }
+  .how-to code { background: var(--gray); padding: 2px 6px; border-radius: 3px; font-family: monospace; font-size: 13px; color: #5B2D8E; }
+  .section-label { font-size: 12px; font-weight: bold; color: var(--blue); text-transform: uppercase; letter-spacing: 0.5px; margin: 28px 0 10px; }
+  .card { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 22px 26px; margin-bottom: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+  .card h2 { color: var(--blue); font-size: 18px; margin-bottom: 8px; }
+  .card p { font-size: 13px; color: #444; line-height: 1.7; margin-bottom: 12px; }
+  .manual { background: var(--amber-light); border: 2px solid var(--amber); border-radius: 6px; padding: 14px 18px; margin-bottom: 18px; }
+  .manual h3 { color: var(--amber); font-size: 14px; margin-bottom: 8px; }
+  .manual ol { margin-left: 18px; font-size: 13px; line-height: 2; }
+  .manual li strong { color: var(--amber); }
+  .auto-note { background: var(--green-light); border: 2px solid var(--green); border-radius: 6px; padding: 12px 16px; margin-bottom: 18px; font-size: 13px; line-height: 1.7; }
+  .auto-note strong { color: var(--green); }
+  .code-wrap { position: relative; }
+  pre { background: #1e1e1e; color: #d4d4d4; font-family: 'Courier New', monospace; font-size: 12.5px; line-height: 1.65; padding: 20px; border-radius: 6px; overflow-x: auto; white-space: pre; }
+  .copy-btn { position: absolute; top: 10px; right: 10px; background: var(--blue); color: #fff; border: none; padding: 6px 14px; border-radius: 4px; font-size: 12px; cursor: pointer; font-family: Arial, sans-serif; }
+  .copy-btn:hover { background: var(--blue-mid); }
+  .copy-btn.copied { background: var(--green); }
+  .kw { color: #569cd6; } .fn { color: #dcdcaa; } .str { color: #ce9178; }
+  .cmt { color: #6a9955; } .var { color: #9cdcfe; } .obj { color: #4ec9b0; }
+  .response-preview { background: var(--gray); border-radius: 8px; padding: 20px 24px; margin-top: 16px; }
+  .response-preview h3 { color: var(--blue); font-size: 15px; margin-bottom: 12px; }
+  .msg-box { background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 16px 20px; font-size: 13px; line-height: 1.8; margin-bottom: 12px; }
+  .msg-box .lang { font-size: 11px; font-weight: bold; color: var(--charcoal); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1>RUSD AAC Program — Parent Contact Form Builder</h1>
+  <p>Apps Script  |  Builds the Google Form automatically in your Drive  |  Rialto Unified School District</p>
+</div>
+<div class="page">
+
+  <div class="intro">
+    <strong>What this builds:</strong> A family-facing contact form for the public section of the RUSD AAC Hub. Families can submit questions, request a meeting, or ask to observe the classroom — without needing to know who to contact or what email address to use. You receive an email notification for every submission. An automatic confirmation is sent back to the family in their preferred language (English or Spanish).<br><br>
+    <strong>After running the script:</strong> Complete the three manual steps below to set up the auto-response and notification, then embed the form in the Hub public section.
+  </div>
+
+  <div class="how-to">
+    <h2>How to run this script</h2>
+    <ol>
+      <li>Go to <strong>script.google.com</strong> and sign in with your RUSD Google account.</li>
+      <li>Click <strong>New Project</strong>. Delete the default code.</li>
+      <li>Copy the script below and paste it in.</li>
+      <li>Click <strong>Run</strong> (triangle button) or press <code>Ctrl+R</code>.</li>
+      <li>On first run: click <strong>Review permissions</strong> &rarr; choose your RUSD account &rarr; <strong>Allow</strong>.</li>
+      <li>A popup will confirm the form was created and show its URL. Check your Google Drive.</li>
+      <li>Complete the three manual steps listed below the script.</li>
+    </ol>
+  </div>
+
+  <div class="manual">
+    <h3>⚠️ Complete these three steps manually after running the script</h3>
+    <ol>
+      <li><strong>Set the confirmation message:</strong> Open the form &rarr; Settings (gear icon) &rarr; Presentation tab &rarr; Confirmation message. Paste the English + Spanish message from the preview below.</li>
+      <li><strong>Turn on email notifications:</strong> Responses tab &rarr; three-dot menu &rarr; <strong>Get email notifications for new responses</strong>. Every submission will immediately email <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6309011617020d070223110a020f170c1610074d0c1104">[email&#160;protected]</a>.</li>
+      <li><strong>Link to a Google Sheet:</strong> Responses tab &rarr; <strong>Link to Sheets</strong>. Name the sheet "AAC Program — Family Contact Log." This creates a searchable record of every submission.</li>
+    </ol>
+  </div>
+
+  <div class="auto-note">
+    <strong>Auto-response note:</strong> Google Forms sends the confirmation message automatically to anyone who completes the form — but only if they have a Google account and the form is set to collect email addresses. The script sets <code>setCollectEmail(true)</code> so the family's email is collected. The confirmation message below (English + Spanish) is what they receive immediately after submitting. You still need to follow up personally based on the notification you receive.
+  </div>
+
+  <p class="section-label">Google Apps Script — Copy and paste into script.google.com</p>
+
+  <div class="card">
+    <h2>Parent Contact &amp; Meeting Request Form</h2>
+    <p>This form appears in the public (no password) section of the RUSD AAC Hub. It collects the family's name, their child's school, preferred language, preferred contact method, reason for reaching out, and any message they want to share in advance.</p>
+    <div class="code-wrap">
+      <button class="copy-btn" onclick="copyCode('form')">Copy</button>
+      <pre id="form"><span class="kw">function</span> <span class="fn">buildParentContactForm</span>() {
+
+  <span class="kw">var</span> <span class="var">form</span> = <span class="obj">FormApp</span>.<span class="fn">create</span>(<span class="str">'RUSD AAC Program — Contact Us / Request a Meeting'</span>);
+
+  <span class="var">form</span>.<span class="fn">setDescription</span>(
+    <span class="str">'Questions about the AAC program? Want to schedule a meeting or observe your child’s classroom? '</span> +
+    <span class="str">'Complete this form and the District AAC Lead SLP will follow up within two school days.
+
+'</span> +
+    <span class="str">'¿Tiene preguntas sobre el programa de CAA? ¿Quiere programar una reunión u observar el salón de su hijo/a? '</span> +
+    <span class="str">'Complete este formulario y el Coordinador de CAA del Distrito se comunicará con usted dentro de dos días escolares.'</span>
+  );
+
+  <span class="var">form</span>.<span class="fn">setCollectEmail</span>(<span class="kw">true</span>);   <span class="cmt">// Enables automatic confirmation email to family</span>
+  <span class="var">form</span>.<span class="fn">setAllowResponseEdits</span>(<span class="kw">false</span>);
+  <span class="var">form</span>.<span class="fn">setLimitOneResponsePerUser</span>(<span class="kw">false</span>);  <span class="cmt">// Families may submit more than once</span>
+
+  <span class="kw">var</span> <span class="var">schools</span> = [
+    <span class="str">'Levi Bemis Elementary'</span>, <span class="str">'J.C. Boyd Elementary'</span>, <span class="str">'Merle S. Casey Elementary'</span>,
+    <span class="str">'Sam V. Curtis Elementary'</span>, <span class="str">'Helen L. Dollahan Elementary'</span>, <span class="str">'George H. Dunn Elementary'</span>,
+    <span class="str">'Dr. Edward Fitzgerald Elementary'</span>, <span class="str">'Dr. Ernest Garcia Elementary'</span>,
+    <span class="str">'Lida M. Henry Elementary'</span>, <span class="str">'Elizabeth T. Hughbanks Elementary'</span>,
+    <span class="str">'J.P. Kelley Elementary'</span>, <span class="str">'Nancy R. Kordyak Elementary'</span>,
+    <span class="str">'Lena M. Preston Elementary'</span>, <span class="str">'A.H. Morgan Elementary'</span>,
+    <span class="str">'Georgia F. Morris Elementary'</span>, <span class="str">'W.A. Myers Elementary'</span>,
+    <span class="str">'Samuel W. Simpson Elementary'</span>, <span class="str">'W.J.C. Trapp Elementary'</span>,
+    <span class="str">'Charlotte N. Werner Elementary'</span>, <span class="str">'Warren H. Frisbie Middle School'</span>,
+    <span class="str">'William G. Jehue Middle School'</span>, <span class="str">'Ben F. Kolb Middle School'</span>,
+    <span class="str">'Ethel Kucera Middle School'</span>, <span class="str">'Rialto Middle School'</span>,
+    <span class="str">'W.A. Carter High School'</span>, <span class="str">'Dwight D. Eisenhower High School'</span>,
+    <span class="str">'Dr. John Milor High School'</span>, <span class="str">'Rialto High School'</span>,
+    <span class="str">'Zupanic Virtual Academy'</span>, <span class="str">'Adult Transition Program (ATP)'</span>,
+    <span class="str">'I am not sure / My child is not yet enrolled'</span>
+  ];
+
+  <span class="cmt">// ── SECTION 1: Who is reaching out ─────────────────────</span>
+  <span class="var">form</span>.<span class="fn">addSectionHeaderItem</span>()
+    .<span class="fn">setTitle</span>(<span class="str">'About You  /  Sobre usted'</span>);
+
+  <span class="var">form</span>.<span class="fn">addTextItem</span>()
+    .<span class="fn">setTitle</span>(<span class="str">'Your name  /  Su nombre'</span>)
+    .<span class="fn">setRequired</span>(<span class="kw">true</span>);
+
+  <span class="var">form</span>.<span class="fn">addTextItem</span>()
+    .<span class="fn">setTitle</span>(<span class="str">'Your child’s first name (or initials)  /  Nombre de su hijo/a (o iniciales)'</span>)
+    .<span class="fn">setHelpText</span>(<span class="str">'First name or initials only, please.  /  Solo el primer nombre o iniciales, por favor.'</span>)
+    .<span class="fn">setRequired</span>(<span class="kw">true</span>);
+
+  <span class="var">form</span>.<span class="fn">addListItem</span>()
+    .<span class="fn">setTitle</span>(<span class="str">'Your child’s school  /  La escuela de su hijo/a'</span>)
+    .<span class="fn">setChoiceValues</span>(<span class="var">schools</span>)
+    .<span class="fn">setRequired</span>(<span class="kw">true</span>);
+
+  <span class="cmt">// ── SECTION 2: Language and contact preference ──────────</span>
+  <span class="var">form</span>.<span class="fn">addSectionHeaderItem</span>()
+    .<span class="fn">setTitle</span>(<span class="str">'How to reach you  /  Cómo contactarle'</span>);
+
+  <span class="var">form</span>.<span class="fn">addMultipleChoiceItem</span>()
+    .<span class="fn">setTitle</span>(<span class="str">'Preferred language for our response  /  Idioma preferido para nuestra respuesta'</span>)
+    .<span class="fn">setChoiceValues</span>([
+      <span class="str">'English'</span>,
+      <span class="str">'Spanish  /  Español'</span>,
+      <span class="str">'English and Spanish  /  Inglés y español'</span>
+    ])
+    .<span class="fn">setRequired</span>(<span class="kw">true</span>);
+
+  <span class="var">form</span>.<span class="fn">addMultipleChoiceItem</span>()
+    .<span class="fn">setTitle</span>(<span class="str">'Best way to reach you  /  Mejor manera de contactarle'</span>)
+    .<span class="fn">setChoiceValues</span>([
+      <span class="str">'Email (address collected above)'</span>,
+      <span class="str">'Phone call  /  Llamada telefónica'</span>,
+      <span class="str">'Either is fine  /  Cualquiera está bien'</span>
+    ])
+    .<span class="fn">setRequired</span>(<span class="kw">true</span>);
+
+  <span class="var">form</span>.<span class="fn">addTextItem</span>()
+    .<span class="fn">setTitle</span>(<span class="str">'Best phone number (if you selected phone)  /  Número de teléfono (si seleccionó llamada)'</span>)
+    .<span class="fn">setHelpText</span>(<span class="str">'Leave blank if email is preferred.  /  Deje en blanco si prefiere correo electrónico.'</span>)
+    .<span class="fn">setRequired</span>(<span class="kw">false</span>);
+
+  <span class="var">form</span>.<span class="fn">addTextItem</span>()
+    .<span class="fn">setTitle</span>(<span class="str">'Best time to reach you (if calling)  /  Mejor hora para llamarle'</span>)
+    .<span class="fn">setHelpText</span>(<span class="str">'Example: mornings before 9am, after 3pm  /  Ejemplo: mañanas antes de las 9am, después de las 3pm'</span>)
+    .<span class="fn">setRequired</span>(<span class="kw">false</span>);
+
+  <span class="cmt">// ── SECTION 3: Reason for contact ──────────────────────</span>
+  <span class="var">form</span>.<span class="fn">addSectionHeaderItem</span>()
+    .<span class="fn">setTitle</span>(<span class="str">'What can we help you with?  /  ¿En qué podemos ayudarle?'</span>);
+
+  <span class="var">form</span>.<span class="fn">addMultipleChoiceItem</span>()
+    .<span class="fn">setTitle</span>(<span class="str">'I am reaching out because…  /  Me comunico porque…'</span>)
+    .<span class="fn">setChoiceValues</span>([
+      <span class="str">'I have a general question about the AAC program  /  Tengo una pregunta general sobre el programa de CAA'</span>,
+      <span class="str">'I have a question specifically about my child  /  Tengo una pregunta específica sobre mi hijo/a'</span>,
+      <span class="str">'I would like to schedule a meeting  /  Me gustaría programar una reunión'</span>,
+      <span class="str">'I would like to observe my child’s classroom  /  Me gustaría observar el salón de mi hijo/a'</span>,
+      <span class="str">'I have a concern I would like to discuss  /  Tengo una preocupación que quisiera comentar'</span>,
+      <span class="str">'Something else  /  Otro motivo'</span>
+    ])
+    .<span class="fn">setRequired</span>(<span class="kw">true</span>);
+
+  <span class="var">form</span>.<span class="fn">addParagraphTextItem</span>()
+    .<span class="fn">setTitle</span>(<span class="str">'Anything you’d like to share in advance  /  Algo que quisiera compartir de antemano'</span>)
+    .<span class="fn">setHelpText</span>(<span class="str">'Optional. This helps us prepare before we reach out to you.  /  Opcional. Esto nos ayuda a prepararnos antes de contactarle.'</span>)
+    .<span class="fn">setRequired</span>(<span class="kw">false</span>);
+
+  <span class="obj">Logger</span>.<span class="fn">log</span>(<span class="str">'Parent Contact form created: '</span> + <span class="var">form</span>.<span class="fn">getPublishedUrl</span>());
+  <span class="obj">Browser</span>.<span class="fn">msgBox</span>(
+    <span class="str">'✅ Parent Contact form created!
+
+Check your Google Drive.
+
+Form URL:
+'</span> + <span class="var">form</span>.<span class="fn">getPublishedUrl</span>() +
+    <span class="str">'
+
+Next: complete the 3 manual steps in the builder page
+(confirmation message, email notification, link to Sheet).'</span>
+  );
+}</pre>
+    </div>
+  </div>
+
+  <!-- Confirmation message preview -->
+  <div class="response-preview">
+    <h3>Confirmation message to paste into form settings (Settings &rarr; Presentation &rarr; Confirmation message)</h3>
+    <div class="code-wrap" style="margin-top:12px;">
+      <button class="copy-btn" onclick="copyCode('confirm')">Copy</button>
+      <pre id="confirm" style="white-space:pre-wrap; font-size:13px;">Thank you for reaching out to the RUSD AAC Program. We received your message and will follow up within two school days by email or phone, based on your preference.
+
+If your matter is urgent, you can also email the District AAC Lead SLP directly at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="640e061110050a000524160d0508100b1117004a0b1603">[email&#160;protected]</a>.
+
+---
+
+Gracias por comunicarse con el Programa de CAA de RUSD. Recibimos su mensaje y nos pondremos en contacto con usted dentro de dos días escolares por correo electrónico o teléfono, según su preferencia.
+
+Si su asunto es urgente, también puede enviar un correo electrónico directamente al Coordinador de CAA del Distrito: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a5cfc7d0d1c4cbc1c4e5d7ccc4c9d1cad0d6c18bcad7c2">[email&#160;protected]</a>.</pre>
+    </div>
+  </div>
+
+  <!-- Embed code -->
+  <p class="section-label" style="margin-top:32px;">Hub embed code — paste into Google Sites public page</p>
+  <div class="card">
+    <h2>Embedding the form in the Hub</h2>
+    <p>In Google Sites: open the public Hub page &rarr; Insert &rarr; Embed &rarr; paste the published form URL. Google Sites will render the form inline. Alternatively, use a Button or Card link that opens the form in a new tab — this works better on mobile.</p>
+    <p>The form URL appears in the popup after you run the script, and is also available by opening the form and clicking <strong>Send &rarr; link icon</strong>.</p>
+  </div>
+
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/script

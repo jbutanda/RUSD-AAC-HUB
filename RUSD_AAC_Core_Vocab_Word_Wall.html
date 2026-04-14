@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Core Vocabulary Word Wall | RUSD AAC Program</title>
+<style>
+  /* ── Print setup: 11×17 landscape ── */
+  @page {
+    size: 17in 11in landscape;
+    margin: 0.35in;
+  }
+  @media print {
+    body { margin: 0; }
+    .no-print { display: none; }
+  }
+
+  :root {
+    --blue:       #1A5294;
+    --blue-mid:   #2E6DB8;
+    --blue-lt:    #E8EFF8;
+    --charcoal:   #555555;
+    --lgray:      #F5F5F5;
+    --border:     #CCCCCC;
+    --white:      #FFFFFF;
+
+    /* Category colors */
+    --core-h:  #1A5294; --core-b:  #E8EFF8;
+    --req-h:   #1B5E20; --req-b:   #E8F5E9;
+    --feel-h:  #B71C1C; --feel-b:  #FFEBEE;
+    --act-h:   #006064; --act-b:   #E0F7FA;
+    --quest-h: #4A148C; --quest-b: #EDE7F6;
+    --ppl-h:   #6A1B9A; --ppl-b:   #F3E5F5;
+    --soc-h:   #33691E; --soc-b:   #F1F8E9;
+    --desc-h:  #E65100; --desc-b:  #FFF3E0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11pt;
+    color: #222;
+    background: white;
+    width: 16.3in;
+    max-width: 16.3in;
+    padding: 0;
+  }
+
+  /* ── Header ── */
+  .header {
+    display: grid;
+    grid-template-columns: 1.8in 1fr 2.6in;
+    gap: 0.15in;
+    align-items: center;
+    padding-bottom: 0.1in;
+    border-bottom: 3px solid var(--blue);
+    margin-bottom: 0.12in;
+  }
+  .header-logo img { width: 1.6in; }
+  .header-title { text-align: center; }
+  .header-title h1 { font-size: 26pt; font-weight: 900; color: var(--blue); line-height: 1.1; margin-bottom: 0.04in; }
+  .header-title p { font-size: 9pt; color: var(--charcoal); }
+  .header-tip {
+    background: var(--blue-lt);
+    border-left: 4px solid var(--blue);
+    padding: 0.08in 0.12in;
+    border-radius: 4px;
+    font-size: 8.5pt;
+    color: var(--blue);
+    line-height: 1.5;
+  }
+  .header-tip strong { display: block; font-size: 9pt; margin-bottom: 0.03in; }
+
+  /* ── Main grid ── */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.1in;
+    margin-bottom: 0.1in;
+  }
+
+  /* ── Category section ── */
+  .cat { break-inside: avoid; }
+  .cat-header {
+    color: white;
+    font-weight: 700;
+    font-size: 9pt;
+    padding: 4px 8px;
+    border-radius: 3px 3px 0 0;
+    letter-spacing: 0.3px;
+  }
+  .word-grid {
+    display: grid;
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 3px 3px;
+    overflow: hidden;
+  }
+  .word-cell {
+    padding: 5px 4px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .word-cell:last-child { border-right: none; }
+  .word-cell .en {
+    font-weight: 700;
+    font-size: 11pt;
+    line-height: 1.2;
+  }
+  .word-cell .es {
+    font-size: 8pt;
+    color: var(--charcoal);
+    font-style: italic;
+    line-height: 1.2;
+    margin-top: 1px;
+  }
+  .word-cell.empty { background: var(--lgray); }
+
+  /* Core Starters — 5 cols */
+  .cat-core .cat-header   { background: var(--core-h); }
+  .cat-core .word-grid    { grid-template-columns: repeat(5, 1fr); }
+  .cat-core .word-cell    { background: var(--core-b); }
+  .cat-core .word-cell .en { color: var(--core-h); }
+
+  /* Requests — 4 cols */
+  .cat-req .cat-header    { background: var(--req-h); }
+  .cat-req .word-grid     { grid-template-columns: repeat(4, 1fr); }
+  .cat-req .word-cell     { background: var(--req-b); }
+  .cat-req .word-cell .en { color: var(--req-h); }
+
+  /* Feelings — 4 cols */
+  .cat-feel .cat-header   { background: var(--feel-h); }
+  .cat-feel .word-grid    { grid-template-columns: repeat(4, 1fr); }
+  .cat-feel .word-cell    { background: var(--feel-b); }
+  .cat-feel .word-cell .en { color: var(--feel-h); }
+
+  /* Actions — 4 cols */
+  .cat-act .cat-header    { background: var(--act-h); }
+  .cat-act .word-grid     { grid-template-columns: repeat(4, 1fr); }
+  .cat-act .word-cell     { background: var(--act-b); }
+  .cat-act .word-cell .en { color: var(--act-h); }
+
+  /* Questions — 4 cols */
+  .cat-quest .cat-header  { background: var(--quest-h); }
+  .cat-quest .word-grid   { grid-template-columns: repeat(4, 1fr); }
+  .cat-quest .word-cell   { background: var(--quest-b); }
+  .cat-quest .word-cell .en { color: var(--quest-h); }
+
+  /* People — 4 cols */
+  .cat-ppl .cat-header    { background: var(--ppl-h); }
+  .cat-ppl .word-grid     { grid-template-columns: repeat(4, 1fr); }
+  .cat-ppl .word-cell     { background: var(--ppl-b); }
+  .cat-ppl .word-cell .en { color: var(--ppl-h); }
+
+  /* Social — 4 cols */
+  .cat-soc .cat-header    { background: var(--soc-h); }
+  .cat-soc .word-grid     { grid-template-columns: repeat(4, 1fr); }
+  .cat-soc .word-cell     { background: var(--soc-b); }
+  .cat-soc .word-cell .en { color: var(--soc-h); }
+
+  /* Describing — 4 cols */
+  .cat-desc .cat-header   { background: var(--desc-h); }
+  .cat-desc .word-grid    { grid-template-columns: repeat(4, 1fr); }
+  .cat-desc .word-cell    { background: var(--desc-b); }
+  .cat-desc .word-cell .en { color: var(--desc-h); }
+
+  /* ── Column groups for bottom half ── */
+  .bottom-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 1fr 1fr;
+    gap: 0.1in;
+    margin-bottom: 0.1in;
+  }
+  .bottom-stack { display: flex; flex-direction: column; gap: 0.1in; }
+
+  /* ── Modeling reminders strip ── */
+  .reminders-label {
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 0.04in;
+  }
+  .reminders {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    border: 2px solid var(--blue);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.08in;
+  }
+  .reminder {
+    padding: 5px 7px;
+    font-size: 8pt;
+    color: var(--blue);
+    text-align: center;
+    line-height: 1.4;
+    border-right: 1px solid var(--border);
+  }
+  .reminder:nth-child(odd)  { background: var(--blue-lt); }
+  .reminder:nth-child(even) { background: white; }
+  .reminder:last-child { border-right: none; }
+
+  /* ── Footer ── */
+  .footer {
+    border-top: 2px solid var(--blue);
+    padding-top: 0.05in;
+    font-size: 8pt;
+    color: var(--charcoal);
+    text-align: center;
+  }
+
+  /* ── Print button (screen only) ── */
+  .print-bar {
+    background: var(--blue);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    font-size: 13px;
+  }
+  .print-bar button {
+    background: white;
+    color: var(--blue);
+    border: none;
+    padding: 7px 20px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+<div class="print-bar no-print">
+  <span>RUSD AAC Program — Core Vocabulary Word Wall &nbsp;·&nbsp; Print at 11×17 landscape, then laminate</span>
+  <button onclick="window.print()">🖨 Print / Save as PDF</button>
+</div>
+
+<!-- ══ HEADER ═══════════════════════════════════════════════ -->
+<div class="header">
+  <div class="header-logo">
+    <!-- RUSD logo placeholder — replace src with actual logo URL in Google Sites -->
+    <div style="width:1.6in;height:0.5in;background:var(--blue);border-radius:4px;display:flex;align-items:center;justify-content:center;">
+      <span style="color:white;font-weight:900;font-size:13pt;letter-spacing:1px;">RIALTO USD</span>
+    </div>
+  </div>
+  <div class="header-title">
+    <h1>Core Vocabulary Word Wall</h1>
+    <p>Most-used words in Proloquo2Go &nbsp;·&nbsp; Post near the device &nbsp;·&nbsp; Model throughout the day</p>
+  </div>
+  <div class="header-tip">
+    <strong>HOW TO USE THIS CHART</strong>
+    Find a word your student might need. Tap it on the device while you say it out loud. Use the Home button to return to the main screen. You don't need to navigate menus — just find it here first.
+  </div>
+</div>
+
+<!-- ══ TOP ROW: Core Starters + Requests ════════════════════ -->
+<div class="main-grid">
+
+  <div class="cat cat-core">
+    <div class="cat-header">CORE STARTERS — use these every day, in every activity</div>
+    <div class="word-grid">
+      <div class="word-cell"><div class="en">I</div><div class="es">yo</div></div>
+      <div class="word-cell"><div class="en">you</div><div class="es">tú</div></div>
+      <div class="word-cell"><div class="en">he</div><div class="es">él</div></div>
+      <div class="word-cell"><div class="en">she</div><div class="es">ella</div></div>
+      <div class="word-cell"><div class="en">we</div><div class="es">nosotros</div></div>
+      <div class="word-cell"><div class="en">want</div><div class="es">quiero</div></div>
+      <div class="word-cell"><div class="en">need</div><div class="es">necesito</div></div>
+      <div class="word-cell"><div class="en">like</div><div class="es">me gusta</div></div>
+      <div class="word-cell"><div class="en">don't like</div><div class="es">no me gusta</div></div>
+      <div class="word-cell"><div class="en">my</div><div class="es">mi</div></div>
+      <div class="word-cell"><div class="en">yes</div><div class="es">sí</div></div>
+      <div class="word-cell"><div class="en">no</div><div class="es">no</div></div>
+      <div class="word-cell"><div class="en">more</div><div class="es">más</div></div>
+      <div class="word-cell"><div class="en">done</div><div class="es">terminé</div></div>
+      <div class="word-cell"><div class="en">that</div><div class="es">eso</div></div>
+      <div class="word-cell"><div class="en">go</div><div class="es">ir</div></div>
+      <div class="word-cell"><div class="en">stop</div><div class="es">parar</div></div>
+      <div class="word-cell"><div class="en">look</div><div class="es">mira</div></div>
+      <div class="word-cell"><div class="en">help</div><div class="es">ayuda</div></div>
+      <div class="word-cell"><div class="en">it</div><div class="es">eso</div></div>
+    </div>
+  </div>
+
+  <div class="cat cat-req">
+    <div class="cat-header">REQUESTS — for food, activities, objects, and needs</div>
+    <div class="word-grid">
+      <div class="word-cell"><div class="en">eat</div><div class="es">comer</div></div>
+      <div class="word-cell"><div class="en">drink</div><div class="es">beber</div></div>
+      <div class="word-cell"><div class="en">bathroom</div><div class="es">baño</div></div>
+      <div class="word-cell"><div class="en">break</div><div class="es">descanso</div></div>
+      <div class="word-cell"><div class="en">music</div><div class="es">música</div></div>
+      <div class="word-cell"><div class="en">play</div><div class="es">jugar</div></div>
+      <div class="word-cell"><div class="en">outside</div><div class="es">afuera</div></div>
+      <div class="word-cell"><div class="en">book</div><div class="es">libro</div></div>
+      <div class="word-cell"><div class="en">give me</div><div class="es">dame</div></div>
+      <div class="word-cell"><div class="en">open</div><div class="es">abrir</div></div>
+      <div class="word-cell"><div class="en">close</div><div class="es">cerrar</div></div>
+      <div class="word-cell"><div class="en">turn on</div><div class="es">encender</div></div>
+      <div class="word-cell"><div class="en">wait</div><div class="es">espera</div></div>
+      <div class="word-cell"><div class="en">again</div><div class="es">otra vez</div></div>
+      <div class="word-cell"><div class="en">different</div><div class="es">diferente</div></div>
+      <div class="word-cell"><div class="en">all done</div><div class="es">ya terminé</div></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ BOTTOM ROW: Four columns ═════════════════════════════ -->
+<div class="bottom-grid">
+
+  <!-- Col 1: Feelings -->
+  <div class="cat cat-feel">
+    <div class="cat-header">FEELINGS — honor every emotional message</div>
+    <div class="word-grid">
+      <div class="word-cell"><div class="en">happy</div><div class="es">feliz</div></div>
+      <div class="word-cell"><div class="en">sad</div><div class="es">triste</div></div>
+      <div class="word-cell"><div class="en">mad</div><div class="es">enojado</div></div>
+      <div class="word-cell"><div class="en">scared</div><div class="es">asustado</div></div>
+      <div class="word-cell"><div class="en">sick</div><div class="es">enfermo</div></div>
+      <div class="word-cell"><div class="en">tired</div><div class="es">cansado</div></div>
+      <div class="word-cell"><div class="en">hungry</div><div class="es">hambre</div></div>
+      <div class="word-cell"><div class="en">hurt</div><div class="es">duele</div></div>
+      <div class="word-cell"><div class="en">excited</div><div class="es">emocionado</div></div>
+      <div class="word-cell"><div class="en">OK</div><div class="es">bien</div></div>
+      <div class="word-cell"><div class="en">not OK</div><div class="es">no bien</div></div>
+      <div class="word-cell"><div class="en">love</div><div class="es">amor</div></div>
+    </div>
+  </div>
+
+  <!-- Col 2: Actions -->
+  <div class="cat cat-act">
+    <div class="cat-header">ACTIONS — verbs for classroom routines</div>
+    <div class="word-grid">
+      <div class="word-cell"><div class="en">sit</div><div class="es">sentarse</div></div>
+      <div class="word-cell"><div class="en">stand</div><div class="es">pararse</div></div>
+      <div class="word-cell"><div class="en">walk</div><div class="es">caminar</div></div>
+      <div class="word-cell"><div class="en">run</div><div class="es">correr</div></div>
+      <div class="word-cell"><div class="en">write</div><div class="es">escribir</div></div>
+      <div class="word-cell"><div class="en">read</div><div class="es">leer</div></div>
+      <div class="word-cell"><div class="en">draw</div><div class="es">dibujar</div></div>
+      <div class="word-cell"><div class="en">listen</div><div class="es">escuchar</div></div>
+      <div class="word-cell"><div class="en">watch</div><div class="es">mirar</div></div>
+      <div class="word-cell"><div class="en">make</div><div class="es">hacer</div></div>
+      <div class="word-cell"><div class="en">put</div><div class="es">poner</div></div>
+      <div class="word-cell"><div class="en">come</div><div class="es">ven</div></div>
+    </div>
+  </div>
+
+  <!-- Col 3: Questions + People stacked -->
+  <div class="bottom-stack">
+    <div class="cat cat-quest">
+      <div class="cat-header">QUESTIONS</div>
+      <div class="word-grid">
+        <div class="word-cell"><div class="en">what</div><div class="es">qué</div></div>
+        <div class="word-cell"><div class="en">where</div><div class="es">dónde</div></div>
+        <div class="word-cell"><div class="en">who</div><div class="es">quién</div></div>
+        <div class="word-cell"><div class="en">when</div><div class="es">cuándo</div></div>
+        <div class="word-cell"><div class="en">why</div><div class="es">por qué</div></div>
+        <div class="word-cell"><div class="en">how</div><div class="es">cómo</div></div>
+        <div class="word-cell"><div class="en">how many</div><div class="es">cuántos</div></div>
+        <div class="word-cell"><div class="en">which</div><div class="es">cuál</div></div>
+      </div>
+    </div>
+    <div class="cat cat-ppl">
+      <div class="cat-header">PEOPLE</div>
+      <div class="word-grid">
+        <div class="word-cell"><div class="en">mom</div><div class="es">mamá</div></div>
+        <div class="word-cell"><div class="en">dad</div><div class="es">papá</div></div>
+        <div class="word-cell"><div class="en">teacher</div><div class="es">maestra/o</div></div>
+        <div class="word-cell"><div class="en">friend</div><div class="es">amigo/a</div></div>
+        <div class="word-cell"><div class="en">para</div><div class="es">ayudante</div></div>
+        <div class="word-cell"><div class="en">SLP</div><div class="es">terapeuta</div></div>
+        <div class="word-cell"><div class="en">brother</div><div class="es">hermano</div></div>
+        <div class="word-cell"><div class="en">sister</div><div class="es">hermana</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Col 4: Social + Describing stacked -->
+  <div class="bottom-stack">
+    <div class="cat cat-soc">
+      <div class="cat-header">SOCIAL</div>
+      <div class="word-grid">
+        <div class="word-cell"><div class="en">hi</div><div class="es">hola</div></div>
+        <div class="word-cell"><div class="en">bye</div><div class="es">adiós</div></div>
+        <div class="word-cell"><div class="en">please</div><div class="es">por favor</div></div>
+        <div class="word-cell"><div class="en">thank you</div><div class="es">gracias</div></div>
+        <div class="word-cell"><div class="en">sorry</div><div class="es">lo siento</div></div>
+        <div class="word-cell"><div class="en">excuse me</div><div class="es">perdón</div></div>
+        <div class="word-cell"><div class="en">my turn</div><div class="es">mi turno</div></div>
+        <div class="word-cell"><div class="en">your turn</div><div class="es">tu turno</div></div>
+        <div class="word-cell"><div class="en">I know</div><div class="es">yo sé</div></div>
+        <div class="word-cell"><div class="en">I don't know</div><div class="es">no sé</div></div>
+        <div class="word-cell"><div class="en">funny</div><div class="es">gracioso</div></div>
+        <div class="word-cell"><div class="en">wow</div><div class="es">wow</div></div>
+      </div>
+    </div>
+    <div class="cat cat-desc">
+      <div class="cat-header">DESCRIBING</div>
+      <div class="word-grid">
+        <div class="word-cell"><div class="en">big</div><div class="es">grande</div></div>
+        <div class="word-cell"><div class="en">little</div><div class="es">pequeño</div></div>
+        <div class="word-cell"><div class="en">hot</div><div class="es">caliente</div></div>
+        <div class="word-cell"><div class="en">cold</div><div class="es">frío</div></div>
+        <div class="word-cell"><div class="en">fast</div><div class="es">rápido</div></div>
+        <div class="word-cell"><div class="en">slow</div><div class="es">despacio</div></div>
+        <div class="word-cell"><div class="en">good</div><div class="es">bueno</div></div>
+        <div class="word-cell"><div class="en">bad</div><div class="es">malo</div></div>
+        <div class="word-cell"><div class="en">loud</div><div class="es">fuerte</div></div>
+        <div class="word-cell"><div class="en">quiet</div><div class="es">callado</div></div>
+        <div class="word-cell"><div class="en">same</div><div class="es">igual</div></div>
+        <div class="word-cell"><div class="en">yucky</div><div class="es">asqueroso</div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ MODELING REMINDERS ════════════════════════════════════ -->
+<div class="reminders-label">QUICK MODELING REMINDERS</div>
+<div class="reminders">
+  <div class="reminder">Point to the word as you say it — don't just tap silently</div>
+  <div class="reminder">Model 1–2 words above the student's current level</div>
+  <div class="reminder">Don't ask the student to imitate — just model</div>
+  <div class="reminder">Use the device yourself, throughout the whole day</div>
+  <div class="reminder">Respond to every communication attempt as real communication</div>
+  <div class="reminder">Wait 10–15 seconds after modeling before expecting a response</div>
+</div>
+
+<!-- ══ FOOTER ════════════════════════════════════════════════ -->
+<div class="footer">
+  RUSD AAC Program &nbsp;·&nbsp; Core Vocabulary Word Wall &nbsp;·&nbsp; Print at 11×17 &nbsp;·&nbsp; Laminate and post near the device &nbsp;·&nbsp; District Lead AAC SLP: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a2c8c0d7d6c3ccc6c3e2

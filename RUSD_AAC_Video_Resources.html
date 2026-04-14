@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AAC Video Resources for Families | RUSD AAC Program</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue:       #1A5294;
+    --blue-mid:   #2E6DB8;
+    --blue-light: #E8EFF8;
+    --blue-pale:  #F0F5FC;
+    --charcoal:   #3D3D3D;
+    --warm-gray:  #6B6560;
+    --white:      #FFFFFF;
+    --cream:      #FDFBF7;
+    --gold:       #C8922A;
+    --green:      #2D6A2D;
+    --green-light:#EAF4EA;
+    --border:     #D8E4F0;
+    --shadow:     rgba(26,82,148,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 16px;
+    color: var(--charcoal);
+    background: var(--cream);
+    line-height: 1.75;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: var(--blue);
+    color: white;
+    padding: 52px 28px 44px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(ellipse at 70% 40%,rgba(46,109,184,0.5) 0%,transparent 60%);
+    pointer-events:none;
+  }
+  .hero-label {
+    display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);
+    border-radius:20px;padding:5px 16px;font-size:12px;font-weight:600;letter-spacing:0.8px;
+    text-transform:uppercase;color:rgba(255,255,255,0.85);margin-bottom:22px;position:relative;z-index:1;
+  }
+  .hero h1 {
+    font-family:'Merriweather',serif;font-size:clamp(24px,4vw,40px);font-weight:700;
+    line-height:1.25;margin-bottom:14px;position:relative;z-index:1;
+  }
+  .hero p { font-size:15px;color:rgba(255,255,255,0.72);max-width:560px;margin:0 auto;position:relative;z-index:1; }
+  .hero-rule { width:50px;height:3px;background:var(--gold);margin:24px auto 0;border-radius:2px;position:relative;z-index:1; }
+
+  /* ── Page ── */
+  .page { max-width:840px;margin:0 auto;padding:0 22px 80px; }
+
+  /* ── Intro ── */
+  .intro {
+    background:var(--white);border:1px solid var(--border);border-radius:12px;
+    padding:30px 36px;margin:44px 0 48px;box-shadow:0 4px 16px var(--shadow);
+    font-size:17px;line-height:1.8;
+  }
+  .intro p+p { margin-top:14px; }
+  .intro .es { color:var(--warm-gray);font-style:italic;font-size:15px;margin-top:8px; }
+
+  /* ── Category section ── */
+  .cat-label {
+    display:flex;align-items:center;gap:12px;margin:48px 0 20px;
+  }
+  .cat-label h2 {
+    font-family:'Merriweather',serif;font-size:19px;font-weight:700;color:var(--blue);white-space:nowrap;
+  }
+  .cat-line { flex:1;height:2px;background:var(--border);border-radius:1px; }
+  .cat-es { font-size:12px;color:var(--warm-gray);font-style:italic;white-space:nowrap; }
+
+  /* ── Video card ── */
+  .video-card {
+    background:var(--white);border:1px solid var(--border);border-radius:10px;
+    padding:22px 26px;margin-bottom:16px;box-shadow:0 2px 8px var(--shadow);
+    display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start;
+  }
+  .video-card:hover { box-shadow:0 6px 20px var(--shadow); }
+  .vc-title {
+    font-size:16px;font-weight:700;color:var(--blue);margin-bottom:5px;line-height:1.3;
+  }
+  .vc-source {
+    font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;
+    color:var(--warm-gray);margin-bottom:8px;
+  }
+  .vc-desc { font-size:15px;color:var(--charcoal);line-height:1.7;margin-bottom:6px; }
+  .vc-es { font-size:13px;color:var(--warm-gray);font-style:italic;line-height:1.6; }
+  .vc-tags { display:flex;flex-wrap:wrap;gap:6px;margin-top:10px; }
+  .vc-tag {
+    font-size:11px;font-weight:700;padding:3px 10px;border-radius:12px;
+    background:var(--blue-light);color:var(--blue);letter-spacing:0.3px;
+  }
+  .vc-tag.green { background:var(--green-light);color:var(--green); }
+  .vc-tag.gold { background:#FFF3DC;color:#7A5000; }
+  .vc-btn {
+    display:inline-flex;align-items:center;gap:6px;
+    background:var(--blue);color:white;text-decoration:none;
+    padding:9px 18px;border-radius:8px;font-size:13px;font-weight:700;
+    white-space:nowrap;transition:background 0.15s;flex-shrink:0;margin-top:2px;
+  }
+  .vc-btn:hover { background:var(--blue-mid); }
+  .vc-btn svg { width:14px;height:14px;flex-shrink:0; }
+
+  /* ── Note box ── */
+  .note-box {
+    background:var(--green-light);border:2px solid var(--green);border-radius:10px;
+    padding:20px 24px;margin:48px 0;font-size:15px;line-height:1.75;
+  }
+  .note-box strong { color:var(--green); }
+
+  /* ── Search bar ── */
+  .search-wrap { margin-bottom:32px; }
+  .search-wrap input {
+    width:100%;padding:12px 18px;border:2px solid var(--border);border-radius:8px;
+    font-size:16px;font-family:'Source Sans 3',sans-serif;outline:none;
+    transition:border-color 0.15s;background:var(--white);color:var(--charcoal);
+  }
+  .search-wrap input:focus { border-color:var(--blue); }
+  .search-wrap input::placeholder { color:#AAA; }
+
+  /* ── Footer ── */
+  .page-footer {
+    border-top:2px solid var(--blue);padding-top:24px;margin-top:56px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    font-size:13px;color:var(--warm-gray);
+  }
+  .page-footer strong { color:var(--blue); }
+
+  .hidden { display:none!important; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-label">RUSD AAC Program &nbsp;·&nbsp; For Families</div>
+  <h1>AAC Video Resources</h1>
+  <p>Short, plain-language videos to help families understand AAC, why it matters, and what it looks like in the classroom and at home.</p>
+  <div class="hero-rule"></div>
+</div>
+
+<div class="page">
+
+  <div class="intro">
+    <p>These videos were selected because they are <strong>family-friendly</strong> — no jargon, no clinical language, real students and real families. Most are under 10 minutes. You don't need to watch them all. Start with whatever question is most on your mind.</p>
+    <p class="es">Estos videos fueron seleccionados porque son accesibles para las familias — sin jerga clínica, con estudiantes y familias reales. La mayoría duran menos de 10 minutos. No necesita verlos todos. Empiece con la pregunta que más le preocupa.</p>
+  </div>
+
+  <div class="search-wrap">
+    <input type="text" id="search" placeholder="Search videos by topic, source, or keyword... / Buscar videos..." oninput="filterCards(this.value)">
+  </div>
+
+  <!-- ══ WHAT IS AAC? ══════════════════════════════════════ -->
+  <div class="cat-label" data-cat="what">
+    <h2>What Is AAC?</h2>
+    <div class="cat-line"></div>
+    <div class="cat-es">¿Qué es la CAA?</div>
+  </div>
+
+  <div class="video-card" data-tags="what aac introduction family basics proloquo2go">
+    <div>
+      <div class="vc-source">AssistiveWare</div>
+      <div class="vc-title">What Is AAC? A Family Introduction</div>
+      <div class="vc-desc">A warm, simple overview of AAC for families who have never heard the term. Covers what AAC is, who uses it, and why it matters — using real students and real communication.</div>
+      <div class="vc-es">Una introducción sencilla a la CAA para familias que nunca han escuchado el término. Cubre qué es la CAA, quién la usa y por qué es importante, con estudiantes reales.</div>
+      <div class="vc-tags">
+        <span class="vc-tag">Families</span>
+        <span class="vc-tag green">Short — under 5 min</span>
+        <span class="vc-tag">English</span>
+      </div>
+    </div>
+    <a href="https://www.youtube.com/watch?v=Zhm0dY5o3MQ" target="_blank" class="vc-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 1.77-.13 3.08-.44 3.83-.28.66-.73 1.11-1.39 1.39-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 18c-4.19 0-6.8-.14-7.83-.44-.66-.28-1.11-.73-1.39-1.39-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-1.77.13-3.08.44-3.83.28-.66.73-1.11 1.39-1.39.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 6c4.19 0 6.8.14 7.83.44.66.28 1.11.73 1.39 1.39z"/></svg>
+      Watch
+    </a>
+  </div>
+
+  <div class="video-card" data-tags="what aac myths speech development does not replace">
+    <div>
+      <div class="vc-source">PrAACtical AAC</div>
+      <div class="vc-title">AAC Does Not Stop a Child from Talking</div>
+      <div class="vc-desc">One of the most common fears families have is that giving a child a device will make them stop trying to speak. This short video addresses that fear directly with research-backed reassurance.</div>
+      <div class="vc-es">Una de las preocupaciones más comunes de las familias es que darle un dispositivo a su hijo hará que deje de intentar hablar. Este video aborda ese temor directamente con información basada en investigaciones.</div>
+      <div class="vc-tags">
+        <span class="vc-tag">Families</span>
+        <span class="vc-tag green">Short — under 5 min</span>
+        <span class="vc-tag gold">Speech + AAC</span>
+      </div>
+    </div>
+    <a href="https://praacticalaac.org" target="_blank" class="vc-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 1.77-.13 3.08-.44 3.83-.28.66-.73 1.11-1.39 1.39-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 18c-4.19 0-6.8-.14-7.83-.44-.66-.28-1.11-.73-1.39-1.39-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-1.77.13-3.08.44-3.83.28-.66.73-1.11 1.39-1.39.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 6c4.19 0 6.8.14 7.83.44.66.28 1.11.73 1.39 1.39z"/></svg>
+      Watch
+    </a>
+  </div>
+
+  <div class="video-card" data-tags="what aac all communicators no prerequisites right">
+    <div>
+      <div class="vc-source">ASHA / Speak for Yourself</div>
+      <div class="vc-title">Communication Is a Human Right</div>
+      <div class="vc-desc">A short, compelling video about why every person deserves a way to communicate — and why there are no prerequisites to AAC access. Good for sharing with family members who are skeptical.</div>
+      <div class="vc-es">Un video breve y convincente sobre por qué toda persona merece una forma de comunicarse, y por qué no hay requisitos previos para acceder a la CAA. Bueno para compartir con familiares escépticos.</div>
+      <div class="vc-tags">
+        <span class="vc-tag">Families</span>
+        <span class="vc-tag">Rights</span>
+        <span class="vc-tag green">Short — under 5 min</span>
+      </div>
+    </div>
+    <a href="https://www.asha.org/public/speech/disorders/aac/" target="_blank" class="vc-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 1.77-.13 3.08-.44 3.83-.28.66-.73 1.11-1.39 1.39-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 18c-4.19 0-6.8-.14-7.83-.44-.66-.28-1.11-.73-1.39-1.39-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-1.77.13-3.08.44-3.83.28-.66.73-1.11 1.39-1.39.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 6c4.19 0 6.8.14 7.83.44.66.28 1.11.73 1.39 1.39z"/></svg>
+      Watch
+    </a>
+  </div>
+
+  <!-- ══ AAC AT HOME ═══════════════════════════════════════ -->
+  <div class="cat-label" data-cat="home">
+    <h2>AAC at Home</h2>
+    <div class="cat-line"></div>
+    <div class="cat-es">La CAA en casa</div>
+  </div>
+
+  <div class="video-card" data-tags="home family support modeling respond communication home carry-over">
+    <div>
+      <div class="vc-source">AssistiveWare</div>
+      <div class="vc-title">How Families Can Support AAC at Home</div>
+      <div class="vc-desc">Practical, realistic advice for parents and caregivers on how to respond to AAC communication attempts at home — even without a device present. Focuses on responding to all communication, not just device use.</div>
+      <div class="vc-es">Consejos prácticos y realistas para padres y cuidadores sobre cómo responder a los intentos de comunicación con CAA en casa, incluso sin tener un dispositivo. Se enfoca en responder a toda comunicación.</div>
+      <div class="vc-tags">
+        <span class="vc-tag">Families</span>
+        <span class="vc-tag gold">For Caregivers</span>
+        <span class="vc-tag">Home Support</span>
+      </div>
+    </div>
+    <a href="https://www.assistiveware.com/learn-aac/help-your-child-use-aac" target="_blank" class="vc-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 1.77-.13 3.08-.44 3.83-.28.66-.73 1.11-1.39 1.39-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 18c-4.19 0-6.8-.14-7.83-.44-.66-.28-1.11-.73-1.39-1.39-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-1.77.13-3.08.44-3.83.28-.66.73-1.11 1.39-1.39.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 6c4.19 0 6.8.14 7.83.44.66.28 1.11.73 1.39 1.39z"/></svg>
+      Watch
+    </a>
+  </div>
+
+  <div class="video-card" data-tags="home family wait time patience respond communication attempts">
+    <div>
+      <div class="vc-source">Talking with Tech</div>
+      <div class="vc-title">Give It Time: Wait Time for AAC Users</div>
+      <div class="vc-desc">A family-friendly explanation of why AAC users need more time to respond — and how to give them that time without feeling awkward. Directly parallels what classroom staff are working on in October.</div>
+      <div class="vc-es">Una explicación accesible para familias sobre por qué los usuarios de CAA necesitan más tiempo para responder y cómo dárselo sin sentirse incómodos. Complementa lo que el personal del salón practica en octubre.</div>
+      <div class="vc-tags">
+        <span class="vc-tag">Families</span>
+        <span class="vc-tag green">Short — under 8 min</span>
+        <span class="vc-tag gold">Wait Time</span>
+      </div>
+    </div>
+    <a href="https://www.talkingwithtech.org" target="_blank" class="vc-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 1.77-.13 3.08-.44 3.83-.28.66-.73 1.11-1.39 1.39-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 18c-4.19 0-6.8-.14-7.83-.44-.66-.28-1.11-.73-1.39-1.39-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-1.77.13-3.08.44-3.83.28-.66.73-1.11 1.39-1.39.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 6c4.19 0 6.8.14 7.83.44.66.28 1.11.73 1.39 1.39z"/></svg>
+      Watch
+    </a>
+  </div>
+
+  <!-- ══ REAL STUDENTS AND FAMILIES ═══════════════════════ -->
+  <div class="cat-label" data-cat="stories">
+    <h2>Real Students &amp; Families</h2>
+    <div class="cat-line"></div>
+    <div class="cat-es">Estudiantes y familias reales</div>
+  </div>
+
+  <div class="video-card" data-tags="stories family real students autism nonverbal proloquo2go device">
+    <div>
+      <div class="vc-source">AssistiveWare</div>
+      <div class="vc-title">Finding Their Voice: AAC User Stories</div>
+      <div class="vc-desc">Short vignettes of AAC users and their families describing what communication access has meant in their lives. Emotional, honest, and powerful for any family just starting out with AAC.</div>
+      <div class="vc-es">Viñetas cortas de usuarios de CAA y sus familias describiendo lo que el acceso a la comunicación ha significado en sus vidas. Emotivo, honesto y poderoso para cualquier familia que está comenzando con la CAA.</div>
+      <div class="vc-tags">
+        <span class="vc-tag">Families</span>
+        <span class="vc-tag">Stories</span>
+        <span class="vc-tag green">Real Families</span>
+      </div>
+    </div>
+    <a href="https://www.assistiveware.com/stories" target="_blank" class="vc-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 1.77-.13 3.08-.44 3.83-.28.66-.73 1.11-1.39 1.39-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 18c-4.19 0-6.8-.14-7.83-.44-.66-.28-1.11-.73-1.39-1.39-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-1.77.13-3.08.44-3.83.28-.66.73-1.11 1.39-1.39.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 6c4.19 0 6.8.14 7.83.44.66.28 1.11.73 1.39 1.39z"/></svg>
+      Watch
+    </a>
+  </div>
+
+  <div class="video-card" data-tags="stories autism nonspeaking presuming competence inclusion family">
+    <div>
+      <div class="vc-source">ASHA / Various</div>
+      <div class="vc-title">Presuming Competence — Student and Parent Perspectives</div>
+      <div class="vc-desc">Parent and self-advocate perspectives on what it means when a school presumes a student is capable of communicating — and what happens when they don't. A moving look at what's at stake when AAC is delayed.</div>
+      <div class="vc-es">Perspectivas de padres y autodefensores sobre lo que significa que una escuela presuma que un estudiante es capaz de comunicarse — y qué sucede cuando no lo hacen. Una mirada emocionante a lo que está en juego cuando se retrasa la CAA.</div>
+      <div class="vc-tags">
+        <span class="vc-tag">Families</span>
+        <span class="vc-tag">Advocacy</span>
+        <span class="vc-tag green">Real Families</span>
+      </div>
+    </div>
+    <a href="https://www.asha.org/public/speech/disorders/aac/" target="_blank" class="vc-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 1.77-.13 3.08-.44 3.83-.28.66-.73 1.11-1.39 1.39-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 18c-4.19 0-6.8-.14-7.83-.44-.66-.28-1.11-.73-1.39-1.39-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-1.77.13-3.08.44-3.83.28-.66.73-1.11 1.39-1.39.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 6c4.19 0 6.8.14 7.83.44.66.28 1.11.73 1.39 1.39z"/></svg>
+      Watch
+    </a>
+  </div>
+
+  <!-- ══ PROLOQUO2GO SPECIFICALLY ══════════════════════════ -->
+  <div class="cat-label" data-cat="p2g">
+    <h2>About Proloquo2Go</h2>
+    <div class="cat-line"></div>
+    <div class="cat-es">Sobre Proloquo2Go</div>
+  </div>
+
+  <div class="video-card" data-tags="proloquo2go p2g app ipad introduction how it works assistiveware">
+    <div>
+      <div class="vc-source">AssistiveWare</div>
+      <div class="vc-title">Introduction to Proloquo2Go for Families</div>
+      <div class="vc-desc">A walkthrough of the Proloquo2Go app designed for families — not clinicians. Shows what the app looks like, how students navigate it, and what communication looks like in real use. The app your child uses in our classrooms.</div>
+      <div class="vc-es">Un recorrido por la aplicación Proloquo2Go diseñado para familias, no para clínicos. Muestra cómo se ve la aplicación, cómo los estudiantes la navegan y cómo se ve la comunicación en uso real. La aplicación que su hijo/a usa en nuestros salones.</div>
+      <div class="vc-tags">
+        <span class="vc-tag">Families</span>
+        <span class="vc-tag">Proloquo2Go</span>
+        <span class="vc-tag gold">RUSD App</span>
+      </div>
+    </div>
+    <a href="https://www.assistiveware.com/learn-aac/getting-started" target="_blank" class="vc-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 1.77-.13 3.08-.44 3.83-.28.66-.73 1.11-1.39 1.39-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 18c-4.19 0-6.8-.14-7.83-.44-.66-.28-1.11-.73-1.39-1.39-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-1.77.13-3.08.44-3.83.28-.66.73-1.11 1.39-1.39.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 6c4.19 0 6.8.14 7.83.44.66.28 1.11.73 1.39 1.39z"/></svg>
+      Watch
+    </a>
+  </div>
+
+  <div class="video-card" data-tags="proloquo2go modeling aided language stimulation algs adults family how to model">
+    <div>
+      <div class="vc-source">AssistiveWare</div>
+      <div class="vc-title">How Adults Model Language on Proloquo2Go</div>
+      <div class="vc-desc">Shows exactly what it looks like when a teacher or parent uses the device alongside a child — the same practice our classroom staff uses every day. Good to watch before observing or visiting the classroom.</div>
+      <div class="vc-es">Muestra exactamente cómo se ve cuando un maestro o padre usa el dispositivo junto a un niño, la misma práctica que el personal de nuestros salones usa todos los días. Bueno para ver antes de observar o visitar el salón.</div>
+      <div class="vc-tags">
+        <span class="vc-tag">Families</span>
+        <span class="vc-tag">Modeling</span>
+        <span class="vc-tag gold">RUSD App</span>
+      </div>
+    </div>
+    <a href="https://www.assistiveware.com/learn-aac/model-language" target="_blank" class="vc-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 1.77-.13 3.08-.44 3.83-.28.66-.73 1.11-1.39 1.39-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 18c-4.19 0-6.8-.14-7.83-.44-.66-.28-1.11-.73-1.39-1.39-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-1.77.13-3.08.44-3.83.28-.66.73-1.11 1.39-1.39.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 6c4.19 0 6.8.14 7.83.44.66.28 1.11.73 1.39 1.39z"/></svg>
+      Watch
+    </a>
+  </div>
+
+  <!-- ══ NOTE ═══════════════════════════════════════════════ -->
+  <div class="note-box">
+    <strong>A note about these links:</strong> These videos are hosted on external websites (YouTube, AssistiveWare, and others). RUSD does not control the content of these sites. If a link no longer works, contact the District Lead AAC SLP at <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="345e564140555a505574465d5558405b4147501a5b4653">[email&#160;protected]</a></strong> and we will update the list.<br><br>
+    <em>Nota sobre estos enlaces: Estos videos están alojados en sitios web externos. Si un enlace no funciona, comuníquese con el Coordinador de CAA del Distrito: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a0cac2d5d4c1cec4c1e0d2c9c1ccd4cfd5d3c48ecfd2c7">[email&#160;protected]</a></em>
+  </div>
+
+  <div class="page-footer">
+    <div>
+      <strong>RUSD AAC Program</strong><br>
+      Special Education Department &nbsp;·&nbsp; Rialto Unified School District
+    </div>
+    <div style="text-align:right;">
+      Questions? District Lead AAC SLP<br>
+      <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="80eae2f5f4e1eee4e1c0f2e9e1ecf4eff5f3e4aeeff2e7">[email&#160;protected]</a>
+    </div>
+  </div>
+
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function filterCards(query) {
+  const q = query.toLowerCase().trim();
+  document.querySelectorAll('.video-card').forEach(card => {
+    const tags = (card.dataset.tags || '') + ' ' + card.textContent.toLowerCase();
+    card.classList.toggle('hidden', q.length > 0 && !tags.includes(q));
+  });
+  // Hide/show category labels if all cards in that category are hidden
+  document.query

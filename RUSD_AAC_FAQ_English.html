@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AAC Program — Frequently Asked Questions | RUSD AAC Program</title>
+<style>
+  :root { --blue:#1A5294; --blue-light:#E8EFF8; --blue-mid:#2E6DB8; --black:#1a1a1a; --gray:#555; --border:#d0d8e4; --green:#2D6A2D; --green-light:#EAF4EA; --white:#fff; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:Arial,sans-serif;font-size:15px;color:var(--black);background:#f0f4f9;}
+  .topbar{background:var(--blue);color:#fff;padding:18px 32px;display:flex;align-items:center;gap:20px;}
+  .topbar-logo{font-size:13px;line-height:1.4;border-right:1px solid rgba(255,255,255,0.3);padding-right:20px;}
+  .topbar-logo strong{font-size:17px;display:block;}
+  .topbar-title{font-size:22px;font-weight:bold;}
+  .topbar-sub{font-size:13px;opacity:0.8;margin-top:3px;}
+  .page{max-width:860px;margin:0 auto;padding:36px 24px 80px;}
+  .intro{background:var(--blue-light);border-left:5px solid var(--blue);padding:16px 20px;margin-bottom:32px;border-radius:0 6px 6px 0;font-size:14px;line-height:1.75;color:#333;}
+  .intro strong{color:var(--blue);}
+  .search-bar{display:flex;gap:10px;margin-bottom:28px;align-items:center;}
+  .search-bar input{flex:1;padding:10px 16px;border:2px solid var(--border);border-radius:6px;font-size:15px;font-family:Arial,sans-serif;}
+  .search-bar input:focus{outline:none;border-color:var(--blue);}
+  .faq{border:1px solid var(--border);border-radius:8px;margin-bottom:16px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.06);}
+  .faq-q{padding:16px 20px;background:var(--white);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:15px;font-weight:bold;color:var(--blue);line-height:1.5;}
+  .faq-q:hover{background:var(--blue-light);}
+  .faq-q .arrow{font-size:18px;transition:transform 0.2s;flex-shrink:0;}
+  .faq-q.open .arrow{transform:rotate(180deg);}
+  .faq-a{display:none;padding:16px 20px 20px;background:#fafbfd;border-top:1px solid var(--border);font-size:14px;line-height:1.8;color:#333;}
+  .faq-a.open{display:block;}
+  .faq-a strong{color:var(--blue);}
+  .faq-a ul{margin:10px 0 0 20px;}
+  .faq-a li{margin-bottom:6px;}
+  .category-label{font-size:13px;font-weight:bold;color:var(--blue);text-transform:uppercase;letter-spacing:0.06em;margin:28px 0 12px;padding-left:4px;border-left:4px solid var(--blue);padding-left:10px;}
+  .hidden{display:none!important;}
+  #no-results{display:none;text-align:center;padding:48px;color:var(--gray);font-size:15px;}
+  mark{background:#fff176;border-radius:2px;}
+  .contact-box{background:var(--green-light);border:2px solid var(--green);border-radius:8px;padding:20px 24px;margin-top:40px;font-size:14px;line-height:1.8;}
+  .contact-box strong{color:var(--green);}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-logo"><strong>RUSD</strong>Special Education</div>
+  <div><div class="topbar-title">AAC Program — Frequently Asked Questions</div><div class="topbar-sub">Rialto Unified School District  |  AAC Program</div></div>
+</div>
+<div class="page">
+
+<div class="intro"><strong>Frequently Asked Questions</strong> about the RUSD AAC Program. Click any question to read the answer. Use the search box to find a specific topic.</div>
+<div class="search-bar"><input type="text" id="search" placeholder="Search questions..." oninput="doSearch()"></div>
+<div id="no-results">No matching questions found. Try a different keyword or <a href="/cdn-cgi/l/email-protection#c6aca4b3b2a7a8a2a786b4afa7aab2a9b3b5a2e8a9b4a1">contact us directly</a>.</div>
+
+<div class="category-label">About AAC</div>
+
+<div class="faq"><div class="faq-q" onclick="toggle(this)">What is AAC?<span class="arrow">&#8964;</span></div><div class="faq-a"><strong>AAC stands for Augmentative and Alternative Communication.</strong> It refers to all the ways people communicate besides spoken words — including gestures, facial expressions, sign language, picture symbols, and speech-generating apps on tablets. Many people use a combination of these tools alongside speech. AAC is not one thing — it is a whole toolkit that supports communication in whatever way works best for each person.</div></div>
+
+<div class="faq"><div class="faq-q" onclick="toggle(this)">Will AAC replace my child's speech?<span class="arrow">&#8964;</span></div><div class="faq-a"><strong>No. AAC does not replace speech, and research consistently shows it does not slow speech development.</strong> In fact, many studies show that access to AAC tools supports the growth of natural speech over time. Your child's team will always encourage and celebrate every form of communication your child uses — including natural speech, vocalizations, gestures, and the device. The goal is to give your child <em>more</em> ways to communicate, not fewer.</div></div>
+
+<div class="faq"><div class="faq-q" onclick="toggle(this)">My child already uses some words. Why do they need a device?<span class="arrow">&#8964;</span></div><div class="faq-a">Many students who use some words also benefit from an AAC device. Speech can be inconsistent — it may work well in some situations and not others. A device gives your child a reliable way to communicate even on days when speech is harder, or in situations where words are difficult to find quickly. Having both available means your child always has a way to be heard. There is no minimum or maximum amount of speech that determines whether AAC is helpful.</div></div>
+
+<div class="faq"><div class="faq-q" onclick="toggle(this)">What is Proloquo2Go?<span class="arrow">&#8964;</span></div><div class="faq-a">Proloquo2Go is the AAC app used in RUSD classrooms. It runs on an iPad and contains thousands of picture-symbol buttons that speak words and phrases out loud when tapped. The app is widely used by students, adults, and people of all ages around the world. It can be customized to match a student's vocabulary, language level, and communication needs. It is one of the most well-researched AAC apps available.</div></div>
+
+<div class="category-label">The RUSD AAC Program</div>
+
+<div class="faq"><div class="faq-q" onclick="toggle(this)">What is the RUSD AAC Program?<span class="arrow">&#8964;</span></div><div class="faq-a">The RUSD AAC Program provides every Extensive Support Needs (ESN) classroom with iPads loaded with Proloquo2Go. The classroom teacher has a device to model communication throughout the day, and student devices are available for all students to use. Any student who needs to communicate can use a device — no evaluation or IEP goal is required to have access. The program is led by Jerry Butanda, M.S.-SLP, ATAC, AAC, District AAC Lead SLP.</div></div>
+
+<div class="faq"><div class="faq-q" onclick="toggle(this)">Who can use the classroom device?<span class="arrow">&#8964;</span></div><div class="faq-a">Any student in the classroom can use a device. The program is designed so that communication support is available to everyone, not just students with specific IEP goals. No student has to wait, qualify, or ask permission to use a device.</div></div>
+
+<div class="faq"><div class="faq-q" onclick="toggle(this)">Why does the device stay at school?<span class="arrow">&#8964;</span></div><div class="faq-a">Right now the classroom devices are shared tools — similar to books or manipulatives — that all students access throughout the day. Keeping them at school ensures they are always charged, available, and ready. If your child's IEP team determines that a personal take-home device would support their communication at home, that decision is made together with you through the IEP process.</div></div>
+
+<div class="faq"><div class="faq-q" onclick="toggle(this)">Can my child get their own personal device?<span class="arrow">&#8964;</span></div><div class="faq-a">Yes, this is possible. If your child's speech-language pathologist determines — through observation, data, and collaboration with the team — that your child needs a dedicated personal device, a formal AAC evaluation can be completed. If the evaluation supports it, the IEP team can authorize a personal device. This process is guided by your child's individual needs, not a waiting list or budget limit.</div></div>
+
+<div class="category-label">What You Can Do at Home</div>
+
+<div class="faq"><div class="faq-q" onclick="toggle(this)">How can I support my child's communication at home?<span class="arrow">&#8964;</span></div><div class="faq-a"><ul>
+<li>Respond to everything your child communicates — gestures, sounds, words, signs, or device use all count.</li>
+<li>Give your child time to respond before jumping in. A pause of 10–15 seconds can make a big difference.</li>
+<li>Ask your child's SLP to show you the app so you can use it together at home during meals, play, or routines.</li>
+<li>Talk to your child's teacher about what vocabulary is being practiced at school so you can reinforce it at home.</li>
+<li>Most importantly — celebrate every communication attempt, no matter how it happens.</li>
+</ul></div></div>
+
+<div class="faq"><div class="faq-q" onclick="toggle(this)">My child uses signs at home. Should I tell the school?<span class="arrow">&#8964;</span></div><div class="faq-a"><strong>Yes, absolutely.</strong> Signs, gestures, and any other communication forms your child uses at home are valuable and important. Please share this information with your child's SLP so that the school can recognize and respond to those forms too. Your child's total communication system — everything they use to communicate — should be supported consistently between home and school.</div></div>
+
+<div class="faq"><div class="faq-q" onclick="toggle(this)">What if my child refuses to use the device?<span class="arrow">&#8964;</span></div><div class="faq-a">This is very common, especially at first. AAC takes time — just like learning any new skill. The classroom team is trained to offer the device without pressure and to respond to all communication attempts regardless of whether the device is used. If you have concerns about engagement, talk to your child's SLP. There are many strategies for building comfort and motivation with a device, and the team will work with you on this.</div></div>
+
+<div class="category-label">Working With the Team</div>
+
+<div class="faq"><div class="faq-q" onclick="toggle(this)">Who is my child's speech-language pathologist?<span class="arrow">&#8964;</span></div><div class="faq-a">Each school site has a speech-language pathologist who supports students with communication needs. Your child's SLP coordinates AAC support at the classroom level and communicates with the District AAC Lead SLP. If you are not sure who your child's SLP is, contact your school's front office or reach out to Jerry Butanda at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="157f776061747b717455677c7479617a6066713b7a6772">[email&#160;protected]</a>.</div></div>
+
+<div class="faq"><div class="faq-q" onclick="toggle(this)">Can I observe my child using the device in the classroom?<span class="arrow">&#8964;</span></div><div class="faq-a">Yes. You are welcome to request a classroom observation. Contact your child's teacher or SLP to schedule a time. Seeing the program in action is one of the best ways to understand how your child communicates at school and how you can support that at home.</div></div>
+
+<div class="faq"><div class="faq-q" onclick="toggle(this)">I have more questions. Who should I contact?<span class="arrow">&#8964;</span></div><div class="faq-a">Start with your child's site SLP or classroom teacher. For program-level questions, contact:<br><br><strong>Jerry Butanda, M.S.-SLP, ATAC, AAC</strong><br>District AAC Lead SLP<br>Rialto Unified School District<br><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a5cfc7d0d1c4cbc1c4e5d7ccc4c9d1cad0d6c18bcad7c2">[email&#160;protected]</a></div></div>
+
+<div class="contact-box"><strong>Still have questions?</strong> We want to hear from you. Contact your child's speech-language pathologist or reach out to Jerry Butanda at <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f19b938485909f9590b18398909d859e848295df9e8396">[email&#160;protected]</a></strong>. You can also request an AAC orientation — a brief meeting where we walk you through the program, show you the device, and answer your questions.</div>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function toggle(el){
+  const q=el;const a=el.nextElementSibling;
+  q.classList.toggle('open');a.classList.toggle('open');
+}
+function doSearch(){
+  const q=document.getElementById('search').value.trim().toLowerCase();
+  document.querySelectorAll('.faq').forEach(f=>{
+    const text=f.textContent.toLowerCase();
+    f.classList.toggle('hidden',q&&!text.includes(q));
+    if(q){f.querySelectorAll('mark').forEach(m=>{con

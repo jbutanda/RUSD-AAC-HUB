@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IEP Language Bank | RUSD AAC Program</title>
+<style>
+  :root {
+    --blue: #1A5294;
+    --blue-light: #E8EFF8;
+    --blue-mid: #2E6DB8;
+    --black: #1a1a1a;
+    --gray: #555;
+    --gray-light: #f4f4f4;
+    --border: #d0d8e4;
+    --green: #2D6A2D;
+    --green-light: #EAF4EA;
+    --amber: #7A5000;
+    --amber-light: #FFF8E1;
+    --white: #fff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 15px; color: var(--black); background: #f0f4f9; }
+
+  /* ── TOP BAR ── */
+  .topbar { background: var(--blue); color: #fff; padding: 18px 32px; display: flex; align-items: center; gap: 20px; }
+  .topbar-logo { font-size: 13px; line-height: 1.4; border-right: 1px solid rgba(255,255,255,0.3); padding-right: 20px; }
+  .topbar-logo strong { font-size: 17px; display: block; }
+  .topbar-title { font-size: 22px; font-weight: bold; }
+  .topbar-sub { font-size: 13px; opacity: 0.8; margin-top: 3px; }
+
+  /* ── LAYOUT ── */
+  .page { max-width: 1100px; margin: 0 auto; padding: 32px 24px 80px; }
+
+  /* ── INTRO BOX ── */
+  .intro { background: var(--blue-light); border-left: 5px solid var(--blue); padding: 16px 20px; margin-bottom: 32px; border-radius: 0 6px 6px 0; font-size: 14px; line-height: 1.7; color: #333; }
+  .intro strong { color: var(--blue); }
+
+  /* ── SEARCH BAR ── */
+  .search-bar { display: flex; gap: 10px; margin-bottom: 28px; align-items: center; }
+  .search-bar input { flex: 1; padding: 10px 16px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: Arial, sans-serif; }
+  .search-bar input:focus { outline: none; border-color: var(--blue); }
+  #search-count { font-size: 13px; color: var(--gray); white-space: nowrap; }
+
+  /* ── CATEGORY TABS ── */
+  .tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+  .tab { padding: 7px 16px; border-radius: 20px; border: 2px solid var(--blue); background: var(--white); color: var(--blue); font-size: 13px; font-weight: bold; cursor: pointer; transition: all 0.15s; }
+  .tab:hover, .tab.active { background: var(--blue); color: #fff; }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 40px; }
+  .section-title { background: var(--blue); color: #fff; padding: 10px 18px; border-radius: 6px 6px 0 0; font-size: 16px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+  .section-body { border: 1px solid var(--border); border-top: none; border-radius: 0 0 6px 6px; overflow: hidden; }
+
+  /* ── SNIPPET CARD ── */
+  .snippet { padding: 16px 20px; border-bottom: 1px solid var(--border); background: var(--white); transition: background 0.1s; }
+  .snippet:last-child { border-bottom: none; }
+  .snippet:nth-child(even) { background: #fafbfd; }
+  .snippet-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
+  .snippet-label { font-size: 13px; font-weight: bold; color: var(--blue); text-transform: uppercase; letter-spacing: 0.04em; }
+  .snippet-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tag { font-size: 11px; padding: 2px 8px; border-radius: 12px; background: var(--blue-light); color: var(--blue); font-weight: bold; }
+  .tag.tier2 { background: #e8f5e9; color: #2D6A2D; }
+  .tag.tier3 { background: #fff3e0; color: #7A5000; }
+  .tag.goal { background: #f3e8ff; color: #6A1B9A; }
+  .tag.total-comm { background: #e0f4f4; color: #005f5f; }
+  .snippet-text { font-size: 14px; line-height: 1.75; color: var(--black); background: #f8f9fc; border: 1px solid var(--border); border-radius: 4px; padding: 12px 14px; margin-bottom: 10px; white-space: pre-wrap; font-family: Arial, sans-serif; }
+  .snippet-note { font-size: 12px; color: var(--gray); font-style: italic; margin-bottom: 10px; }
+  .copy-btn { padding: 6px 14px; background: var(--blue); color: #fff; border: none; border-radius: 4px; font-size: 13px; font-family: Arial, sans-serif; cursor: pointer; transition: background 0.15s; }
+  .copy-btn:hover { background: var(--blue-mid); }
+  .copy-btn.copied { background: var(--green); }
+
+  /* ── NO RESULTS ── */
+  #no-results { display: none; text-align: center; padding: 48px; color: var(--gray); font-size: 15px; }
+
+  /* ── HIDDEN ── */
+  .hidden { display: none !important; }
+
+  mark { background: #fff176; border-radius: 2px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-logo">
+    <strong>RUSD</strong>
+    Special Education
+  </div>
+  <div>
+    <div class="topbar-title">IEP Language Bank</div>
+    <div class="topbar-sub">AAC Program  |  Copy-paste ready language for IEPs, evaluations, and progress reports</div>
+  </div>
+</div>
+
+<div class="page">
+
+  <div class="intro">
+    <strong>How to use this page:</strong> Browse by category or search by keyword. Click <strong>Copy</strong> to copy any passage to your clipboard. All language is written within a <strong>total communication framework</strong> — goals and descriptions address communication functions across all modalities, not device use alone. Adjust student name, pronouns, tier, and specific details before using. Brackets [ ] indicate fields to fill in.
+    <br><br>Language marked <span style="background:#e0f4f4;color:#005f5f;font-weight:bold;padding:1px 6px;border-radius:3px;font-size:12px;">TOTAL COMM</span> is explicitly multimodal in framing. Language marked <span style="background:#e8f5e9;color:#2D6A2D;font-weight:bold;padding:1px 6px;border-radius:3px;font-size:12px;">TIER 2</span> is appropriate for students with individualized plans. Language marked <span style="background:#fff3e0;color:#7A5000;font-weight:bold;padding:1px 6px;border-radius:3px;font-size:12px;">TIER 3</span> is appropriate for or following a formal evaluation.
+  </div>
+
+  <div class="search-bar">
+    <input type="text" id="search" placeholder="Search by keyword (e.g. requesting, modeling, Proloquo2Go, present levels...)" oninput="doSearch()">
+    <span id="search-count"></span>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="filterCat('all', this)">All</button>
+    <button class="tab" onclick="filterCat('profile', this)">Communication Profile</button>
+    <button class="tab" onclick="filterCat('plaafp', this)">Present Levels</button>
+    <button class="tab" onclick="filterCat('at-factors', this)">AT Special Factors</button>
+    <button class="tab" onclick="filterCat('goals', this)">Goals</button>
+    <button class="tab" onclick="filterCat('progress', this)">Progress Monitoring</button>
+    <button class="tab" onclick="filterCat('services', this)">Service Delivery</button>
+    <button class="tab" onclick="filterCat('transition', this)">Transitions</button>
+  </div>
+
+  <div id="bank"></div>
+  <div id="no-results">No matching language found. Try a different keyword.</div>
+
+</div>
+
+<script>
+const DATA = [
+
+  // ── COMMUNICATION PROFILE ─────────────────────────────────────────────────
+  {
+    cat: "profile",
+    label: "Total Communication Profile — Overview",
+    tags: ["profile", "total-comm"],
+    text: `[Student] communicates through a total communication approach, using a combination of [list all modes observed: e.g., natural speech, vocalizations, gestures, facial expression, body language, American Sign Language signs, and a speech-generating device (iPad with Proloquo2Go)]. All of [his/her/their] communication forms are recognized and honored by [his/her/their] educational team as valid, meaningful, and intentional. No single modality is prioritized over others; the goal is for [Student] to have access to the full range of communication tools that allow [him/her/them] to express [himself/herself/themselves] most effectively in any context.`,
+    note: "Use as an opening paragraph in the communication section of the PLAAFP or evaluation report. Lists all modalities before describing any one in detail."
+  },
+  {
+    cat: "profile",
+    label: "Describing Natural Speech in a Multimodal Communicator",
+    tags: ["profile", "total-comm"],
+    text: `[Student] uses natural speech as part of [his/her/their] communication repertoire. [His/Her/Their] speech is [describe intelligibility and consistency: e.g., most intelligible to familiar communication partners in structured contexts and less consistent in novel or high-demand situations]. [Student]'s verbal output includes [describe: e.g., single words, word approximations, scripted phrases, and echolalic speech that is often communicative in context]. Natural speech is one of several communication tools available to [Student], and the educational team responds to and builds upon all communicative attempts regardless of modality.`,
+    note: "Use for students who are verbal but also use devices, signs, or other modalities. Avoids framing speech as the 'goal' and the device as a workaround."
+  },
+  {
+    cat: "profile",
+    label: "Describing AAC Device Use in a Multimodal Communicator",
+    tags: ["profile", "total-comm", "tier2"],
+    text: `[Student] has access to an iPad with Proloquo2Go as part of [his/her/their] total communication system. [He/She/They] uses the device [describe current level of use: e.g., across familiar routines with partner support, or independently to initiate communication in preferred contexts]. The device supports [Student]'s language expression by providing a consistent, robust vocabulary that complements [his/her/their] other communication forms. Device use is not treated as a replacement for any other modality — it is one option within a flexible, multimodal system.`,
+    note: "Use when describing device use specifically, within the broader total communication profile."
+  },
+  {
+    cat: "profile",
+    label: "Describing Sign Language or Gestural Communication",
+    tags: ["profile", "total-comm"],
+    text: `[Student] uses [American Sign Language signs / Signed English / key word signing / idiosyncratic gestures] as part of [his/her/their] expressive communication system. [He/She/They] demonstrates a functional sign vocabulary of approximately [number] signs used consistently across settings, including [examples: e.g., MORE, FINISHED, EAT, HELP, NO]. Signs are recognized and responded to by [familiar staff and family / all classroom staff]. The educational team supports [Student]'s continued use and expansion of signing as a valued part of [his/her/their] communication repertoire.`,
+    note: "Customize for ASL, SEE, key word signing, or informal gestural systems depending on the student."
+  },
+  {
+    cat: "profile",
+    label: "Communication Partner Dependency and Familiarity",
+    tags: ["profile", "total-comm"],
+    text: `[Student]'s communicative effectiveness varies with partner familiarity. [He/She/They] communicates most reliably and spontaneously with [familiar communication partners such as primary classroom staff and family members]. With less familiar partners, [Student] may require [describe: e.g., additional wait time, environmental cues, or partner-initiated communication opportunities] to communicate successfully. A core goal of [Student]'s communication program is to expand the range of partners and contexts in which [he/she/they] can communicate effectively using any available modality.`,
+    note: "Important for students whose communication is context- or partner-dependent. Sets up environmental and partner training goals."
+  },
+  {
+    cat: "profile",
+    label: "Receptive Communication Profile",
+    tags: ["profile"],
+    text: `[Student]'s receptive language skills are an important component of [his/her/their] overall communication profile. [He/She/They] demonstrates [describe: e.g., consistent response to [his/her/their] name, comprehension of routine directives with gestural cues, and emerging understanding of two-step instructions in familiar contexts]. [Student] benefits from [describe supports: e.g., slow rate of speech, visual supports paired with verbal directions, reduced linguistic complexity, and consistent vocabulary across environments]. Receptive and expressive communication are addressed together within [his/her/their] communication program.`,
+    note: "Always describe receptive alongside expressive. Receptive strengths can be underrepresented in profiles that focus on device output."
+  },
+
+  // ── PRESENT LEVELS ────────────────────────────────────────────────────────
+  {
+    cat: "plaafp",
+    label: "Present Levels — Communication — Tier 1",
+    tags: ["tier1", "plaafp", "total-comm"],
+    text: `[Student] currently receives communication support through the RUSD AAC Program at the Tier 1 level. [He/She/They] has access to an iPad with Proloquo2Go in the classroom throughout the school day as one component of [his/her/their] broader communication system. [Student] currently uses [describe all modes: e.g., vocalizations, reaching and pointing, and emerging use of the classroom device] to communicate wants, needs, and preferences. Staff provide aided language input by modeling vocabulary on the teacher device during classroom routines, alongside responding to all of [Student]'s communication attempts across modalities. Communication has been observed most consistently during [describe contexts].`,
+    note: "Opens with total communication framing before describing the device. Tier 1 — classroom access, no individualized plan."
+  },
+  {
+    cat: "plaafp",
+    label: "Present Levels — Communication — Tier 2",
+    tags: ["tier2", "plaafp", "total-comm"],
+    text: `[Student] currently communicates through a multimodal system that includes [list all modalities: e.g., natural speech, vocalizations, gestures, and an iPad with Proloquo2Go]. [He/She/They] uses [his/her/their] communication system most effectively during [describe contexts] and with [familiar partners / all communication partners]. Observed communication functions include [list: e.g., requesting preferred items, protesting non-preferred activities, greeting familiar adults, and commenting during shared activities]. The classroom team responds to all communicative acts regardless of modality. [Student]'s individualized communication plan supports vocabulary expansion, partner training, and increased communication across all settings and partners.`,
+    note: "Centers total communication from the first sentence. Lists device as one modality among several."
+  },
+  {
+    cat: "plaafp",
+    label: "Present Levels — Post Formal Evaluation",
+    tags: ["tier3", "plaafp", "total-comm"],
+    text: `A formal communication evaluation was completed on [date] by [evaluator name], [credentials], [role]. Assessment included [describe methods: e.g., standardized assessment, dynamic assessment, structured observation, and caregiver/teacher interview]. Results characterize [Student] as a multimodal communicator who uses [list modalities] to express a range of communicative functions. [Student]'s language development is supported most effectively through a total communication approach that honors all expressive modalities. Results support provision of [describe recommended system] as an additional communication tool to complement [his/her/their] existing communication repertoire.`,
+    note: "Frames evaluation findings within a total communication model. Device is positioned as additive, not corrective."
+  },
+  {
+    cat: "plaafp",
+    label: "Impact on Educational Performance",
+    tags: ["plaafp", "tier2", "tier3"],
+    text: `[Student]'s communication profile directly impacts [his/her/their] ability to access the academic curriculum, demonstrate knowledge, participate in classroom routines, and engage with peers and adults across the school day. When [Student]'s full communication system is recognized and supported — including [list modalities] — [he/she/they] demonstrates increased engagement, reduced frustration, and greater participation. The educational team's consistent recognition of and response to all communication forms is essential to [Student]'s educational progress and wellbeing. Communication supports documented in this IEP are designed to ensure [Student] has the tools, partners, and environment needed to communicate effectively throughout the school day.`,
+    note: "Frames impact around what happens when communication is supported — not only what happens when it isn't. Strengths-based."
+  },
+  {
+    cat: "plaafp",
+    label: "Family Communication and Home Generalization",
+    tags: ["plaafp", "family", "total-comm"],
+    text: `[Parent/Guardian] report that [Student] communicates at home using [describe home communication: e.g., natural speech, gestures, and vocalizations], and that [he/she/they] is [describe: e.g., most communicative during mealtimes and preferred play activities]. The family [has/has not] been introduced to [Student]'s AAC device and [is/is not] currently using it at home. Family members have been invited to observe [Student]'s communication in the classroom setting and have received information about [his/her/their] total communication system. Family communication preferences and cultural considerations have been incorporated into [Student]'s communication program planning.`,
+    note: "Includes family communication modalities, home context, and cultural responsiveness. Avoids assuming the device is the focus of home communication."
+  },
+
+  // ── AT SPECIAL FACTORS ───────────────────────────────────────────────────
+  {
+    cat: "at-factors",
+    label: "AT Special Factors — AAC Considered and Provided",
+    tags: ["at-factors", "tier1", "tier2"],
+    text: `The IEP team considered whether [Student] requires assistive technology devices or services to receive a free appropriate public education (IDEA 34 CFR 300.324(a)(2)(v)). The team determined that [Student] benefits from access to augmentative and alternative communication (AAC) technology as part of [his/her/their] total communication system. [Student] will have access to an iPad with Proloquo2Go through the RUSD AAC Program. This technology supports [Student]'s ability to express language across a broader range of contexts and partners. It is intended to complement, not replace, [his/her/their] other communication modalities. Staff training in responding to all communication forms and providing aided language input is included as a support.`,
+    note: "Explicitly frames AAC as part of a total communication system. Use when device is provided through the classroom program."
+  },
+  {
+    cat: "at-factors",
+    label: "AT Special Factors — Formal Evaluation Recommended",
+    tags: ["at-factors", "tier3"],
+    text: `The IEP team considered whether [Student] requires assistive technology devices or services. The team determined that [Student]'s communication needs warrant a formal evaluation to identify the communication tools, access methods, vocabulary frameworks, and environmental supports that best complement [his/her/their] existing communication abilities. The evaluation will assess [Student]'s full communication system — including natural speech, alternative modalities, and potential AAC technology — and results will inform an updated IEP.`,
+    note: "Frames the evaluation as an assessment of the whole communication system, not a search for an AAC device."
+  },
+  {
+    cat: "at-factors",
+    label: "AT Special Factors — Post Evaluation, Device Authorized",
+    tags: ["at-factors", "tier3"],
+    text: `Based on the results of a formal communication evaluation completed on [date], the IEP team determined that [Student] requires [describe device: e.g., a dedicated iPad with Proloquo2Go] as an assistive technology device to support [his/her/their] communication across educational settings. The device is one component of [Student]'s total communication system and is intended to complement [his/her/their] existing communication modalities. The device shall be available to [Student] throughout the school day. [Home use has been authorized by the IEP team per IDEA 300.105 to support communication consistency across environments.]`,
+    note: "Legally required language for device authorization. Total communication framing is added explicitly."
+  },
+  {
+    cat: "at-factors",
+    label: "AT Special Factors — Multimodal System, No New Device Warranted",
+    tags: ["at-factors"],
+    text: `The IEP team considered whether [Student] requires assistive technology devices or services. The team reviewed [Student]'s current communication system, which includes [list modalities]. The team determined that [Student]'s current communication tools and supports are appropriate at this time and that no new assistive technology device is warranted for this IEP period. This determination will be revisited at the next annual IEP review or sooner if [Student]'s communication needs change. [Student] will continue to have access to the classroom AAC device as part of the RUSD AAC Program's universal Tier 1 support.]`,
+    note: "Use when the team reviews AT Special Factors and determines no new device is needed — but Tier 1 access continues."
+  },
+  {
+    cat: "at-factors",
+    label: "AAC Supports Speech — Statement for Families",
+    tags: ["at-factors", "family"],
+    text: `Access to AAC tools does not reduce or replace natural speech development. Research across multiple decades consistently demonstrates that providing individuals with complex communication needs access to robust AAC supports — including SGDs, sign systems, and symbol-based tools — does not inhibit speech and in many cases supports its development. [Student]'s total communication approach is designed to build on all of [his/her/their] communication strengths, including natural speech, and all modalities are actively encouraged and responded to throughout the school day.`,
+    note: "Neurodiversity-affirming and evidence-based. Use when families express concern that AAC will replace or reduce speech."
+  },
+
+  // ── GOALS ─────────────────────────────────────────────────────────────────
+  {
+    cat: "goals",
+    label: "Goal — Requesting (Any Modality)",
+    tags: ["goal", "tier2", "tier3", "total-comm"],
+    text: `Given natural communication opportunities across classroom settings and access to [his/her/their] full communication system, [Student] will independently communicate a request for a preferred item, activity, or assistance using any available and intentional communication form (e.g., speech, sign, gesture, device, or vocalization) in [4 out of 5] observed opportunities, as measured by classroom staff data and SLP observation across [3] consecutive data collection periods.`,
+    note: "Function-first goal. Any intentional modality counts — no hierarchy of forms. Staff must be trained to recognize and respond to all."
+  },
+  {
+    cat: "goals",
+    label: "Goal — Protesting and Refusing (Any Modality)",
+    tags: ["goal", "tier2", "total-comm"],
+    text: `Given a non-preferred activity, item, or transition, [Student] will communicate protest, refusal, or a desire to stop using any recognized communication form (e.g., speech, sign, gesture, device, or vocalization) in a manner that is recognized by communication partners in [4 out of 5] observed opportunities, as measured by classroom staff data and SLP observation across [3] consecutive data collection periods.`,
+    note: "Protesting is a fundamental communication right. Do not restrict acceptable modality — any recognized form counts. Partner recognition is part of the goal."
+  },
+  {
+    cat: "goals",
+    label: "Goal — Commenting and Sharing Information (Any Modality)",
+    tags: ["goal", "tier2", "tier3", "total-comm"],
+    text: `Given a shared activity, preferred context, or conversational opportunity, [Student] will use any available communication form to comment, share information, or respond to a topic (e.g., labeling an item, describing an event, answering a yes/no question, or sharing a preference) in [3 out of 5] opportunities across [2] different classroom settings, as measured by SLP observation and staff data across [3] consecutive measurement periods.`,
+    note: "Commenting is an often-underdeveloped function for students whose programs focus heavily on requesting. Modality-neutral framing ensures it counts regardless of how it's expressed."
+  },
+  {
+    cat: "goals",
+    label: "Goal — Social Communication and Greetings (Any Modality)",
+    tags: ["goal", "tier2", "tier3", "total-comm"],
+    text: `Given natural social opportunities across the school day (e.g., arrival, departure, transitions, shared meals), [Student] will initiate or respond to a social communication exchange — including greetings, farewells, or brief social comments — using any recognized communication form in [4 out of 5] observed opportunities, as measured by classroom staff data and SLP observation across [3] consecutive data collection periods.`,
+    note: "Social communication goals should not require device use. A wave, a vocalization, or a sign is a fully valid greeting."
+  },
+  {
+    cat: "goals",
+    label: "Goal — Expanding Utterance Length / Language Complexity",
+    tags: ["goal", "tier2", "tier3", "total-comm"],
+    text: `Given a communication opportunity and access to [his/her/their] full communication system, [Student] will produce a [2- or 3-element] communicative message combining two or more modalities or symbols (e.g., a sign + vocalization, a device combination, a spoken word + gesture) in [3 out of 5] opportunities during naturalistic and structured contexts, as measured by SLP observation and staff data across [3] consecutive data collection periods.`,
+    note: "Multi-element combinations can occur across modalities — a sign plus a vocalization counts. Focus is on language complexity, not device use."
+  },
+  {
+    cat: "goals",
+    label: "Goal — Communicating Across Partners and Settings",
+    tags: ["goal", "tier2", "tier3", "total-comm"],
+    text: `Given communication opportunities with [familiar and unfamiliar / less familiar] communication partners across [2 or more] settings, [Student] will use any available communication form to successfully convey a want, need, or comment in [3 out of 5] opportunities, as measured by SLP observation and staff report across [3] consecutive data collection periods.`,
+    note: "Generalization goal. Partner familiarity and setting variety are the targets, not modality. Important for students who communicate reliably with primary staff but not across contexts."
+  },
+  {
+    cat: "goals",
+    label: "Goal — Staff Responsiveness to All Communication Forms",
+    tags: ["goal", "tier1", "tier2", "total-comm"],
+    text: `Following training in total communication and aided language input, classroom staff will respond to [Student]'s communication attempts across all modalities — including natural speech, vocalizations, gestures, signs, and device use — in [4 out of 5] observed opportunities, as documented by SLP observation using the Classroom AAC Implementation Observation Checklist across [2] observation periods.`,
+    note: "Staff responsiveness goal — frames partner behavior as the target. Critical for building a communication-supportive environment. Document via Observation Checklist."
+  },
+  {
+    cat: "goals",
+    label: "Goal — Expanding Sign Vocabulary",
+    tags: ["goal", "tier2", "total-comm"],
+    text: `Given natural communication opportunities and partner modeling of key vocabulary in sign, [Student] will use [target number] functional signs consistently across [2 or more] different settings and communication partners, as measured by classroom staff data and SLP observation across [3] consecutive data collection periods. Signs may supplement or accompany other communication forms.`,
+    note: "For students who use signs as part of their communication repertoire. Goal does not require signs to replace or compete with other modalities."
+  },
+
+  // ── PROGRESS MONITORING ──────────────────────────────────────────────────
+  {
+    cat: "progress",
+    label: "Baseline — Full Communication Profile",
+    tags: ["progress", "tier2", "tier3", "total-comm"],
+    text: `At baseline, [Student] communicates using [list all observed modalities and their contexts: e.g., consistent use of vocalizations and reaching to request preferred items, emerging use of the classroom device in highly structured contexts, and 3-5 functional signs used with familiar partners]. [He/She/They] demonstrates the most robust communication during [describe: e.g., preferred activities and snack] and with [familiar partners / all partners]. Baseline was established through [describe method: e.g., structured observation across three sessions, classroom staff interview, and family input] and reflects [Student]'s current communicative competence across all modes.`,
+    note: "Baseline should document all communication forms — not just device use. This provides a richer foundation for measuring growth."
+  },
+  {
+    cat: "progress",
+    label: "Progress Monitoring — Making Progress",
+    tags: ["progress", "total-comm"],
+    text: `[Student] is making [adequate/good] progress toward [his/her/their] communication goals. Since the previous reporting period, [he/she/they] has demonstrated [describe growth across modalities: e.g., increased spontaneous vocalizations paired with device use, expanded sign vocabulary, and more consistent communication attempts with less familiar partners]. Communication growth is being measured across all modalities as part of [Student]'s total communication approach. Continued implementation of current supports — including partner training and consistent access to [his/her/their] full communication system — is recommended.`,
+    note: "Progress language documents growth across the whole communication system. Not limited to device metrics."
+  },
+  {
+    cat: "progress",
+    label: "Progress Monitoring — Limited Progress, Review Needed",
+    tags: ["progress", "tier2", "tier3"],
+    text: `[Student] has demonstrated limited progress toward [his/her/their] communication goals during this reporting period. Data across [describe modalities monitored] indicate [describe: e.g., inconsistent partner responses to multimodal communication attempts, reduced device access, and limited opportunities for spontaneous communication during structured instruction]. Contributing factors under consideration include [describe: e.g., changes in classroom staffing, reduced implementation fidelity, or environmental barriers]. The IEP team will convene to review current goals, communication supports, and environmental factors and to determine whether program modifications are warranted.`,
+    note: "Limited progress may reflect partner or environmental barriers, not student regression. The framing here keeps the door open for environmental analysis."
+  },
+  {
+    cat: "progress",
+    label: "Progress Monitoring — Goal Met, Updated Goal",
+    tags: ["progress"],
+    text: `[Student] has met [his/her/their] current communication goal as evidenced by data collected across [number] consecutive periods. [He/She/They] now [describe the skill that has been mastered and the modality/ies used: e.g., consistently communicates requests across familiar and unfamiliar partners using a combination of speech and device across all classroom settings]. A revised goal targeting the next level of communicative competence — [describe new target: e.g., expanding to commenting and multi-element messages] — has been developed and is included in the updated IEP.`,
+    note: "Use at IEP review when a goal is mastered. Describes what was achieved in full communication terms."
+  },
+
+  // ── SERVICE DELIVERY ──────────────────────────────────────────────────────
+  {
+    cat: "services",
+    label: "Service — Consultation (Total Communication Support)",
+    tags: ["services", "tier1", "tier2", "total-comm"],
+    text: `Speech-language pathology consultation services will be provided to support implementation of [Student]'s total communication program. Services include: consultation with classroom staff on responding to and building upon all communication forms, aided language input modeling, vocabulary customization and device programming, review of communication data, participation in IEP meetings, and coordination with the District AAC Lead SLP. Consultation services are provided in addition to, not in lieu of, any direct SLP services documented in this IEP.`,
+    note: "Total communication framing throughout. Use for service delivery grid."
+  },
+  {
+    cat: "services",
+    label: "Service — Direct SLP (Communication — Total Communication Focus)",
+    tags: ["services", "tier2", "tier3", "total-comm"],
+    text: `Direct speech-language pathology services will be provided to support [Student]'s communication development within a total communication framework. Services will include: building communicative competence across all modalities, structured and naturalistic communication opportunities, instruction in expanding language functions and utterance complexity, collaboration with classroom staff on generalization strategies, and ongoing dynamic assessment of [Student]'s full communication system. Services will be provided [individually/in a small group] [frequency and duration] in [setting].`,
+    note: "Direct service language that does not single out the device as the primary intervention target."
+  },
+  {
+    cat: "services",
+    label: "Service — Staff Training (Total Communication and Partner Responsiveness)",
+    tags: ["services", "tier1", "tier2", "total-comm"],
+    text: `Staff training will be provided to classroom staff to support [Student]'s total communication program. Training will include: recognizing and responding to all communication forms (speech, vocalization, gesture, sign, and device), strategies for aided language input and modeling across modalities, implementation of wait time and communication opportunities throughout the school day, and use of the Tier 1 data collection tool. Training will be provided by the [site SLP and/or District AAC Lead SLP] at the start of the school year and as needed.`,
+    note: "Training is not just about device use — it's about partner responsiveness to all modalities. This framing is more clinically accurate and more inclusive."
+  },
+  {
+    cat: "services",
+    label: "Service — Family Training (Total Communication)",
+    tags: ["services", "family", "total-comm"],
+    text: `Family training will be offered to support [Student]'s communication across home and community environments. Training will include: an overview of [Student]'s total communication system, strategies for recognizing and responding to all communication forms, guidance on supporting communication during daily routines, and an orientation to the AAC device and app as one component of [his/her/their] communication tools. Training will be offered in [Spanish/English] as preferred by the family and at least [once] during the IEP year.`,
+    note: "Positions family training within the full communication system — not just device training."
+  },
+
+  // ── TRANSITIONS ───────────────────────────────────────────────────────────
+  {
+    cat: "transition",
+    label: "Transition — School-to-School (Communication Continuity)",
+    tags: ["transition", "total-comm"],
+    text: `[Student] will be transitioning to [receiving school site] for the [year] school year. An AAC Communication Transfer Summary has been completed by the sending SLP documenting [Student]'s full communication profile — including all modalities, vocabulary customization, IEP goals, and partner training notes. This summary will be shared with the receiving site SLP prior to or at the matriculation meeting to ensure continuity of [Student]'s total communication supports without interruption. The receiving classroom team will be oriented to [Student]'s full communication system, not only the AAC device, prior to or during the first week of enrollment.`,
+    note: "Transition documentation explicitly covers the full communication system, not just the device."
+  },
+  {
+    cat: "transition",
+    label: "Transition — Device and Vocabulary Continuity",
+    tags: ["transition", "tier2", "tier3"],
+    text: `To support continuity of [Student]'s communication tools during the school transition, [his/her/their] AAC vocabulary has been backed up to the RUSD AAC Shared Drive in [his/her/their] student folder. The receiving site SLP has been given access to this folder. The transition plan includes a coaching visit to the receiving classroom within the first [two] weeks of the new school year to confirm device setup, orient classroom staff to [Student]'s full communication system, and ensure that all modalities are being recognized and supported.`,
+    note: "Coaching visit framed around orienting to the full system — not just confirming the device works."
+  },
+  {
+    cat: "transition",
+    label: "Transition — Age 18–22 / Adult Transition Program",
+    tags: ["transition", "tier3"],
+    text: `As [Student] approaches transition to post-secondary settings, [his/her/their] communication supports will be reviewed to ensure alignment with [his/her/their] goals for employment, independent living, and community participation. Transition planning will include assessment of [Student]'s full communication system across post-secondary environments — including the utility of each current modality, partner training needs in adult settings, and consideration of whether a personal dedicated communication device is warranted per the AT Special Factors process. The goal is for [Student] to enter adult settings with a robust, flexible communication system that is recognized and supported by [his/her/their] community.`,
+    note: "Positions adult transition planning around the whole communication system and community integration."
+  }
+
+];
+
+// ── RENDER ──────────────────────────────────────────────────────────────────
+
+function renderAll(items, query = "") {
+  const bank = document.getElementById('bank');
+  const noRes = document.getElementById('no-results');
+
+  // Group by category
+  const catOrder = ['profile','plaafp','at-factors','goals','progress','services','transition'];
+  const catLabels = {
+    profile: 'Communication Profile',
+    plaafp: 'Present Levels (PLAAFP)',
+    'at-factors': 'AT Special Factors',
+    goals: 'Goals',
+    progress: 'Progress Monitoring',
+    services: 'Service Delivery',
+    transition: 'Transitions'
+  };
+
+  const grouped = {};
+  catOrder.forEach(c => grouped[c] = []);
+  items.forEach(item => { if (grouped[item.cat]) grouped[item.cat].push(item); });
+
+  let html = '';
+  let totalVisible = 0;
+
+  catOrder.forEach(cat => {
+    const catItems = grouped[cat];
+    if (!catItems.length) return;
+    totalVisible += catItems.length;
+
+    html += `<div class="section" data-cat="${cat}">
+      <div class="section-title">${catLabels[cat]}<span style="font-size:13px;font-weight:normal;opacity:0.8;">${catItems.length} passage${catItems.length !== 1 ? 's' : ''}</span></div>
+      <div class="section-body">`;
+
+    catItems.forEach((item, idx) => {
+      const displayText = query ? highlight(item.text, query) : escHtml(item.text);
+      const displayLabel = query ? highlight(item.label, query) : escHtml(item.label);
+      const tagHtml = item.tags.map(t => {
+        const cls = t === 'tier2' ? 'tag tier2' : t === 'tier3' ? 'tag tier3' : t === 'goal' ? 'tag goal' : t === 'total-comm' ? 'tag total-comm' : 'tag';
+        const label = t === 'tier2' ? 'TIER 2' : t === 'tier3' ? 'TIER 3' : t === 'goal' ? 'GOAL' : t === 'total-comm' ? 'TOTAL COMM' : t === 'plaafp' ? 'PLAAFP' : t === 'at-factors' ? 'AT FACTORS' : t === 'profile' ? 'PROFILE' : t === 'family' ? 'FAMILY' : t.toUpperCase();
+        return `<span class="${cls}">${label}</span>`;
+      }).join('');
+
+      html += `<div class="snippet">
+        <div class="snippet-header">
+          <span class="snippet-label">${displayLabel}</span>
+          <div class="snippet-tags">${tagHtml}</div>
+        </div>
+        <div class="snippet-text" id="text-${cat}-${idx}">${displayText}</div>
+        ${item.note ? `<div class="snippet-note">\u2139\uFE0F ${item.note}</div>` : ''}
+        <button class="copy-btn" onclick="copySnippet('text-${cat}-${idx}', this, ${JSON.stringify(item.text)})">Copy</button>
+      </div>`;
+    });
+
+    html += '</div></div>';
+  });
+
+  bank.innerHTML = html;
+  noRes.style.display = totalVisible === 0 ? 'block' : 'none';
+  if (query) document.getElementById('search-count').textContent = `${totalVisible} result${totalVisible !== 1 ? 's' : ''}`;
+  else document.getElementById('search-count').textContent = '';
+}
+
+function escHtml(t) {
+  return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+function highlight(text, query) {
+  const escaped = escHtml(text);
+  if (!query) return escaped;
+  const re = new RegExp(query.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'), 'gi');
+  return escaped.replace(re, m => `<mark>${m}</mark>`);
+}
+
+let currentCat = 'all';
+let currentQuery = '';
+
+function doSearch() {
+  currentQuery = document.getElementById('search').value.trim().toLowerCase();
+  applyFilters();
+}
+function filterCat(cat, el) {
+  currentCat = cat;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  applyFilters();
+}
+function applyFilters() {
+  let items = DATA;
+  if (currentCat !== 'all') items = items.filter(i => i.cat === currentCat);
+  if (currentQuery) {
+    items = items.filter(i =>
+      i.label.toLowerCase().includes(currentQuery) ||
+      i.text.toLowerCase().includes(currentQuery) ||
+      (i.note && i.note.toLowerCase().includes(currentQuery)) ||
+      i.tags.some(t => t.includes(currentQuery))
+    );
+  }
+  renderAll(items, currentQuery);
+}
+
+function copySnippet(id, btn, rawText) {
+  navigator.clipboard.writeText(rawText).then(() => {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+// Initial render
+renderAll(DATA);
+</script>
+</body>
+</html>
