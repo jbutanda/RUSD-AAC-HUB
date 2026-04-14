@@ -3,103 +3,153 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Programa de CAA — Preguntas Frecuentes | RUSD AAC Program</title>
+<title>Preguntas Frecuentes sobre CAA | RUSD</title>
 <style>
-  :root { --blue:#1A5294; --blue-light:#E8EFF8; --blue-mid:#2E6DB8; --black:#1a1a1a; --gray:#555; --border:#d0d8e4; --green:#2D6A2D; --green-light:#EAF4EA; --white:#fff; }
+  :root{--blue:#1A5294;--blue-light:#E8EFF8;--border:#d0d8e4;--white:#fff;}
   *{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:Arial,sans-serif;font-size:15px;color:var(--black);background:#f0f4f9;}
-  .topbar{background:var(--blue);color:#fff;padding:18px 32px;display:flex;align-items:center;gap:20px;}
-  .topbar-logo{font-size:13px;line-height:1.4;border-right:1px solid rgba(255,255,255,0.3);padding-right:20px;}
-  .topbar-logo strong{font-size:17px;display:block;}
-  .topbar-title{font-size:22px;font-weight:bold;}
-  .topbar-sub{font-size:13px;opacity:0.8;margin-top:3px;}
+  body{font-family:Arial,sans-serif;font-size:15px;color:#1a1a1a;background:#f0f4f9;}
+  .topbar{background:var(--blue);color:#fff;padding:18px 32px;}
+  .topbar strong{font-size:20px;display:block;margin-bottom:4px;}
+  .topbar span{font-size:13px;opacity:0.8;}
   .page{max-width:860px;margin:0 auto;padding:36px 24px 80px;}
-  .intro{background:var(--blue-light);border-left:5px solid var(--blue);padding:16px 20px;margin-bottom:32px;border-radius:0 6px 6px 0;font-size:14px;line-height:1.75;color:#333;}
-  .intro strong{color:var(--blue);}
-  .search-bar{display:flex;gap:10px;margin-bottom:28px;align-items:center;}
-  .search-bar input{flex:1;padding:10px 16px;border:2px solid var(--border);border-radius:6px;font-size:15px;font-family:Arial,sans-serif;}
-  .search-bar input:focus{outline:none;border-color:var(--blue);}
-  .faq{border:1px solid var(--border);border-radius:8px;margin-bottom:16px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.06);}
-  .faq-q{padding:16px 20px;background:var(--white);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:15px;font-weight:bold;color:var(--blue);line-height:1.5;}
+  .intro{background:var(--blue-light);border-left:5px solid var(--blue);padding:16px 20px;margin-bottom:28px;border-radius:0 6px 6px 0;font-size:14px;line-height:1.75;}
+  .search-bar{margin-bottom:28px;}
+  .search-bar input{width:100%;padding:11px 16px;border:2px solid var(--border);border-radius:6px;font-size:15px;font-family:Arial,sans-serif;outline:none;}
+  .search-bar input:focus{border-color:var(--blue);}
+  .faq{border:1px solid var(--border);border-radius:8px;margin-bottom:14px;overflow:hidden;background:var(--white);}
+  .faq.hidden{display:none;}
+  .faq-q{padding:16px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:15px;font-weight:bold;color:var(--blue);line-height:1.5;user-select:none;}
   .faq-q:hover{background:var(--blue-light);}
-  .faq-q .arrow{font-size:18px;transition:transform 0.2s;flex-shrink:0;}
+  .arrow{transition:transform 0.2s;flex-shrink:0;}
   .faq-q.open .arrow{transform:rotate(180deg);}
-  .faq-a{display:none;padding:16px 20px 20px;background:#fafbfd;border-top:1px solid var(--border);font-size:14px;line-height:1.8;color:#333;}
+  .faq-a{display:none;padding:16px 20px 20px;background:#fafbfd;border-top:1px solid var(--border);font-size:14px;line-height:1.8;}
   .faq-a.open{display:block;}
   .faq-a strong{color:var(--blue);}
   .faq-a ul{margin:10px 0 0 20px;}
   .faq-a li{margin-bottom:6px;}
-  .category-label{font-size:13px;font-weight:bold;color:var(--blue);text-transform:uppercase;letter-spacing:0.06em;margin:28px 0 12px;padding-left:4px;border-left:4px solid var(--blue);padding-left:10px;}
-  .hidden{display:none!important;}
-  #no-results{display:none;text-align:center;padding:48px;color:var(--gray);font-size:15px;}
-  mark{background:#fff176;border-radius:2px;}
-  .contact-box{background:var(--green-light);border:2px solid var(--green);border-radius:8px;padding:20px 24px;margin-top:40px;font-size:14px;line-height:1.8;}
-  .contact-box strong{color:var(--green);}
+  .contact-box{background:var(--blue);color:white;border-radius:8px;padding:24px 28px;margin-top:40px;font-size:14px;line-height:2;}
+  .contact-box a{color:#fde68a;font-weight:bold;text-decoration:none;}
+  .footer{text-align:center;font-size:12px;color:#aaa;margin-top:40px;padding-top:20px;border-top:1px solid var(--border);}
 </style>
 </head>
 <body>
+
 <div class="topbar">
-  <div class="topbar-logo"><strong>RUSD</strong>Special Education</div>
-  <div><div class="topbar-title">Programa de CAA — Preguntas Frecuentes</div><div class="topbar-sub">Rialto Unified School District  |  AAC Program</div></div>
+  <strong>Programa de CAA de RUSD &mdash; Preguntas Frecuentes</strong>
+  <span>Rialto Unified School District &middot; Departamento de Educaci&oacute;n Especial</span>
 </div>
+
 <div class="page">
 
-<div class="intro"><strong>Preguntas frecuentes</strong> sobre el Programa de CAA de RUSD. Haga clic en cualquier pregunta para leer la respuesta. Use el campo de búsqueda para encontrar un tema específico.</div>
-<div class="search-bar"><input type="text" id="search" placeholder="Buscar preguntas..." oninput="doSearch()"></div>
-<div id="no-results">No se encontraron preguntas relacionadas. Intente con otra palabra clave o jbutanda@rialtousd.org.</div>
+  <div class="intro">
+    <strong>&iquest;Tiene preguntas sobre la CAA?</strong> No est&aacute; solo/a. Estas son las preguntas que las familias hacen con m&aacute;s frecuencia. Haga clic en cualquier pregunta para leer la respuesta.
+  </div>
 
-<div class="category-label">Sobre la CAA</div>
+  <div class="search-bar">
+    <input type="text" id="search" placeholder="Buscar preguntas..." oninput="doSearch()">
+  </div>
 
-<div class="faq"><div class="faq-q" onclick="toggle(this)">¿Qué es la CAA?<span class="arrow">&#8964;</span></div><div class="faq-a"><strong>CAA significa Comunicación Aumentativa y Alternativa.</strong> Se refiere a todas las formas en que las personas se comunican además de las palabras habladas — incluyendo gestos, expresiones faciales, lenguaje de señas, símbolos visuales y aplicaciones de voz en tabletas. Muchas personas usan una combinación de estas herramientas junto con el habla. La CAA no es una sola cosa — es un conjunto de herramientas que apoya la comunicación de la manera que mejor funcione para cada persona.</div></div>
+  <div class="faq">
+    <div class="faq-q" onclick="toggle(this)">&iquest;Qu&eacute; es la CAA? <span class="arrow">&#9660;</span></div>
+    <div class="faq-a"><strong>CAA significa Comunicaci&oacute;n Aumentativa y Alternativa.</strong> Se refiere a todas las formas en que las personas se comunican adem&aacute;s de las palabras habladas &mdash; incluyendo gestos, expresiones faciales, lenguaje de se&ntilde;as, s&iacute;mbolos de im&aacute;genes y aplicaciones que generan voz en tabletas. La CAA no es una sola cosa &mdash; es un conjunto completo de herramientas que apoya la comunicaci&oacute;n de la manera que mejor funcione para cada persona.</div>
+  </div>
 
-<div class="faq"><div class="faq-q" onclick="toggle(this)">¿La CAA reemplazará el habla de mi hijo/a?<span class="arrow">&#8964;</span></div><div class="faq-a"><strong>No. La CAA no reemplaza el habla, y las investigaciones demuestran consistentemente que no retrasa el desarrollo del habla.</strong> De hecho, muchos estudios muestran que el acceso a herramientas de CAA apoya el crecimiento del habla natural con el tiempo. El equipo de su hijo/a siempre alentará y celebrará cada forma de comunicación que use, incluyendo el habla natural, las vocalizaciones, los gestos y el dispositivo. El objetivo es darle a su hijo/a <em>más</em> formas de comunicarse, no menos.</div></div>
+  <div class="faq">
+    <div class="faq-q" onclick="toggle(this)">&iquest;La CAA reemplazar&aacute; el habla de mi hijo/a? <span class="arrow">&#9660;</span></div>
+    <div class="faq-a"><strong>No. La CAA no reemplaza el habla, y las investigaciones muestran que no retrasa el desarrollo del habla.</strong> De hecho, muchos estudios muestran que el acceso a herramientas de CAA apoya el crecimiento del habla natural con el tiempo. El objetivo es dar a su hijo/a m&aacute;s formas de comunicarse, no menos.</div>
+  </div>
 
-<div class="faq"><div class="faq-q" onclick="toggle(this)">Mi hijo/a ya usa algunas palabras. ¿Por qué necesita un dispositivo?<span class="arrow">&#8964;</span></div><div class="faq-a">Muchos estudiantes que usan algunas palabras también se benefician de un dispositivo de CAA. El habla puede ser inconsistente — puede funcionar bien en algunas situaciones y no en otras. Un dispositivo le da a su hijo/a una forma confiable de comunicarse incluso en los días en que hablar es más difícil, o en situaciones donde las palabras son difíciles de encontrar rápidamente. Tener ambas opciones disponibles significa que su hijo/a siempre tiene una manera de ser escuchado/a.</div></div>
+  <div class="faq">
+    <div class="faq-q" onclick="toggle(this)">Mi hijo/a ya usa algunas palabras. &iquest;Por qu&eacute; necesita un dispositivo? <span class="arrow">&#9660;</span></div>
+    <div class="faq-a">Muchos estudiantes que usan algunas palabras tambi&eacute;n se benefician de un dispositivo de CAA. El habla puede ser inconsistente &mdash; puede funcionar bien en algunas situaciones y no en otras. Un dispositivo le da a su hijo/a una forma confiable de comunicarse incluso en los d&iacute;as en que el habla es m&aacute;s dif&iacute;cil.</div>
+  </div>
 
-<div class="faq"><div class="faq-q" onclick="toggle(this)">¿Qué es Proloquo2Go?<span class="arrow">&#8964;</span></div><div class="faq-a">Proloquo2Go es la aplicación de CAA que se usa en los salones de RUSD. Funciona en un iPad y contiene miles de botones con símbolos visuales que dicen palabras y frases en voz alta cuando se tocan. La aplicación es ampliamente usada por estudiantes, adultos y personas de todas las edades en todo el mundo. Se puede personalizar para adaptarse al vocabulario, nivel de lenguaje y necesidades de comunicación del estudiante.</div></div>
+  <div class="faq">
+    <div class="faq-q" onclick="toggle(this)">&iquest;Qu&eacute; es Proloquo2Go? <span class="arrow">&#9660;</span></div>
+    <div class="faq-a">Proloquo2Go es la aplicaci&oacute;n de CAA que se usa en los salones de RUSD. Funciona en un iPad y contiene miles de botones con s&iacute;mbolos de im&aacute;genes que dicen palabras y frases en voz alta cuando se tocan. Se puede personalizar para adaptarse al vocabulario y las necesidades de comunicaci&oacute;n de cada estudiante.</div>
+  </div>
 
-<div class="category-label">El Programa de CAA de RUSD</div>
+  <div class="faq">
+    <div class="faq-q" onclick="toggle(this)">&iquest;Qu&eacute; es el Programa de CAA de RUSD? <span class="arrow">&#9660;</span></div>
+    <div class="faq-a">El Programa de CAA de RUSD proporciona a cada sal&oacute;n de Apoyo Extensivo iPads con Proloquo2Go. El/la maestro/a del sal&oacute;n tiene un dispositivo para modelar la comunicaci&oacute;n durante el d&iacute;a, y los dispositivos para estudiantes est&aacute;n disponibles para todos. Cualquier estudiante que necesite comunicarse puede usar un dispositivo &mdash; no se requiere una evaluaci&oacute;n ni una meta de IEP para tener acceso.</div>
+  </div>
 
-<div class="faq"><div class="faq-q" onclick="toggle(this)">¿En qué consiste el Programa de CAA de RUSD?<span class="arrow">&#8964;</span></div><div class="faq-a">El Programa de CAA de RUSD proporciona a cada salón de Apoyo Extensivo iPads con Proloquo2Go. El/la maestro/a tiene un dispositivo para modelar la comunicación durante todo el día, y los dispositivos para estudiantes están disponibles para todos. Cualquier estudiante que necesite comunicarse puede usar un dispositivo — no se necesita una evaluación ni una meta de IEP para tener acceso. El programa es dirigido por Jerry Butanda, M.S.-SLP, ATAC, AAC, Coordinador de CAA del Distrito.</div></div>
+  <div class="faq">
+    <div class="faq-q" onclick="toggle(this)">&iquest;Qui&eacute;n puede usar el dispositivo del sal&oacute;n? <span class="arrow">&#9660;</span></div>
+    <div class="faq-a">Cualquier estudiante en el sal&oacute;n puede usar un dispositivo. El programa est&aacute; dise&ntilde;ado para que el apoyo de comunicaci&oacute;n est&eacute; disponible para todos, no solo para estudiantes con metas espec&iacute;ficas de IEP. Ning&uacute;n estudiante tiene que esperar, calificar ni pedir permiso.</div>
+  </div>
 
-<div class="faq"><div class="faq-q" onclick="toggle(this)">¿Quién puede usar el dispositivo del salón?<span class="arrow">&#8964;</span></div><div class="faq-a">Cualquier estudiante del salón puede usar un dispositivo. El programa está diseñado para que el apoyo de comunicación esté disponible para todos, no solo para los estudiantes con metas específicas en el IEP. Ningún estudiante tiene que esperar, calificar o pedir permiso para usar un dispositivo.</div></div>
+  <div class="faq">
+    <div class="faq-q" onclick="toggle(this)">&iquest;Por qu&eacute; el dispositivo se queda en la escuela? <span class="arrow">&#9660;</span></div>
+    <div class="faq-a">Los dispositivos del sal&oacute;n son herramientas compartidas que todos los estudiantes usan durante el d&iacute;a. Mantenerlos en la escuela garantiza que siempre est&eacute;n cargados, disponibles y listos. Si el equipo de IEP de su hijo/a determina que un dispositivo personal para llevar a casa apoyar&iacute;a su comunicaci&oacute;n, esa decisi&oacute;n se toma junto con usted a trav&eacute;s del proceso de IEP.</div>
+  </div>
 
-<div class="faq"><div class="faq-q" onclick="toggle(this)">¿Por qué el dispositivo se queda en la escuela?<span class="arrow">&#8964;</span></div><div class="faq-a">Por ahora, los dispositivos del salón son herramientas compartidas — similares a libros o materiales — a las que todos los estudiantes acceden durante el día. Mantenerlos en la escuela garantiza que siempre estén cargados, disponibles y listos. Si el equipo del IEP de su hijo/a determina que un dispositivo personal para llevar a casa apoyaría su comunicación en el hogar, esa decisión se toma junto con usted a través del proceso del IEP.</div></div>
+  <div class="faq">
+    <div class="faq-q" onclick="toggle(this)">&iquest;Puede mi hijo/a obtener su propio dispositivo personal? <span class="arrow">&#9660;</span></div>
+    <div class="faq-a">S&iacute;, esto es posible. Si el/la pat&oacute;logo/a del habla-lenguaje de su hijo/a determina que su hijo/a necesita un dispositivo personal dedicado, se puede completar una evaluaci&oacute;n formal de CAA. Si la evaluaci&oacute;n lo respalda, el equipo de IEP puede autorizar un dispositivo personal.</div>
+  </div>
 
-<div class="faq"><div class="faq-q" onclick="toggle(this)">¿Puede mi hijo/a obtener su propio dispositivo personal?<span class="arrow">&#8964;</span></div><div class="faq-a">Sí, esto es posible. Si el/la patólogo/a del habla-lenguaje de su hijo/a determina — a través de observación, datos y colaboración con el equipo — que su hijo/a necesita un dispositivo personal dedicado, se puede completar una evaluación formal de CAA. Si la evaluación lo respalda, el equipo del IEP puede autorizar un dispositivo personal.</div></div>
+  <div class="faq">
+    <div class="faq-q" onclick="toggle(this)">&iquest;C&oacute;mo puedo apoyar la comunicaci&oacute;n de mi hijo/a en casa? <span class="arrow">&#9660;</span></div>
+    <div class="faq-a">
+      No necesita un dispositivo en casa para apoyar a su hijo/a. Estas son las cosas m&aacute;s &uacute;tiles que puede hacer:
+      <ul>
+        <li><strong>Responda a todo intento de comunicaci&oacute;n</strong> &mdash; un alcance, un sonido, un gesto o una palabra.</li>
+        <li><strong>D&eacute;le tiempo a su hijo/a para responder</strong> antes de intervenir.</li>
+        <li><strong>Comparta lo que funciona en casa</strong> con el/la SLP de su hijo/a.</li>
+        <li><strong>Pida ver el dispositivo</strong> en una visita escolar o reuni&oacute;n de IEP.</li>
+      </ul>
+    </div>
+  </div>
 
-<div class="category-label">Lo que puede hacer en casa</div>
+  <div class="faq">
+    <div class="faq-q" onclick="toggle(this)">Mi hijo/a usa se&ntilde;as en casa. &iquest;Debo decirle a la escuela? <span class="arrow">&#9660;</span></div>
+    <div class="faq-a"><strong>S&iacute;, absolutamente.</strong> Las se&ntilde;as, los gestos y cualquier otra forma de comunicaci&oacute;n que su hijo/a use en casa son valiosas e importantes. Comp&aacute;rtalo con el/la SLP de su hijo/a para que la escuela tambi&eacute;n pueda reconocer y responder a esas formas.</div>
+  </div>
 
-<div class="faq"><div class="faq-q" onclick="toggle(this)">¿Cómo puedo apoyar la comunicación de mi hijo/a en casa?<span class="arrow">&#8964;</span></div><div class="faq-a"><ul>
-<li>Responda a todo lo que comunique su hijo/a — los gestos, sonidos, palabras, señas y el uso del dispositivo cuentan.</li>
-<li>Dele tiempo a su hijo/a para responder antes de intervenir. Una pausa de 10 a 15 segundos puede marcar una gran diferencia.</li>
-<li>Pídale al/a la patólogo/a de su hijo/a que le muestre la aplicación para que pueda usarla juntos en casa durante las comidas, el juego o las rutinas.</li>
-<li>Hable con el/la maestro/a sobre qué vocabulario se está practicando en la escuela para reforzarlo en casa.</li>
-<li>Lo más importante: celebre cada intento de comunicación, sin importar cómo ocurra.</li>
-</ul></div></div>
+  <div class="faq">
+    <div class="faq-q" onclick="toggle(this)">&iquest;Qu&eacute; pasa si mi hijo/a se niega a usar el dispositivo? <span class="arrow">&#9660;</span></div>
+    <div class="faq-a">Esto es muy com&uacute;n, especialmente al principio. El equipo del sal&oacute;n est&aacute; capacitado para ofrecer el dispositivo sin presi&oacute;n y para responder a todos los intentos de comunicaci&oacute;n. Si tiene preocupaciones, hable con el/la SLP de su hijo/a.</div>
+  </div>
 
-<div class="faq"><div class="faq-q" onclick="toggle(this)">Mi hijo/a usa señas en casa. ¿Debo decírselo a la escuela?<span class="arrow">&#8964;</span></div><div class="faq-a"><strong>Sí, absolutamente.</strong> Las señas, los gestos y cualquier otra forma de comunicación que use su hijo/a en casa son valiosas e importantes. Comparta esta información con el/la patólogo/a de su hijo/a para que la escuela también pueda reconocer y responder a esas formas. El sistema total de comunicación de su hijo/a debe ser apoyado de manera consistente entre el hogar y la escuela.</div></div>
+  <div class="faq">
+    <div class="faq-q" onclick="toggle(this)">&iquest;Puedo observar a mi hijo/a usando el dispositivo en el sal&oacute;n? <span class="arrow">&#9660;</span></div>
+    <div class="faq-a">S&iacute;. Usted puede solicitar una observaci&oacute;n en el sal&oacute;n. Comun&iacute;quese con el/la maestro/a o el/la SLP de su hijo/a para programar una hora.</div>
+  </div>
 
-<div class="faq"><div class="faq-q" onclick="toggle(this)">¿Qué pasa si mi hijo/a se niega a usar el dispositivo?<span class="arrow">&#8964;</span></div><div class="faq-a">Esto es muy común, especialmente al principio. La CAA requiere tiempo, igual que aprender cualquier habilidad nueva. El equipo del salón está capacitado para ofrecer el dispositivo sin presión y para responder a todos los intentos de comunicación, independientemente de si se usa el dispositivo. Si tiene preocupaciones, hable con el/la patólogo/a de su hijo/a.</div></div>
+  <div class="faq">
+    <div class="faq-q" onclick="toggle(this)">Tengo m&aacute;s preguntas. &iquest;A qui&eacute;n debo contactar? <span class="arrow">&#9660;</span></div>
+    <div class="faq-a">Comience con el/la SLP del sitio o el/la maestro/a del sal&oacute;n de su hijo/a. Para preguntas a nivel de programa, comun&iacute;quese directamente con el Coordinador de CAA del Distrito en jbutanda@rialtousd.org.</div>
+  </div>
 
-<div class="category-label">Trabajando con el equipo</div>
+  <div class="contact-box">
+    <strong>&iquest;Todav&iacute;a tiene preguntas? Queremos escucharle.</strong><br>
+    Jerry Butanda, M.S.-SLP, ATAC, AAC<br>
+    Coordinador de CAA del Distrito &middot; Rialto Unified School District<br>
+    <a href="mailto:jbutanda@rialtousd.org">jbutanda@rialtousd.org</a>
+  </div>
 
-<div class="faq"><div class="faq-q" onclick="toggle(this)">¿Quién es el/la patólogo/a del habla-lenguaje de mi hijo/a?<span class="arrow">&#8964;</span></div><div class="faq-a">Cada escuela tiene un/a patólogo/a del habla-lenguaje que apoya a los estudiantes con necesidades de comunicación. Si no sabe quién es el/la patólogo/a de su hijo/a, comuníquese con la oficina principal de su escuela o escriba a Jerry Butanda a jbutanda@rialtousd.org.</div></div>
+  <div class="footer">Programa de CAA de RUSD &middot; Rialto Unified School District &middot; Departamento de Educaci&oacute;n Especial</div>
 
-<div class="faq"><div class="faq-q" onclick="toggle(this)">¿Puedo observar a mi hijo/a usando el dispositivo en el salón?<span class="arrow">&#8964;</span></div><div class="faq-a">Sí. Usted puede solicitar una observación en el salón. Comuníquese con el/la maestro/a o el/la patólogo/a de su hijo/a para programar una visita. Ver el programa en acción es una de las mejores formas de entender cómo se comunica su hijo/a en la escuela.</div></div>
-
-<div class="faq"><div class="faq-q" onclick="toggle(this)">Tengo más preguntas. ¿Con quién debo comunicarme?<span class="arrow">&#8964;</span></div><div class="faq-a">Comience con el/la patólogo/a del habla-lenguaje o el/la maestro/a de su hijo/a. Para preguntas sobre el programa, comuníquese con:<br><br><strong>Jerry Butanda, M.S.-SLP, ATAC, AAC</strong><br>Coordinador de CAA del Distrito<br>Distrito Escolar Unificado de Rialto<br>jbutanda@rialtousd.org</div></div>
-
-<div class="contact-box"><strong>¿Todavía tiene preguntas?</strong> Queremos escucharle. Comuníquese con el/la patólogo/a del habla-lenguaje de su hijo/a o escriba a Jerry Butanda a <strong>jbutanda@rialtousd.org</strong>. También puede solicitar una orientación de CAA — una breve reunión en la que le explicamos el programa, le mostramos el dispositivo y respondemos sus preguntas.</div>
 </div>
+
 <script>
-function toggle(el){
-  const q=el;const a=el.nextElementSibling;
-  q.classList.toggle('open');a.classList.toggle('open');
+function toggle(el) {
+  var answer = el.nextElementSibling;
+  el.classList.toggle('open');
+  answer.classList.toggle('open');
 }
-function doSearch(){
-  const q=document.getElementById('search').value.trim().toLowerCase();
-  document.querySelectorAll('.faq').forEach(f=>{
-    const text=f.textContent.toLowerCase();
-    f.classList.toggle('hidden',q&&!text.includes(q));
-    if(q){f.querySelectorAll('mark').forEach(m=>{con
+
+function doSearch() {
+  var q = document.getElementById('search').value.trim().toLowerCase();
+  document.querySelectorAll('.faq').forEach(function(f) {
+    if (!q) {
+      f.classList.remove('hidden');
+    } else {
+      f.classList.toggle('hidden', !f.textContent.toLowerCase().includes(q));
+    }
+  });
+}
+</script>
+</body>
+</html>
