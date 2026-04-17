@@ -2,26 +2,23 @@
   "site": {
     "title": "AAC Program Hub",
     "subtitle": "Special Education Department",
-    "badge": "Rialto Unified School District \u00B7 AAC Program \u00B7 2026\u201327",
+    "badge": "Rialto Unified School District \u00b7 AAC Program \u00b7 2026\u201327",
     "hero_title": "AAC Program Resource Hub",
     "hero_desc": "Resources for families, classroom staff, clinical staff, and program administration. Staff sections require a password.",
     "contact_label": "District Lead AAC SLP",
     "contact_email": "jbutanda@rialtousd.org",
-    "footer": "RUSD AAC Program \u00B7 Special Education Department \u00B7 Rialto Unified School District"
+    "footer": "RUSD AAC Program \u00b7 Special Education Department \u00b7 Rialto Unified School District"
   },
-
   "passwords": {
     "teacher": "rusdteacher",
     "slp": "AACess",
     "admin": "AACadmin"
   },
-
   "sections": [
-
     {
       "id": "families",
       "title": "For Families & the Community",
-      "icon": "\uD83C\uDF10",
+      "icon": "\ud83c\udf10",
       "access": "public",
       "badge_text": "No password needed",
       "badge_style": "public",
@@ -33,8 +30,8 @@
             {
               "type": "tile",
               "label": "What AAC Looks Like",
-              "sub": "A day in our classrooms \u00B7 Plain language, bilingual",
-              "icon": "\uD83D\uDCD6",
+              "sub": "A day in our classrooms \u00b7 Plain language, bilingual",
+              "icon": "\ud83d\udcd6",
               "color": "blue",
               "url": "https://jbutanda.github.io/RUSD-AAC-HUB/RUSD_AAC_What_It_Looks_Like.html"
             },
@@ -48,17 +45,17 @@
             },
             {
               "type": "tile",
-              "label": "FAQ \u2014 Espa\u00F1ol",
+              "label": "FAQ \u2014 Espa\u00f1ol",
               "sub": "Preguntas frecuentes sobre el programa de CAA",
-              "icon": "\uD83C\uDDF2\uD83C\uDDFD",
+              "icon": "\ud83c\uddf2\ud83c\uddfd",
               "color": "purple",
               "url": "https://jbutanda.github.io/RUSD-AAC-HUB/RUSD_AAC_FAQ_Spanish.html"
             },
             {
               "type": "tile",
               "label": "Contact / Request a Meeting",
-              "sub": "Reach the AAC team \u00B7 Bilingual \u00B7 EN + ES",
-              "icon": "\uD83D\uDCEC",
+              "sub": "Reach the AAC team \u00b7 Bilingual \u00b7 EN + ES",
+              "icon": "\ud83d\udcec",
               "color": "green",
               "url": "https://forms.gle/iWxvHnWrPn5M2YAt7",
               "tag": "Google Form"
@@ -67,27 +64,42 @@
               "type": "tile",
               "label": "Video Resources",
               "sub": "Curated AAC explainer videos for families",
-              "icon": "\uD83C\uDFAC",
+              "icon": "\ud83c\udfac",
               "color": "gold",
               "url": "https://jbutanda.github.io/RUSD-AAC-HUB/RUSD_AAC_Video_Resources.html"
             },
             {
               "type": "tile",
               "label": "Family Orientation Letter",
-              "sub": "Program launch letter \u00B7 EN + ES",
-              "icon": "\uD83D\uDCC4",
+              "sub": "Program launch letter \u00b7 EN + ES",
+              "icon": "\ud83d\udcc4",
               "color": "orange",
               "url": "https://drive.google.com/file/d/1N6sfSmsnkfyFThv-3hcbDIzDJy6hgEAE/view?usp=sharing"
+            },
+            {
+              "type": "tile",
+              "label": "AAC Family Handbook",
+              "sub": "Complete family guide to AAC \u00b7 English",
+              "icon": "\ud83d\udcd8",
+              "color": "blue",
+              "url": "https://docs.google.com/document/d/1BV532z7c0ry1geaU8FtMLOyg_K0bzAXz/edit?usp=sharing"
+            },
+            {
+              "type": "tile",
+              "label": "AAC Family Handbook \u2014 Espa\u00f1ol",
+              "sub": "Gu\u00eda completa de CAA para familias \u00b7 Espa\u00f1ol",
+              "icon": "\ud83d\udcd9",
+              "color": "purple",
+              "url": "https://docs.google.com/document/d/1Py8Vv1ifViE6t7eJdOiIBAUYPr4_RBbt/edit?usp=sharing"
             }
           ]
         }
       ]
     },
-
     {
       "id": "teacher",
       "title": "For Classroom & School Staff",
-      "icon": "\uD83D\uDCDA",
+      "icon": "\ud83d\udcda",
       "access": "teacher",
       "badge_text": "Staff password required",
       "badge_style": "teacher",
@@ -101,16 +113,16 @@
             {
               "type": "tile",
               "label": "Sub Protocol Card",
-              "sub": "What to do on substitute days \u00B7 Laminated card",
-              "icon": "\uD83D\uDCCB",
+              "sub": "What to do on substitute days \u00b7 Laminated card",
+              "icon": "\ud83d\udccb",
               "color": "blue",
               "url": "https://drive.google.com/file/d/10imPGM1ikyGcyBXGbG7NxuHHlSCT_I1F/view?usp=sharing"
             },
             {
               "type": "tile",
               "label": "Troubleshooting Card",
-              "sub": "What to do when things go wrong \u00B7 6 scenarios",
-              "icon": "\uD83D\uDD27",
+              "sub": "What to do when things go wrong \u00b7 6 scenarios",
+              "icon": "\ud83d\udd27",
               "color": "teal",
               "url": "https://drive.google.com/file/d/1owednPkb5zA81r8lmb4kVAH3Jf8q1V_F/view?usp=sharing"
             },
@@ -118,7 +130,7 @@
               "type": "tile",
               "label": "Device Replacement Request",
               "sub": "Submit when a device is broken or lost",
-              "icon": "\u2699\uFE0F",
+              "icon": "\u2699\ufe0f",
               "color": "slate",
               "url": "https://forms.gle/3tqcqw8gtduMpdvT7",
               "tag": "Google Form"
@@ -127,7 +139,7 @@
               "type": "tile",
               "label": "Device Setup Checklist",
               "sub": "Initial configuration record for each classroom",
-              "icon": "\uD83D\uDD0B",
+              "icon": "\ud83d\udd0b",
               "color": "orange",
               "url": "https://forms.gle/kyBQCrtwTUYWCBvL8",
               "tag": "Google Form"
@@ -141,18 +153,26 @@
             {
               "type": "tile",
               "label": "Core Vocabulary Word Wall",
-              "sub": "Most-used P2G words \u00B7 Print at 11x17 \u00B7 EN + ES",
-              "icon": "\uD83D\uDCB2",
+              "sub": "Most-used P2G words \u00b7 Print at 11x17 \u00b7 EN + ES",
+              "icon": "\ud83d\udcb2",
               "color": "blue",
               "url": "https://jbutanda.github.io/RUSD-AAC-HUB/RUSD_AAC_Core_Vocab_Word_Wall.html"
             },
             {
               "type": "tile",
               "label": "P2G Quick Reference Card",
-              "sub": "Setup, folder structure, vocab guide \u00B7 Landscape",
-              "icon": "\uD83D\uDCF1",
+              "sub": "Setup, folder structure, vocab guide \u00b7 Landscape",
+              "icon": "\ud83d\udcf1",
               "color": "teal",
               "url": "https://drive.google.com/file/d/1KSI-dvZ8-hXP9s4wCDEWYGzz0V6Q3_It/view?usp=sharing"
+            },
+            {
+              "type": "tile",
+              "label": "AAC Educator Handbook",
+              "sub": "Comprehensive classroom implementation reference",
+              "icon": "\ud83d\udcd7",
+              "color": "indigo",
+              "url": "https://docs.google.com/document/d/1u4GW77rQ1DGoQ4d7Uw2RSgySWLljsL7k/edit?usp=sharing"
             }
           ]
         },
@@ -164,7 +184,7 @@
               "type": "tile",
               "label": "October Tip Sheet",
               "sub": "Wait Time: the 10-second count",
-              "icon": "\uD83D\uDCC5",
+              "icon": "\ud83d\udcc5",
               "color": "gold",
               "url": "https://docs.google.com/document/d/16c76XtHuf1LjSNQ--4VZ9pMcLla8qqV_/edit?usp=sharing"
             },
@@ -172,7 +192,7 @@
               "type": "tile",
               "label": "November Tip Sheet",
               "sub": "Communication Temptation",
-              "icon": "\uD83D\uDCC5",
+              "icon": "\ud83d\udcc5",
               "color": "gold",
               "url": "https://docs.google.com/document/d/18nMSDpJ6qcgtoWQEbta3dosJP0BGvkJl/edit?usp=sharing"
             },
@@ -180,7 +200,7 @@
               "type": "tile",
               "label": "December Tip Sheet",
               "sub": "Modeling Beyond Requesting",
-              "icon": "\uD83D\uDCC5",
+              "icon": "\ud83d\udcc5",
               "color": "gold",
               "url": "https://docs.google.com/document/d/12Hz3ry4VnikLbXgFyonHNpLznsZ-wuuX/edit?usp=sharing"
             }
@@ -194,14 +214,14 @@
               "type": "tile",
               "label": "Tier 1 Weekly Data Sheet",
               "sub": "Weekly classroom AAC tracking form",
-              "icon": "\uD83D\uDCCA",
+              "icon": "\ud83d\udcca",
               "color": "blue",
               "url": "https://drive.google.com/file/d/1Gm4bMeWstPtQcdWT3DZYu09shvyjZfSwDqUiZFuxq-E/view?usp=sharing"
             },
             {
               "type": "tile",
               "label": "Classroom Self-Audit",
-              "sub": "Weekly self-check \u00B7 Bring to coaching visits",
+              "sub": "Weekly self-check \u00b7 Bring to coaching visits",
               "icon": "\u2705",
               "color": "purple",
               "url": "https://forms.gle/e7Q6pY9M1TMbe5wq8",
@@ -210,8 +230,8 @@
             {
               "type": "tile",
               "label": "Individualized Family Letter",
-              "sub": "Template for site SLP or case carrier \u00B7 EN + ES",
-              "icon": "\uD83D\uDC8C",
+              "sub": "Template for site SLP or case carrier \u00b7 EN + ES",
+              "icon": "\ud83d\udc8c",
               "color": "teal",
               "url": "https://forms.gle/9YbjnuNrKy1epLCo9",
               "tag": "Google Form"
@@ -220,15 +240,15 @@
               "type": "tile",
               "label": "Roles & Responsibilities",
               "sub": "Who does what across all program roles",
-              "icon": "\uD83C\uDFEB",
+              "icon": "\ud83c\udfeb",
               "color": "green",
               "url": "https://drive.google.com/file/d/1KgF9uVnMgLTMZ6Knaw-g83mpN-p924WW/view?usp=sharing"
             },
             {
               "type": "tile",
               "label": "Pre-Training Needs Assessment",
-              "sub": "Complete before Session 1 \u00B7 Teachers and paras",
-              "icon": "\uD83D\uDCDD",
+              "sub": "Complete before Session 1 \u00b7 Teachers and paras",
+              "icon": "\ud83d\udcdd",
               "color": "indigo",
               "url": "https://forms.gle/XHjuRZ3kmJLM4o1X6",
               "tag": "Google Form"
@@ -246,7 +266,7 @@
                   "type": "guide",
                   "label": "Paraeducator Guide",
                   "sub": "Your role, modeling basics, daily checklist",
-                  "icon": "\uD83D\uDC65",
+                  "icon": "\ud83d\udc65",
                   "color": "blue",
                   "url": "https://docs.google.com/document/d/1_VDjuVIAXFK2U-B7vl7UKxgkQLKle53T/edit?usp=sharing"
                 },
@@ -254,7 +274,7 @@
                   "type": "guide",
                   "label": "ESN Teacher Guide",
                   "sub": "Veteran and new teacher framing, data, modeling",
-                  "icon": "\uD83C\uDFEB",
+                  "icon": "\ud83c\udfeb",
                   "color": "blue",
                   "url": "https://docs.google.com/document/d/1VtpnYoQIzv0HBftHnxfYHezRnjSBhnTm/edit?usp=sharing"
                 }
@@ -267,7 +287,7 @@
                   "type": "guide",
                   "label": "General Education Teacher Guide",
                   "sub": "When an AAC user is in your classroom",
-                  "icon": "\uD83C\uDFF3\uFE0F",
+                  "icon": "\ud83c\udff3\ufe0f",
                   "color": "teal",
                   "url": "https://docs.google.com/document/d/1YM8NKoc7QMCESsHik-n-Gx1v39WG-hKV/edit?usp=sharing"
                 },
@@ -275,7 +295,7 @@
                   "type": "guide",
                   "label": "Adapted PE Teacher Guide",
                   "sub": "AAC in physical activity settings",
-                  "icon": "\uD83C\uDFC8",
+                  "icon": "\ud83c\udfc8",
                   "color": "teal",
                   "url": "https://docs.google.com/document/d/1n_xMFgeXdaAntSoqmIo7I5hQR9YOFy9d/edit?usp=sharing"
                 },
@@ -283,7 +303,7 @@
                   "type": "guide",
                   "label": "Education Specialist / RSP Guide",
                   "sub": "Case carrier and inclusion roles",
-                  "icon": "\uD83D\uDCC4",
+                  "icon": "\ud83d\udcc4",
                   "color": "teal",
                   "url": "https://docs.google.com/document/d/1hx7l8K0JzhGLB8TBWtDCFsalKPO9fMg-/edit?usp=sharing"
                 },
@@ -291,7 +311,7 @@
                   "type": "guide",
                   "label": "Site Administrator Guide",
                   "sub": "What the program asks of your building",
-                  "icon": "\uD83C\uDFD8",
+                  "icon": "\ud83c\udfd8",
                   "color": "slate",
                   "url": "https://docs.google.com/document/d/1bL60FA-B5LW002sO5g4DFiTOuO1umJNz/edit?usp=sharing"
                 }
@@ -301,11 +321,10 @@
         }
       ]
     },
-
     {
       "id": "slp",
       "title": "For Clinical & Related Services Staff",
-      "icon": "\uD83E\uDE7A",
+      "icon": "\ud83e\ude7a",
       "access": "slp",
       "badge_text": "SLP password required",
       "badge_style": "clinical",
@@ -320,7 +339,7 @@
               "type": "tile",
               "label": "Tier 2 Referral Form",
               "sub": "Initiate Tier 2 individualized plan",
-              "icon": "\uD83D\uDCDD",
+              "icon": "\ud83d\udcdd",
               "color": "blue",
               "url": "https://forms.gle/AkaNm5wA4AwQPgpf8",
               "tag": "Google Form"
@@ -329,7 +348,7 @@
               "type": "tile",
               "label": "Tier 3 Referral Form",
               "sub": "Initiate formal AAC evaluation",
-              "icon": "\uD83D\uDD3A",
+              "icon": "\ud83d\udd3a",
               "color": "red",
               "url": "https://forms.gle/g3nvekf76YMod2H9A",
               "tag": "Google Form"
@@ -337,8 +356,8 @@
             {
               "type": "tile",
               "label": "Tier 2 Clinical Authorization",
-              "sub": "Expedited device provision \u00B7 Co-signed by Lead SLP",
-              "icon": "\u270D\uFE0F",
+              "sub": "Expedited device provision \u00b7 Co-signed by Lead SLP",
+              "icon": "\u270d\ufe0f",
               "color": "amber",
               "url": "https://drive.google.com/file/d/1yOMx9CcGqDhzihYpHREf32SLTWQElZBQ/view?usp=sharing"
             },
@@ -346,7 +365,7 @@
               "type": "tile",
               "label": "Student Transfer Summary",
               "sub": "AAC handoff at school transitions",
-              "icon": "\uD83D\uDE8C",
+              "icon": "\ud83d\ude8c",
               "color": "teal",
               "url": "https://drive.google.com/file/d/1XYtFc5zrF3jKVCLyNJdzG6pZjBxzeGGf/view?usp=sharing"
             },
@@ -354,7 +373,7 @@
               "type": "tile",
               "label": "Student Communication Profile",
               "sub": "Submit or update a student AAC profile",
-              "icon": "\uD83D\uDC65",
+              "icon": "\ud83d\udc65",
               "color": "purple",
               "url": "https://forms.gle/h8vDsjUFEAotqory7",
               "tag": "Google Form"
@@ -368,8 +387,8 @@
             {
               "type": "tile",
               "label": "Tier 3 Auto-Referral Criteria",
-              "sub": "5 triggers \u00B7 Parallel access framing",
-              "icon": "\uD83D\uDD0D",
+              "sub": "5 triggers \u00b7 Parallel access framing",
+              "icon": "\ud83d\udd0d",
               "color": "blue",
               "url": "https://drive.google.com/file/d/1mDBBwD_TQll9xvYl2yJaQItkpLnHZHgP/view?usp=sharing"
             },
@@ -377,23 +396,23 @@
               "type": "tile",
               "label": "Dynamic Assessment Template",
               "sub": "Structured Tier 3 device trial documentation",
-              "icon": "\uD83E\uDDEA",
+              "icon": "\ud83e\uddea",
               "color": "indigo",
               "url": "https://drive.google.com/file/d/1efuc3KwQZE7re5GMY3WWAqMRIDs_Xk22/view?usp=sharing"
             },
             {
               "type": "tile",
               "label": "GLP Clinical Reference",
-              "sub": "5 stages \u00B7 AAC implications \u00B7 Peer-review caveat",
-              "icon": "\uD83C\uDFF7\uFE0F",
+              "sub": "5 stages \u00b7 AAC implications \u00b7 Peer-review caveat",
+              "icon": "\ud83c\udff7\ufe0f",
               "color": "orange",
               "url": "https://drive.google.com/file/d/13FDNo9lIe8ptkQYQJUCqdUcyy2WgWlq9/view?usp=sharing"
             },
             {
               "type": "tile",
               "label": "Dismissal Criteria",
-              "sub": "Clinical + legal standards \u00B7 IEP team framework",
-              "icon": "\uD83D\uDEAA",
+              "sub": "Clinical + legal standards \u00b7 IEP team framework",
+              "icon": "\ud83d\udeaa",
               "color": "red",
               "url": "https://drive.google.com/file/d/1g20AVBzOuK29nt1LbD-9826vcUMQn6B3/view?usp=sharing"
             }
@@ -407,15 +426,15 @@
               "type": "tile",
               "label": "Session Progress Monitoring",
               "sub": "Tier 2 direct session data sheet",
-              "icon": "\uD83D\uDCC8",
+              "icon": "\ud83d\udcc8",
               "color": "green",
               "url": "https://drive.google.com/file/d/1xUBC_Idq_S6DxNo-8yIuN7QE6I8Kycug/view?usp=sharing"
             },
             {
               "type": "tile",
               "label": "Observation Checklist",
-              "sub": "5-domain fidelity rubric \u00B7 Coaching visits",
-              "icon": "\uD83D\uDC41\uFE0F",
+              "sub": "5-domain fidelity rubric \u00b7 Coaching visits",
+              "icon": "\ud83d\udc41\ufe0f",
               "color": "teal",
               "url": "https://forms.gle/VimQ4c5aJ2ChPEsT6",
               "tag": "Google Form"
@@ -423,8 +442,8 @@
             {
               "type": "tile",
               "label": "Teacher Self-Assessment",
-              "sub": "10-item confidence scale \u00B7 SLP reviews before coaching",
-              "icon": "\uD83D\uDCDD",
+              "sub": "10-item confidence scale \u00b7 SLP reviews before coaching",
+              "icon": "\ud83d\udcdd",
               "color": "teal",
               "url": "https://forms.gle/hTR6zL3nMFLtZBet7",
               "tag": "Google Form"
@@ -439,15 +458,15 @@
               "type": "tile",
               "label": "Coaching Calendar",
               "sub": "Oct\u2013June coaching visit schedule",
-              "icon": "\uD83D\uDDC3\uFE0F",
+              "icon": "\ud83d\uddc3\ufe0f",
               "color": "gold",
               "url": "https://drive.google.com/file/d/1NgjaSQQRBCaUDPfQ4YTI3DCb-brpDSVY/view?usp=sharing"
             },
             {
               "type": "tile",
               "label": "Coaching Visit Guide",
-              "sub": "Before / during / after checklists \u00B7 9 visits",
-              "icon": "\uD83D\uDCCB",
+              "sub": "Before / during / after checklists \u00b7 9 visits",
+              "icon": "\ud83d\udccb",
               "color": "orange",
               "url": "https://drive.google.com/file/d/1vh_KuVYTJ3n_e9VKfkOzKjz8xCx7ZmAW/view?usp=sharing"
             },
@@ -455,7 +474,7 @@
               "type": "tile",
               "label": "Request a Coaching Visit",
               "sub": "Schedule a classroom visit with the Lead AAC SLP",
-              "icon": "\uD83D\uDE4B",
+              "icon": "\ud83d\ude4b",
               "color": "green",
               "url": "https://forms.gle/nWWFR7SExfdzwaqZA",
               "tag": "Google Form"
@@ -469,8 +488,8 @@
             {
               "type": "tile",
               "label": "IEP Language Bank",
-              "sub": "Goals, present levels, service descriptions \u00B7 Searchable",
-              "icon": "\uD83D\uDCDA",
+              "sub": "Goals, present levels, service descriptions \u00b7 Searchable",
+              "icon": "\ud83d\udcda",
               "color": "blue",
               "url": "https://jbutanda.github.io/RUSD-AAC-HUB/RUSD_AAC_IEP_Language_Bank.html"
             },
@@ -478,7 +497,7 @@
               "type": "tile",
               "label": "FERPA / IDEA Reference",
               "sub": "Privacy, consent, records, procedural timelines",
-              "icon": "\u2696\uFE0F",
+              "icon": "\u2696\ufe0f",
               "color": "slate",
               "url": "https://drive.google.com/file/d/1AijJndooRVw4eRzT04_hug54XHnD2Tfm/view?usp=sharing"
             },
@@ -486,7 +505,7 @@
               "type": "tile",
               "label": "Roles & Responsibilities",
               "sub": "Full 7-column role matrix including case carrier",
-              "icon": "\uD83D\uDC65",
+              "icon": "\ud83d\udc65",
               "color": "purple",
               "url": "https://drive.google.com/file/d/11kZX2cX7ake8a0CTXyUTKYHj1SyAIrfDAm7gJwtFEzc/view?usp=sharing"
             },
@@ -494,7 +513,7 @@
               "type": "tile",
               "label": "P2G Full Customization Guide",
               "sub": "Vocabulary setup, backups, troubleshooting",
-              "icon": "\uD83D\uDCD7",
+              "icon": "\ud83d\udcd7",
               "color": "indigo",
               "url": "https://drive.google.com/file/d/1pfaNMZg-g8rfcS7MUKAlUsT1_mlerGqJ/view?usp=sharing"
             }
@@ -511,7 +530,7 @@
                   "type": "guide",
                   "label": "Site SLP Guide",
                   "sub": "Tier responsibilities, vocabulary coordination, IEP, consultation",
-                  "icon": "\uD83E\uDE7A",
+                  "icon": "\ud83e\ude7a",
                   "color": "blue",
                   "url": "https://docs.google.com/document/d/1gGD5WvtdyT4qGNiwoMLonoCOUpnF_Naa/edit?usp=sharing"
                 },
@@ -519,7 +538,7 @@
                   "type": "guide",
                   "label": "SLPA Guide",
                   "sub": "Scope of practice, supervision vs. service delivery",
-                  "icon": "\uD83D\uDCAC",
+                  "icon": "\ud83d\udcac",
                   "color": "blue",
                   "url": "https://docs.google.com/document/d/18g4VG-XqQGFUH5ep6jrCYGGwDRgeSkDD/edit?usp=sharing"
                 }
@@ -532,7 +551,7 @@
                   "type": "guide",
                   "label": "Occupational Therapist Guide",
                   "sub": "Motor access evaluation, Tier 3 coordination",
-                  "icon": "\uD83E\uDD19",
+                  "icon": "\ud83e\udd19",
                   "color": "teal",
                   "url": "https://docs.google.com/document/d/1i5-BID71Ge09kvOlZSVmpwG6-1ZdQwBE/edit?usp=sharing"
                 },
@@ -540,7 +559,7 @@
                   "type": "guide",
                   "label": "Physical Therapist Guide",
                   "sub": "Positioning, mobility, device access",
-                  "icon": "\uD83C\uDFC3",
+                  "icon": "\ud83c\udfc3",
                   "color": "teal",
                   "url": "https://docs.google.com/document/d/1OGVMWiUMt1uR7PhpjrY1129J4ed79rUu/edit?usp=sharing"
                 },
@@ -548,7 +567,7 @@
                   "type": "guide",
                   "label": "OI Specialist Guide",
                   "sub": "Equipment, positioning, Tier 3 consultation",
-                  "icon": "\u267F",
+                  "icon": "\u267f",
                   "color": "teal",
                   "url": "https://docs.google.com/document/d/1XHpBk_3YI1pFe2SKjsO1tTrIyBtU5rJq/edit?usp=sharing"
                 },
@@ -556,7 +575,7 @@
                   "type": "guide",
                   "label": "BCBA / Behaviorist Guide",
                   "sub": "AAC and behavior plan coordination",
-                  "icon": "\uD83D\uDCCB",
+                  "icon": "\ud83d\udccb",
                   "color": "orange",
                   "url": "https://docs.google.com/document/d/1PkTyq69NUoa5NsXffUUBwDYlYPthcHrK/edit?usp=sharing"
                 },
@@ -564,7 +583,7 @@
                   "type": "guide",
                   "label": "School Psychologist Guide",
                   "sub": "Assessment, eligibility, AAC intersections",
-                  "icon": "\uD83E\uDDE0",
+                  "icon": "\ud83e\udde0",
                   "color": "purple",
                   "url": "https://docs.google.com/document/d/19iM1As-JHxO-sB4Bqg0lc1_XM3BIENw1/edit?usp=sharing"
                 }
@@ -576,16 +595,16 @@
                 {
                   "type": "guide",
                   "label": "Family Guide \u2014 General",
-                  "sub": "Bilingual EN/ES \u00B7 Introduction to the program",
-                  "icon": "\uD83D\uDC6A",
+                  "sub": "Bilingual EN/ES \u00b7 Introduction to the program",
+                  "icon": "\ud83d\udc6a",
                   "color": "green",
                   "url": "https://docs.google.com/document/d/1Ea7VR0qo5Y2Jo1VBfWwA-tg7WRWB-NVs/edit?usp=sharing"
                 },
                 {
                   "type": "guide",
                   "label": "Family Guide \u2014 Experienced Families",
-                  "sub": "Bilingual EN/ES \u00B7 For families who have been through the system",
-                  "icon": "\uD83D\uDCAC",
+                  "sub": "Bilingual EN/ES \u00b7 For families who have been through the system",
+                  "icon": "\ud83d\udcac",
                   "color": "green",
                   "url": "https://docs.google.com/document/d/1am4I-c1_p_eVx5lcXAAiF-DIWkB_N89Q/edit?usp=sharing"
                 }
@@ -595,11 +614,10 @@
         }
       ]
     },
-
     {
       "id": "admin",
       "title": "Program Administration",
-      "icon": "\uD83D\uDD12",
+      "icon": "\ud83d\udd12",
       "access": "admin",
       "badge_text": "Admin password required",
       "badge_style": "admin",
@@ -613,8 +631,8 @@
             {
               "type": "tile",
               "label": "Annual Program Data Summary",
-              "sub": "Year-end metrics \u00B7 Report to Director",
-              "icon": "\uD83D\uDCC8",
+              "sub": "Year-end metrics \u00b7 Report to Director",
+              "icon": "\ud83d\udcc8",
               "color": "blue",
               "url": "https://drive.google.com/file/d/1xmnLkPMITJH_LC6idaWxzv8gqV7aT2hV/view?usp=sharing"
             },
@@ -622,7 +640,7 @@
               "type": "tile",
               "label": "Tier 2 Clinical Authorization",
               "sub": "Expedited device provision protocol",
-              "icon": "\u270D\uFE0F",
+              "icon": "\u270d\ufe0f",
               "color": "amber",
               "url": "https://drive.google.com/file/d/1yOMx9CcGqDhzihYpHREf32SLTWQElZBQ/view?usp=sharing"
             },
@@ -630,7 +648,7 @@
               "type": "tile",
               "label": "Program Overview",
               "sub": "One-page leave-behind for any stakeholder",
-              "icon": "\uD83D\uDCCB",
+              "icon": "\ud83d\udccb",
               "color": "teal",
               "url": "https://docs.google.com/document/d/1IEen3lPCxk2pH3lX-7xCdTf34wAhr-RP/edit?usp=sharing"
             }
@@ -644,15 +662,15 @@
               "type": "tile",
               "label": "Coaching Calendar",
               "sub": "Oct\u2013June visit schedule",
-              "icon": "\uD83D\uDCC5",
+              "icon": "\ud83d\udcc5",
               "color": "gold",
               "url": "https://drive.google.com/file/d/1NgjaSQQRBCaUDPfQ4YTI3DCb-brpDSVY/view?usp=sharing"
             },
             {
               "type": "tile",
               "label": "Coaching Depth Map",
-              "sub": "Phase framework \u00B7 Experience-level overlay",
-              "icon": "\uD83D\uDDFA\uFE0F",
+              "sub": "Phase framework \u00b7 Experience-level overlay",
+              "icon": "\ud83d\uddfa\ufe0f",
               "color": "orange",
               "url": "https://drive.google.com/file/d/YOUR_DEPTH_MAP_ID/view?usp=sharing"
             }
@@ -669,7 +687,7 @@
                   "type": "guide",
                   "label": "Special Education Director Guide",
                   "sub": "Executive overview, legal protections, metrics, Year 2 planning",
-                  "icon": "\uD83C\uDFD8",
+                  "icon": "\ud83c\udfd8",
                   "color": "indigo",
                   "url": "https://docs.google.com/document/d/1lARVZQp9CdyslSJLU3QWFTFOvmW0axjq/edit?usp=sharing"
                 }
@@ -679,6 +697,5 @@
         }
       ]
     }
-
   ]
 }
