@@ -91,6 +91,24 @@
               "icon": "\ud83d\udcd9",
               "color": "purple",
               "url": "https://docs.google.com/document/d/1Py8Vv1ifViE6t7eJdOiIBAUYPr4_RBbt/edit?usp=sharing"
+            },
+            {
+              "type": "tile",
+              "label": "AAC Funding Pathways",
+              "sub": "How to access AAC funding \u00b7 District, insurance, Regional Center, grants",
+              "icon": "\ud83d\udcb0",
+              "color": "green",
+              "url": "https://docs.google.com/document/d/1MBKBmQdD0G2hbYcF4SsPB2yCchDa2iSd/edit?usp=sharing",
+              "new": true
+            },
+            {
+              "type": "tile",
+              "label": "V\u00edas de Financiamiento para CAA",
+              "sub": "C\u00f3mo acceder al financiamiento de CAA \u00b7 Distrito, seguro, Centro Regional",
+              "icon": "\ud83d\udcb0",
+              "color": "purple",
+              "url": "https://docs.google.com/document/d/1vHbrJkyPrBoT8ySRFZ5vpqNQAWuZxq4d/edit?usp=sharing",
+              "new": true
             }
           ]
         }
@@ -377,6 +395,15 @@
               "color": "purple",
               "url": "https://forms.gle/h8vDsjUFEAotqory7",
               "tag": "Google Form"
+            },
+            {
+              "type": "tile",
+              "label": "Private Procurement Coordination",
+              "sub": "Dual-purpose reports, FERPA, outside providers, privately owned devices",
+              "icon": "\ud83d\udccb",
+              "color": "slate",
+              "url": "https://docs.google.com/document/d/1IMHGRmnUcRdTxDFrXbZMT0iuhbUyNV3z/edit?usp=sharing",
+              "new": true
             }
           ]
         },
@@ -399,14 +426,6 @@
               "icon": "\ud83e\uddea",
               "color": "indigo",
               "url": "https://drive.google.com/file/d/1efuc3KwQZE7re5GMY3WWAqMRIDs_Xk22/view?usp=sharing"
-            },
-            {
-              "type": "tile",
-              "label": "GLP Clinical Reference",
-              "sub": "5 stages \u00b7 AAC implications \u00b7 Peer-review caveat",
-              "icon": "\ud83c\udff7\ufe0f",
-              "color": "orange",
-              "url": "https://drive.google.com/file/d/13FDNo9lIe8ptkQYQJUCqdUcyy2WgWlq9/view?usp=sharing"
             },
             {
               "type": "tile",
@@ -478,6 +497,44 @@
               "color": "green",
               "url": "https://forms.gle/nWWFR7SExfdzwaqZA",
               "tag": "Google Form"
+            }
+          ]
+        },
+        {
+          "title": "Clinical Reference",
+          "layout": "tile",
+          "items": [
+            {
+              "type": "tile",
+              "label": "Research Foundation",
+              "sub": "Evidence base, operational frameworks, legal grounding, equity commitment",
+              "icon": "\ud83d\udcd0",
+              "color": "indigo",
+              "url": "https://docs.google.com/document/d/1oRS4jq9RKWMkgqoCJqXe9UZg_AfjqFhA/edit?usp=sharing"
+            },
+            {
+              "type": "tile",
+              "label": "Clinical Position Statements",
+              "sub": "GLP/NLA, physical prompting, presumption of competence",
+              "icon": "\ud83d\udccb",
+              "color": "red",
+              "url": "https://docs.google.com/document/d/1HmYRU4jvu_FutrC0VdhlsjTPiPVRB3iV/edit?usp=sharing"
+            },
+            {
+              "type": "tile",
+              "label": "Echolalia, Scripting, and AAC",
+              "sub": "Clinical reference for site SLPs \u00b7 Staging descriptions \u00b7 Peer-review caveat \u00b7 IEP implications",
+              "icon": "\ud83c\udff7\ufe0f",
+              "color": "orange",
+              "url": "https://drive.google.com/file/d/13FDNo9lIe8ptkQYQJUCqdUcyy2WgWlq9/view?usp=sharing"
+            },
+            {
+              "type": "tile",
+              "label": "AAC Abandonment Response Protocol",
+              "sub": "When active AAC use decreases \u00b7 4-step environmental review",
+              "icon": "\ud83d\udd0d",
+              "color": "orange",
+              "url": "https://docs.google.com/document/d/1iTklxSS4YiJyBiImAAs-PDljZlyCpBNO/edit?usp=sharing"
             }
           ]
         },
@@ -651,6 +708,14 @@
               "icon": "\ud83d\udccb",
               "color": "teal",
               "url": "https://docs.google.com/document/d/1IEen3lPCxk2pH3lX-7xCdTf34wAhr-RP/edit?usp=sharing"
+            },
+            {
+              "type": "tile",
+              "label": "Annual Equity Audit Protocol",
+              "sub": "Disaggregated data review \u00b7 Disparity thresholds \u00b7 Corrective action",
+              "icon": "\u2696\ufe0f",
+              "color": "purple",
+              "url": "https://docs.google.com/document/d/1aYB5MI1bhnJb2_ppbmEa7Mm4lgC1uYbM/edit?usp=sharing"
             }
           ]
         },
