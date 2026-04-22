@@ -24,7 +24,7 @@
       "badge_style": "public",
       "subsections": [
         {
-          "title": null,
+          "title": "Program Information",
           "layout": "tile",
           "items": [
             {
@@ -75,7 +75,13 @@
               "icon": "\ud83d\udcc4",
               "color": "orange",
               "url": "https://drive.google.com/file/d/1N6sfSmsnkfyFThv-3hcbDIzDJy6hgEAE/view?usp=sharing"
-            },
+            }
+          ]
+        },
+        {
+          "title": "Family Handbooks & Funding",
+          "layout": "tile",
+          "items": [
             {
               "type": "tile",
               "label": "AAC Family Handbook",
