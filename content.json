@@ -171,6 +171,30 @@
           ]
         },
         {
+          "title": "New Staff Onboarding",
+          "layout": "tile",
+          "items": [
+            {
+              "type": "tile",
+              "label": "Para Onboarding Card",
+              "sub": "First-week survival card for new paraeducators \u00b7 What to do, what never to do",
+              "icon": "\ud83c\udd95",
+              "color": "green",
+              "url": "https://docs.google.com/document/d/18YTIxrXsGqzZp0RJKhDp3VCyq-4ICsKx/edit?usp=sharing",
+              "new": true
+            },
+            {
+              "type": "tile",
+              "label": "Gen Ed Quick Card",
+              "sub": "One-page brief for gen ed teachers receiving an AAC user \u00b7 Read the day before",
+              "icon": "\ud83c\udd95",
+              "color": "teal",
+              "url": "https://docs.google.com/document/d/1HOdfFmCFQS-sHsd0flliQ2axzAICGB8P/edit?usp=sharing",
+              "new": true
+            }
+          ]
+        },
+        {
           "title": "Modeling & Communication Support",
           "layout": "tile",
           "items": [
@@ -227,6 +251,15 @@
               "icon": "\ud83d\udcc5",
               "color": "gold",
               "url": "https://docs.google.com/document/d/12Hz3ry4VnikLbXgFyonHNpLznsZ-wuuX/edit?usp=sharing"
+            },
+            {
+              "type": "tile",
+              "label": "January Tip Sheet",
+              "sub": "Core Vocabulary: Why We Start Here",
+              "icon": "\ud83d\udcc5",
+              "color": "blue",
+              "url": "https://docs.google.com/document/d/1Mb4oVLlZulmJsNh1fH9N5fMEeM5L4Cem/edit?usp=sharing",
+              "new": true
             }
           ]
         },
@@ -409,6 +442,24 @@
               "icon": "\ud83d\udccb",
               "color": "slate",
               "url": "https://docs.google.com/document/d/1IMHGRmnUcRdTxDFrXbZMT0iuhbUyNV3z/edit?usp=sharing",
+              "new": true
+            },
+            {
+              "type": "tile",
+              "label": "Device Loan Agreement",
+              "sub": "Family signature form for devices going home \u00b7 Tier 3 and Clinical Authorization",
+              "icon": "\ud83d\udcdd",
+              "color": "slate",
+              "url": "https://docs.google.com/document/d/1dcPGrqimgtxdPSLmcbNHgr9WLkmvbUd3/edit?usp=sharing",
+              "new": true
+            },
+            {
+              "type": "tile",
+              "label": "Personal AAC Device Use at School",
+              "sub": "Form for privately owned devices used in the classroom \u00b7 Pairs with Private Procurement guide",
+              "icon": "\ud83d\udcf1",
+              "color": "slate",
+              "url": "https://drive.google.com/file/d/1Tneqm5_MuKQE0LfKY52iFm3m46yRkD7I/view?usp=sharing",
               "new": true
             }
           ]
@@ -743,7 +794,7 @@
               "sub": "Phase framework \u00b7 Experience-level overlay",
               "icon": "\ud83d\uddfa\ufe0f",
               "color": "orange",
-              "url": "https://drive.google.com/file/d/YOUR_DEPTH_MAP_ID/view?usp=sharing"
+              "url": "https://docs.google.com/document/d/17I1IpKCmmNsZ3wqNrs99UOsHYUZnvvMn/edit?usp=sharing"
             }
           ]
         },
