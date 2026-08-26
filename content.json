@@ -461,6 +461,14 @@
               "color": "slate",
               "url": "https://drive.google.com/file/d/1Tneqm5_MuKQE0LfKY52iFm3m46yRkD7I/view?usp=sharing",
               "new": true
+            },
+            {
+              "type": "tile",
+              "label": "AAC Device Information Sheet",
+              "sub": "Serial, tag, app settings, backup, charging, contacts · Fill in, save as PDF",
+              "icon": "📱",
+              "color": "indigo",
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/aac-device-info.html"
             }
           ]
         },
