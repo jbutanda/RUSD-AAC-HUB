@@ -217,7 +217,7 @@ function tokens(d){
   FUNCTIONS.forEach(([k,l,def])=>{t[BL_KEY[k]]=d.fn[k]==='observed'?'[describe current level, this function is observed]':d.fn[k]==='emerging'?'[describe emerging use]':def;});
   return t;
 }
-function fill(tpl,t){return tpl.replace(/\{\{(\w+)\}\}/g,(m,k)=>k in t?t[k]:m).replace(/\s{2,}/g,' ').replace(/\s+\./g,'.').trim();}
+function fill(tpl,t){return tpl.replace(/\{\{(\w+)\}\}/g,(m,k)=>k in t?t[k]:m).split('\n').map(l=>l.replace(/\s{2,}/g,' ').replace(/\s+\./g,'.').trim()).join('\n').trim();}
 function entry(label){return BANK.find(e=>e.label===label);}
 
 function generate(){
@@ -242,10 +242,10 @@ function generate(){
     if(['3','4','5','6','7','8','9','10','11','12'].includes(d.grade))acc.push('Accommodation — Testing and Assessment Access');
     if(d.home==='yes'||d.shared)acc.push('Accommodation — Vocabulary Consistency Across Environments');
     if(d.bip)acc.push('Accommodation — Communication Supports During Behavior Incidents and Discipline');
-    blocks.push({title:'Accommodations',where:'Supplementary Aids and Services / Program Accommodations',text:acc.map(l=>fill(entry(l).template,t)).join('\n\n')});
-    blocks.push({title:'Other Supports',where:'FAPE page, Other Supports (not a service line)',text:fill(entry('Other Supports — Assistive Technology Services (Training, Customization, Maintenance)').template,t)});
+    blocks.push({title:'Accommodations',where:'Supplementary Aids and Services / Program Accommodations',text:acc.map(l=>fill(entry(l).short,t)).join('\n')});
+    blocks.push({title:'Other Supports',where:'FAPE page, Other Supports (not a service line)',text:fill(entry('Other Supports — Assistive Technology Services (Training, Customization, Maintenance)').short,t)});
   } else if(d.pathway==='tier3pre'){
-    blocks.push({title:'Accommodations',where:'Supplementary Aids and Services',text:fill(entry('Accommodation — Wait Time and Partner Responsiveness').template,t)});
+    blocks.push({title:'Accommodations',where:'Supplementary Aids and Services',text:fill(entry('Accommodation — Wait Time and Partner Responsiveness').short,t)});
   }
   render(blocks,t);
   setStatus('Generated. Every block is editable; copy each into SEIS.',true);

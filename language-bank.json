@@ -257,7 +257,8 @@
     "text": "In addition to the AAC device, the IEP team identifies the following assistive technology services as necessary for [Student] to benefit from the device: (1) training for classroom staff in aided language input, partner responsiveness, and device management, provided by [site SLP / District AAC Lead] at the start of the year and as staff change; (2) training for [Student] in operational use of the device as part of direct or consultative SLP services; (3) family training in [language]; (4) vocabulary customization and programming by the SLP [frequency]; and (5) device maintenance, charging, and a replacement plan if the device is lost or damaged, coordinated by [site contact].",
     "cite": "34 CFR 300.6(a)-(f); 20 USC 1401(2)",
     "note": "Enter on the FAPE page under Other Supports, not as a service line (there is no AAC service code) and not under accommodations. IDEA defines AT services separately from devices; a device with no documented services is the most common gap in AAC sections.",
-    "template": "Assistive technology services necessary for {{S}} to benefit from {{his}} AAC system: (1) training for classroom staff in aided language input, partner responsiveness, and device management, provided by the site SLP or District AAC Lead at the start of the year and within two weeks of any staffing change; (2) training for {{S}} in operational use of the device within SLP services; (3) family training in {{home_lang}}, at least once during the IEP year{{family_home_clause}}; (4) vocabulary customization and programming by the SLP; and (5) device maintenance, charging, backup of the vocabulary file, and a replacement plan if the device is lost or damaged, coordinated by the site SLP."
+    "template": "Assistive technology services necessary for {{S}} to benefit from {{his}} AAC system: (1) training for classroom staff in aided language input, partner responsiveness, and device management, provided by the site SLP or District AAC Lead at the start of the year and within two weeks of any staffing change; (2) training for {{S}} in operational use of the device within SLP services; (3) family training in {{home_lang}}, at least once during the IEP year{{family_home_clause}}; (4) vocabulary customization and programming by the SLP; and (5) device maintenance, charging, backup of the vocabulary file, and a replacement plan if the device is lost or damaged, coordinated by the site SLP.",
+    "short": "AAC staff and parent training in {{home_lang}}.\nSLP collaboration with staff about AAC implementation and data.\nAAC vocabulary customization, programming, and device maintenance by SLP."
   },
   {
     "cat": "goals",
@@ -581,7 +582,8 @@
     ],
     "text": "[Student]'s AAC system ([app] on [device]) will be available and within reach in all school settings, including general education, specialized academic instruction, recess, lunch, assemblies, field trips, and school transportation. The device will be charged daily and transported with [Student] during transitions. Staff will not remove the device as a consequence for behavior.",
     "note": "Keep the last sentence. Removing a device as a consequence for behavior is a recurring complaint in due process filings.",
-    "template": "{{S}}'s AAC system ({{app}} on {{devicekind}}) will be available and within reach in all school settings, including {{settings_all}}. The device will be charged daily and transported with {{S}} during transitions. Staff will not remove the device as a consequence for behavior."
+    "template": "{{S}}'s AAC system ({{app}} on {{devicekind}}) will be available and within reach in all school settings, including {{settings_all}}. The device will be charged daily and transported with {{S}} during transitions. Staff will not remove the device as a consequence for behavior.",
+    "short": "Access to AAC device ({{app}}) in all school settings, including recess, lunch, and transportation; device charged daily and never removed as a consequence."
   },
   {
     "cat": "accommodations",
@@ -591,7 +593,8 @@
       "total-comm"
     ],
     "text": "Communication partners will provide a wait time of at least [10] seconds after asking a question or offering a choice before prompting, and will respond to any communicative attempt in any modality. Staff will model vocabulary on [Student]'s system or a classroom device during instruction and routines (aided language input) at a rate of at least [X] models per activity.",
-    "template": "Communication partners will provide a wait time of at least 10 seconds after asking a question or offering a choice before prompting, and will respond to any communicative attempt in any modality. Staff will model vocabulary on {{S}}'s system or a classroom device during instruction and routines (aided language input) throughout each activity."
+    "template": "Communication partners will provide a wait time of at least 10 seconds after asking a question or offering a choice before prompting, and will respond to any communicative attempt in any modality. Staff will model vocabulary on {{S}}'s system or a classroom device during instruction and routines (aided language input) throughout each activity.",
+    "short": "Wait time of at least 10 seconds; staff respond to all communication modalities and model on the AAC system (aided language input)."
   },
   {
     "cat": "accommodations",
@@ -603,7 +606,8 @@
     ],
     "text": "[Student] will use [his/her/their] AAC system to respond during classroom assessments, district benchmarks, and statewide assessments to the extent permitted by the applicable accessibility guidelines. Responses generated on the device are accepted as [Student]'s own responses. Where an assessment platform does not permit the device, [Student] will be provided [describe alternative: e.g., a scribe recording [his/her/their] device output, or an alternate response format], and the team will document the accommodation in the state testing system.",
     "note": "Check the current CAASPP accessibility matrix for the specific codes; they change year to year.",
-    "template": "{{S}} will use {{his}} AAC system to respond during classroom assessments, district benchmarks, and statewide assessments to the extent permitted by the applicable accessibility guidelines. Responses generated on the device are accepted as {{S}}'s own responses. Where an assessment platform does not permit the device, {{S}} will be provided an alternate response format, and the team will document the accommodation in the state testing system."
+    "template": "{{S}} will use {{his}} AAC system to respond during classroom assessments, district benchmarks, and statewide assessments to the extent permitted by the applicable accessibility guidelines. Responses generated on the device are accepted as {{S}}'s own responses. Where an assessment platform does not permit the device, {{S}} will be provided an alternate response format, and the team will document the accommodation in the state testing system.",
+    "short": "Access to AAC device for all classroom, district, and state testing; device responses accepted as {{S}}'s own."
   },
   {
     "cat": "accommodations",
@@ -615,7 +619,8 @@
       "tier3"
     ],
     "text": "To support generalization, [Student]'s core vocabulary and page layout will remain consistent across the school device, any classroom AAC system, and [if applicable] the home device. Changes to vocabulary organization will be made by the SLP and communicated to classroom staff and family before implementation. Classroom core boards and visual supports will use the same symbol set as [Student]'s device.",
-    "template": "To support generalization, {{S}}'s core vocabulary and page layout will remain consistent across the school device, any classroom AAC system, and the home device. Changes to vocabulary organization will be made by the SLP and communicated to classroom staff and family before implementation. Classroom core boards and visual supports will use the same symbol set as {{S}}'s device."
+    "template": "To support generalization, {{S}}'s core vocabulary and page layout will remain consistent across the school device, any classroom AAC system, and the home device. Changes to vocabulary organization will be made by the SLP and communicated to classroom staff and family before implementation. Classroom core boards and visual supports will use the same symbol set as {{S}}'s device.",
+    "short": "Consistent core vocabulary and layout across school device, classroom boards, and home device."
   },
   {
     "cat": "accommodations",
@@ -627,7 +632,8 @@
     ],
     "text": "Staff will ensure that [Student] has access to [his/her/their] communication system before, during, and after any behavior intervention, and will offer communication opportunities (e.g., BREAK, HELP, ALL DONE) as a first response to signs of dysregulation. Any behavior plan for [Student] will identify the communicative function of the behavior and the replacement communication that staff will model and reinforce. Communication access will be maintained during any disciplinary process, and [Student] will be provided a means to give [his/her/their] account.",
     "note": "Align with the behavior plan. A student cannot be denied a voice during discipline.",
-    "template": "Staff will ensure that {{S}} has access to {{his}} communication system before, during, and after any behavior intervention, and will offer communication opportunities (e.g., BREAK, HELP, ALL DONE) as a first response to signs of dysregulation. {{S}}'s behavior plan will identify the communicative function of the behavior and the replacement communication that staff will model and reinforce. Communication access will be maintained during any disciplinary process, and {{S}} will be provided a means to give {{his}} account."
+    "template": "Staff will ensure that {{S}} has access to {{his}} communication system before, during, and after any behavior intervention, and will offer communication opportunities (e.g., BREAK, HELP, ALL DONE) as a first response to signs of dysregulation. {{S}}'s behavior plan will identify the communicative function of the behavior and the replacement communication that staff will model and reinforce. Communication access will be maintained during any disciplinary process, and {{S}} will be provided a means to give {{his}} account.",
+    "short": "Access to AAC device maintained during behavior interventions and discipline; communication offered as first response to dysregulation."
   },
   {
     "cat": "transition",
