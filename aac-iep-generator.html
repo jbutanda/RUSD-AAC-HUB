@@ -75,6 +75,7 @@
   </div>
 </header>
 
+<div id="toast" style="display:none;background:#FFF4E5;color:#7A4A00;border-bottom:1px solid #F0D9B5;padding:10px 24px;font-size:14px"></div>
 <div class="wrap">
 <section class="entry" id="entry">
   <fieldset><legend>Student</legend>
@@ -160,7 +161,8 @@ const FUNCTIONS=[
 const GOAL_FOR={request:'Goal — Requesting (Any Modality)',protest:'Goal — Protesting and Refusing (Any Modality)',comment:'Goal — Commenting and Sharing Information (Any Modality)',question:'Goal — Asking Questions (Any Modality)',social:'Goal — Social Communication and Greetings (Any Modality)',direct:'Goal — Directing Others (Any Modality)',repair:'Goal — Communication Repair and Persistence',academic:'Goal — Participation in Academic Instruction (Answering and Contributing)',operational:'Goal — Operational Competence and Device Management'};
 const BL_KEY={request:'bl_request',protest:'bl_protest',comment:'bl_comment',question:'bl_question',social:'bl_social',direct:'bl_direct',repair:'bl_repair',academic:'bl_academic',operational:'bl_operational'};
 let BANK=[];
-fetch('language-bank.json').then(r=>r.json()).then(d=>{BANK=d;}).catch(()=>{setStatus('Could not load language-bank.json. Upload it next to this page.');});
+if(location.protocol==='file:'){setStatus('Open this page from the Hub (jbutanda.github.io), not from a downloaded file; browsers block it from reading language-bank.json locally.');}
+fetch('language-bank.json?v='+Date.now(),{cache:'no-store'}).then(r=>r.json()).then(d=>{BANK=d;if(!BANK.some(e=>e.template)){setStatus('language-bank.json on the site is an older version without generator templates. Upload the newest language-bank.json.');}}).catch(()=>{setStatus('Could not load language-bank.json. Make sure it is uploaded next to this page.');});
 
 function checkGate(e){e.preventDefault();if(document.getElementById('pw').value===SLP_PASSWORD){document.getElementById('gate').remove();sessionStorage.setItem('aacgate','1');}else document.getElementById('gateErr').textContent='That password did not match.';return false;}
 if(sessionStorage.getItem('aacgate')==='1')document.getElementById('gate').remove();
@@ -179,7 +181,7 @@ function read(){
   d.fn={};FUNCTIONS.forEach(([k])=>{const r=document.querySelector(`input[name=fn_${k}]:checked`);d.fn[k]=r?r.value:'not';});
   return d;
 }
-function setStatus(t,ok){const s=document.getElementById('status');s.className='status'+(ok?' ok':'');s.textContent=t;}
+function setStatus(t,ok){const s=document.getElementById('status');s.className='status'+(ok?' ok':'');s.textContent=t;const tt=document.getElementById('toast');tt.textContent=t;tt.style.display=t?'block':'none';tt.style.background=ok?'#E8F5EC':'#FFF4E5';tt.style.color=ok?'#1F5C38':'#7A4A00';if(t)window.scrollTo({top:0});}
 function list(a){a=a.filter(Boolean);if(!a.length)return'';if(a.length===1)return a[0];return a.slice(0,-1).join(', ')+', and '+a[a.length-1];}
 function fmtDate(v){if(!v)return'';const m=v.match(/^(\d{4})-(\d{2})-(\d{2})$/);return m?`${+m[2]}/${+m[3]}/${m[1]}`:v;}
 function cap(s){return s.charAt(0).toUpperCase()+s.slice(1);}
@@ -218,9 +220,12 @@ function tokens(d){
   return t;
 }
 function fill(tpl,t){return tpl.replace(/\{\{(\w+)\}\}/g,(m,k)=>k in t?t[k]:m).split('\n').map(l=>l.replace(/\s{2,}/g,' ').replace(/\s+\./g,'.').trim()).join('\n').trim();}
-function entry(label){return BANK.find(e=>e.label===label);}
+function entry(label){const e=BANK.find(x=>x.label===label);if(!e||!(e.template||e.short)){throw new Error('Missing passage in language-bank.json: '+label);}return e;}
 
 function generate(){
+  try{ generate2(); }catch(err){ setStatus(err.message); }
+}
+function generate2(){
   const d=read();
   const missing=[];
   if(!d.student)missing.push('student name');if(!d.pathway)missing.push('pathway');if(!d.data_source)missing.push('data source');if(!d.strength)missing.push('one strength');if(!d.concern)missing.push('one concern');
