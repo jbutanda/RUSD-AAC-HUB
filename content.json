@@ -617,6 +617,14 @@
             },
             {
               "type": "tile",
+              "label": "AAC IEP Language Generator",
+              "sub": "Special Factors, present levels, goals, accommodations, other supports · From the Language Bank",
+              "icon": "🧩",
+              "color": "blue",
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/aac-iep-generator.html"
+            },
+            {
+              "type": "tile",
               "label": "FERPA / IDEA Reference",
               "sub": "Privacy, consent, records, procedural timelines",
               "icon": "⚖️",

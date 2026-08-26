@@ -114,6 +114,7 @@
     <button class="tab" onclick="filterCat('progress', this)">Progress Monitoring</button>
     <button class="tab" onclick="filterCat('services', this)">Service Delivery</button>
     <button class="tab" onclick="filterCat('accommodations', this)">Accommodations</button>
+    <button class="tab" onclick="filterCat('other-supports', this)">Other Supports</button>
     <button class="tab" onclick="filterCat('transition', this)">Transitions</button>
   </div>
 
@@ -133,7 +134,7 @@ function renderAll(items, query = "") {
   const noRes = document.getElementById('no-results');
 
   // Group by category
-  const catOrder = ['profile','plaafp','at-factors','goals','progress','services','accommodations','transition'];
+  const catOrder = ['profile','plaafp','at-factors','goals','progress','services','accommodations','other-supports','transition'];
   const catLabels = {
     profile: 'Communication Profile',
     plaafp: 'Present Levels (PLAAFP)',
@@ -142,6 +143,7 @@ function renderAll(items, query = "") {
     progress: 'Progress Monitoring',
     services: 'Service Delivery',
     accommodations: 'Accommodations',
+    'other-supports': 'Other Supports (FAPE page)',
     transition: 'Transitions'
   };
 
@@ -166,7 +168,7 @@ function renderAll(items, query = "") {
       const displayLabel = query ? highlight(item.label, query) : escHtml(item.label);
       const tagHtml = item.tags.map(t => {
         const cls = t === 'tier2' ? 'tag tier2' : t === 'tier3' ? 'tag tier3' : t === 'goal' ? 'tag goal' : t === 'total-comm' ? 'tag total-comm' : 'tag';
-        const label = t === 'tier2' ? 'TIER 2' : t === 'tier3' ? 'TIER 3' : t === 'goal' ? 'GOAL' : t === 'total-comm' ? 'TOTAL COMM' : t === 'plaafp' ? 'PLAAFP' : t === 'at-factors' ? 'AT FACTORS' : t === 'profile' ? 'PROFILE' : t === 'family' ? 'FAMILY' : t === 'tier1' ? 'TIER 1' : t === 'accommodations' ? 'ACCOMMODATION' : t.toUpperCase();
+        const label = t === 'tier2' ? 'TIER 2' : t === 'tier3' ? 'TIER 3' : t === 'goal' ? 'GOAL' : t === 'total-comm' ? 'TOTAL COMM' : t === 'plaafp' ? 'PLAAFP' : t === 'at-factors' ? 'AT FACTORS' : t === 'profile' ? 'PROFILE' : t === 'family' ? 'FAMILY' : t === 'tier1' ? 'TIER 1' : t === 'accommodations' ? 'ACCOMMODATION' : t === 'other-supports' ? 'OTHER SUPPORTS' : t.toUpperCase();
         return `<span class="${cls}">${label}</span>`;
       }).join('');
 

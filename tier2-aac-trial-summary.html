@@ -106,6 +106,7 @@
   <div class="actions">
     <button class="ghost" type="button" onclick="togglePreview()" id="pvBtn">Preview</button>
     <button class="ghost" type="button" onclick="clearForm()">Clear</button>
+    <button class="ghost" type="button" onclick="exportForGenerator()">Send to IEP Generator</button>
     <button type="button" onclick="generate()">Save as PDF</button>
   </div>
 </header>
@@ -296,6 +297,12 @@ function generate(){
   document.title='Tier 2 AAC Trial Summary | RUSD AAC Hub';
 }
 
+function exportForGenerator(){
+  const d=read(); if(!d.student){document.getElementById('status').textContent='Enter a student name first.';return;}
+  try{localStorage.setItem('rusd_aac_trial',JSON.stringify(d));}catch(e){}
+  const a=document.createElement('a');a.href='data:application/json,'+encodeURIComponent(JSON.stringify(d));a.download=`trial-${d.student.replace(/[^A-Za-z0-9]/g,'')}.json`;a.click();
+  const s=document.getElementById('status');s.className='status ok';s.textContent='Saved for the IEP Generator. Open the generator and press Import trial data (a backup .json also downloaded).';
+}
 function sendToForm(d){
   if(!FORM_ACTION||!Object.keys(FORM_ENTRY).length)return;
   const fd=new FormData();
