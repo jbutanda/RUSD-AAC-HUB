@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ATP AAC Take-Home Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: single readable column, district-blue header, section blocks with jump links; tool-sheet feel for families and staff */
+:root {
+  --blue: #064997;
+  --blue-deep: #04366F;
+  --gold: #F2B53A;
+  --coral: #C9502F;
+  --green: #2E7D4F;
+  --bg: #F7F9FC;
+  --surface: #FFFFFF;
+  --tint: #E8F0F9;
+  --fg: #1C2633;
+  --muted: #566274;
+  --line: #D6DEEA;
+  --on-blue: #FFFFFF;
+  --chip: #FFFFFF;
+  --font: "Lexend", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --blue: #7FB0EE; --blue-deep: #0B2A52; --gold: #F2C25A; --coral: #F08A6C; --green: #6FCB97;
+    --bg: #0E1621; --surface: #152131; --tint: #1A2B42; --fg: #E6ECF4; --muted: #A3B0C2; --line: #2A3A52;
+    --on-blue: #FFFFFF; --chip: #1F3049; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --blue: #7FB0EE; --blue-deep: #0B2A52; --gold: #F2C25A; --coral: #F08A6C; --green: #6FCB97;
+  --bg: #0E1621; --surface: #152131; --tint: #1A2B42; --fg: #E6ECF4; --muted: #A3B0C2; --line: #2A3A52;
+  --on-blue: #FFFFFF; --chip: #1F3049; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 1rem; line-height: 1.6; }
+a { color: var(--blue); text-underline-offset: 3px; }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 4px; }
+h1, h2, h3 { line-height: 1.2; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+
+.masthead { background: #064997; color: var(--on-blue); padding-inline: 16px; }
+.masthead-inner { max-width: 880px; margin: 0 auto; padding-block: 28px 32px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+.masthead img { width: 84px; height: 84px; border-radius: 50%; background: #fff; padding: 4px; flex: none; }
+.masthead-text { flex: 1 1 280px; min-width: 0; display: grid; gap: 6px; }
+.eyebrow { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: #F2C25A; font-weight: 600; }
+.masthead h1 { font-size: clamp(1.6rem, 4.5vw, 2.3rem); font-weight: 700; }
+.masthead p { color: #DCE7F6; max-width: 60ch; }
+
+.jump { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); padding-inline: 16px; }
+.jump ul { list-style: none; margin: 0 auto; padding: 10px 0; max-width: 880px; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: thin; }
+.jump a { display: inline-block; white-space: nowrap; padding: 6px 12px; border-radius: 999px; background: var(--tint); color: var(--blue); text-decoration: none; font-size: 0.88rem; font-weight: 500; }
+.jump a:hover { background: var(--line); }
+
+main { max-width: 880px; margin: 0 auto; padding-inline: 16px; padding-block: 8px 48px; display: grid; gap: 44px; }
+section { display: grid; gap: 16px; scroll-margin-top: 64px; padding-top: 28px; }
+section > h2 { font-size: 1.5rem; color: var(--blue); }
+.lede { color: var(--muted); max-width: 65ch; }
+
+.right { background: var(--tint); border-radius: 14px; padding: 20px 22px; display: grid; gap: 8px; }
+.right strong { font-size: 1.15rem; color: var(--blue); }
+
+.voice-wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+.voice-wrap img { border-radius: 12px; width: 100%; }
+.voice-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.voice-list li { display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; }
+.letter { width: 40px; height: 40px; border-radius: 50%; background: #064997; color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 1.1rem; }
+.voice-list b { display: block; color: var(--fg); }
+.voice-list span { color: var(--muted); font-size: 0.94rem; }
+.when { font-size: 0.95rem; border-left: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+
+.trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.tile { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: grid; gap: 6px; align-content: start; }
+.tile h3 { font-size: 1.02rem; color: var(--blue); }
+.tile p { font-size: 0.94rem; color: var(--muted); }
+
+.words { display: flex; flex-wrap: wrap; gap: 8px; }
+.word { background: var(--chip); border: 2px solid var(--line); border-radius: 8px; padding: 6px 12px; font-weight: 600; font-size: 0.95rem; }
+.w-people { border-color: #F39C3C; } .w-action { border-color: #E64FB0; } .w-little { border-color: #3DB54A; } .w-describe { border-color: #3C9BE8; }
+.key { display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.85rem; color: var(--muted); }
+.key span::before { content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; border: 2px solid currentColor; }
+.k-people { color: #D9822B; } .k-action { color: #C93E98; } .k-little { color: #2E9A3B; } .k-describe { color: #2F86CC; }
+.key span { color: var(--muted); }
+
+.settings { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.setting { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: grid; gap: 8px; }
+.setting h3 { font-size: 1.05rem; }
+.setting ul { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; font-size: 0.95rem; }
+.setting em { font-style: normal; font-weight: 600; color: var(--coral); }
+
+.shot { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.shot img { display: block; width: 100%; }
+.shot figcaption { padding: 10px 14px; font-size: 0.88rem; color: var(--muted); }
+figure { margin: 0; }
+.shots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+
+details { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+details + details { margin-top: -6px; }
+summary { cursor: pointer; padding: 14px 16px; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; color: var(--blue); font-weight: 700; }
+details[open] summary::after { content: "−"; }
+details ol, details > p { margin: 0; padding: 0 16px 16px 2.2em; display: grid; gap: 6px; font-size: 0.95rem; }
+details > p { padding-left: 16px; }
+.tip { font-size: 0.9rem; color: var(--muted); }
+
+.twocol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.list-card { border-radius: 12px; padding: 16px 18px; display: grid; gap: 8px; }
+.list-card h3 { font-size: 1.05rem; }
+.list-card ul { margin: 0; padding-left: 1.1em; display: grid; gap: 5px; font-size: 0.95rem; }
+.do { background: color-mix(in srgb, var(--green) 12%, var(--surface)); } .do h3 { color: var(--green); }
+.avoid { background: color-mix(in srgb, var(--coral) 12%, var(--surface)); } .avoid h3 { color: var(--coral); }
+
+.myths { display: grid; gap: 10px; }
+.myth { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--surface); }
+.myth > div { padding: 12px 16px; font-size: 0.95rem; }
+.myth .m { background: color-mix(in srgb, var(--coral) 10%, var(--surface)); font-style: italic; }
+.label { display: block; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; font-style: normal; margin-bottom: 2px; }
+.m .label { color: var(--coral); } .f .label { color: var(--blue); }
+
+.resources { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.resources li { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; display: grid; gap: 4px; }
+.resources a { font-weight: 600; }
+.resources span { font-size: 0.92rem; color: var(--muted); }
+
+footer { border-top: 1px solid var(--line); padding-inline: 16px; }
+footer div { max-width: 880px; margin: 0 auto; padding-block: 20px 28px; display: grid; gap: 4px; font-size: 0.92rem; color: var(--muted); }
+footer strong { color: var(--fg); }
+
+@media (max-width: 640px) {
+  .voice-wrap, .trio, .settings, .shots, .twocol, .resources, .myth { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+
+<style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <img src="atp-guide-logo.png" alt="Rialto Unified School District logo">
+    <div class="masthead-text">
+      <span class="eyebrow">Rialto USD Adult Transition Program</span>
+      <h1>AAC Take-Home Guide</h1>
+      <p>Everything from today's training in one place, plus more ideas and free resources. Keep this page handy at home, at work, and out in the community.</p>
+    </div>
+  </div>
+</header>
+
+<nav class="jump" aria-label="Sections">
+  <ul>
+    <li><a href="#voice">VOICE check</a></li>
+    <li><a href="#modeling">Modeling</a></li>
+    <li><a href="#words">Words to model</a></li>
+    <li><a href="#settings">Every setting</a></li>
+    <li><a href="#p2g">Proloquo2Go how-to</a></li>
+    <li><a href="#helps">What helps</a></li>
+    <li><a href="#myths">Myths and facts</a></li>
+    <li><a href="#resources">Free resources</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section id="start">
+    <div class="right">
+      <strong>Communication is a basic human right.</strong>
+      <p>AAC (Augmentative and Alternative Communication) is any way of communicating that adds to or takes the place of speech. It gives a person a way to request, refuse, comment, ask questions, share opinions, and speak up for themselves. Wants and needs are only the starting point.</p>
+    </div>
+  </section>
+
+  <section id="voice">
+    <h2>The VOICE check</h2>
+    <p class="lede">A device that is dead, in a backpack, or left in another room means the person has lost their voice for that moment. Run this quick check often.</p>
+    <div class="voice-wrap">
+      <img src="atp-guide-voice.png" alt="Every student deserves a VOICE: visible, on, in reach, charged, every setting">
+      <ul class="voice-list">
+        <li><span class="letter">V</span><div><b>Visible</b><span>Out where everyone can see it, not in a backpack or drawer.</span></div></li>
+        <li><span class="letter">O</span><div><b>On</b><span>Powered on, open to Proloquo2Go, and the volume turned up.</span></div></li>
+        <li><span class="letter">I</span><div><b>In reach</b><span>Within arm's reach all day, including meals and car rides.</span></div></li>
+        <li><span class="letter">C</span><div><b>Charged</b><span>Charge it every night. Bring a portable battery on outings.</span></div></li>
+        <li><span class="letter">E</span><div><b>Every setting</b><span>It goes to the job site, the community, the classroom, and home.</span></div></li>
+      </ul>
+    </div>
+    <p class="when"><b>When to check:</b> when you arrive, at every change in activity, and before leaving the house or heading to a job site or outing.</p>
+  </section>
+
+  <section id="modeling">
+    <h2>Modeling: use the device when you talk</h2>
+    <p class="lede">People learn language by seeing and hearing it used many, many times. AAC users need to see us use their system the same way. This is called modeling, or aided language input.</p>
+    <div class="trio">
+      <div class="tile"><h3>Talk and tap</h3><p>Say the whole sentence out loud and tap the key words on the device as you say them.</p></div>
+      <div class="tile"><h3>One step ahead</h3><p>Model one or two words more than the person uses now. If they use one word, model two.</p></div>
+      <div class="tile"><h3>No pressure</h3><p>Never require them to copy you. Modeling is showing, not testing.</p></div>
+    </div>
+    <div class="trio">
+      <div class="tile"><h3>Wait</h3><p>Pause 5 to 10 seconds after you ask or model. Count in your head. Silence is thinking time.</p></div>
+      <div class="tile"><h3>Notice</h3><p>Watch for every attempt: a tap, a look, a sign, a sound, a gesture.</p></div>
+      <div class="tile"><h3>Respond</h3><p>Treat every message as meaningful, even if it seems off topic. If they say "stop," honor it when it is safe.</p></div>
+    </div>
+  </section>
+
+  <section id="words">
+    <h2>Words to model</h2>
+    <p class="lede">These core words make up most of what people say every day and work in every setting. Pick one or two as a "word of the week" and use them everywhere.</p>
+    <div class="words" aria-label="Core words">
+      <span class="word w-people">I</span><span class="word w-people">you</span><span class="word w-people">it</span><span class="word w-people">that</span>
+      <span class="word w-action">want</span><span class="word w-action">like</span><span class="word w-action">need</span><span class="word w-action">help</span><span class="word w-action">go</span><span class="word w-action">stop</span><span class="word w-action">get</span><span class="word w-action">put</span><span class="word w-action">make</span><span class="word w-action">look</span><span class="word w-action">think</span><span class="word w-action">eat</span>
+      <span class="word w-little">to</span><span class="word w-little">in</span><span class="word w-little">on</span><span class="word w-little">up</span><span class="word w-little">off</span><span class="word w-little">here</span>
+      <span class="word w-describe">more</span><span class="word w-describe">all done</span><span class="word w-describe">not</span><span class="word w-describe">different</span><span class="word w-describe">good</span><span class="word w-describe">bad</span><span class="word w-describe">all</span><span class="word">what</span><span class="word">where</span><span class="word">who</span>
+    </div>
+    <div class="key"><span class="k-people">People</span><span class="k-action">Actions</span><span class="k-little">Little words</span><span class="k-describe">Describing</span></div>
+    <p class="tip">Border colors match the colors on the Proloquo2Go home screen.</p>
+  </section>
+
+  <section id="settings">
+    <h2>What modeling looks like in every setting</h2>
+    <p class="lede">Highlighted words are the ones to tap on the device while you talk. These fit into routines you already do.</p>
+    <div class="settings">
+      <div class="setting"><h3>Job site</h3><ul>
+        <li>"You are <em>all done</em>. Time to <em>go</em> to break."</li>
+        <li>"I <em>need help</em> with this box."</li>
+        <li>"<em>Put</em> the gloves <em>on</em>."</li>
+        <li>"<em>What</em> do we do <em>next</em>?"</li>
+      </ul></div>
+      <div class="setting"><h3>Community</h3><ul>
+        <li>"I <em>want</em> to <em>pay</em>."</li>
+        <li>"<em>Where</em> is the <em>bus</em>?"</li>
+        <li>"That one is <em>different</em>."</li>
+        <li>"I <em>like</em> this store."</li>
+      </ul></div>
+      <div class="setting"><h3>Classroom</h3><ul>
+        <li>"I <em>think</em> this one is <em>good</em>."</li>
+        <li>"<em>What</em> do <em>you</em> think?"</li>
+        <li>"<em>Look</em> at this."</li>
+        <li>"<em>Not</em> that one."</li>
+      </ul></div>
+      <div class="setting"><h3>Home</h3><ul>
+        <li>"Dinner is <em>ready</em>. Do you want <em>more</em>?"</li>
+        <li>"<em>Who</em> is coming <em>here</em>?"</li>
+        <li>"Let's <em>go</em> to the store."</li>
+        <li>"<em>Turn</em> it <em>off</em>. <em>All done</em> with TV."</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <section id="p2g">
+    <h2>Proloquo2Go how-to</h2>
+    <p class="lede">Quick steps for the things families and staff ask about most. Tap a heading to open it. Before changing anything, check with your team's editing point person.</p>
+    <div class="shots">
+      <figure class="shot"><img src="atp-guide-p2g-home.png" alt="Proloquo2Go home screen with core words and folders"><figcaption>The home screen. Core words stay in place. Folders are in the bottom row. The toolbar is at the very bottom.</figcaption></figure>
+      <figure class="shot"><img src="atp-guide-p2g-edit.png" alt="Proloquo2Go edit mode with a button selected and the Basics panel open"><figcaption>Edit mode. The selected button has a blue check. The Basics panel shows the label, message, and picture choices.</figcaption></figure>
+    </div>
+    <div>
+      <details><summary>Find a word</summary><ol>
+        <li>Start from Home. If you get lost, tap Home.</li>
+        <li>Use search to find a word. It shows the path to the button so you can learn where it lives.</li>
+        <li>Use the keyboard for names and words that are not on the device yet.</li>
+      </ol></details>
+      <details><summary>Change a button</summary><ol>
+        <li>Tap the pencil in the bottom toolbar to open edit mode. Enter the passcode if editing is locked.</li>
+        <li>Tap the button you want to change. It gets a blue check.</li>
+        <li>Change the label (what you see) or the message (what it says).</li>
+        <li>Pick a new symbol, or take a photo of the real item or place.</li>
+        <li>Tap Done at the top right to save and leave edit mode.</li>
+      </ol></details>
+      <details><summary>Add a new word</summary><ol>
+        <li>Open the folder where the word belongs, then open edit mode.</li>
+        <li>Tap the empty + space to add a button (or a folder).</li>
+        <li>Add a label, message, and picture. Real photos work well for job sites, coworkers, and places in town.</li>
+        <li>Tap Done. Let the rest of the team know so everyone can model it.</li>
+      </ol></details>
+      <details><summary>Hide a word instead of deleting it</summary>
+        <p>Hidden buttons keep their spot on the grid, so the layout the person has learned stays the same. In edit mode a hidden button looks faded. It can be shown again later. Deleting can shift buttons and break motor memory, so hide instead.</p>
+      </details>
+      <details><summary>Keep the person in the app (Guided Access)</summary><ol>
+        <li>On the iPad, open Settings, then Accessibility, then Guided Access, and turn it on. Set a passcode.</li>
+        <li>Open Proloquo2Go and triple-click the side (or Home) button to start Guided Access.</li>
+        <li>Triple-click again and enter the passcode to end it.</li>
+      </ol></details>
+      <details><summary>Back up the vocabulary</summary>
+        <p>Ask your team's editing point person how backups are handled for this device. A current backup protects every word that has been added if the iPad is lost, broken, or reset.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="helps">
+    <h2>What helps and what gets in the way</h2>
+    <div class="twocol">
+      <div class="list-card do"><h3>Do</h3><ul>
+        <li>Speak to the person as an adult</li>
+        <li>Keep the device within reach all day</li>
+        <li>Accept speech, signs, gestures, and AAC</li>
+        <li>Create real reasons to communicate</li>
+        <li>Tell the team about words that are missing</li>
+      </ul></div>
+      <div class="list-card avoid"><h3>Avoid</h3><ul>
+        <li>Taking the device away as a consequence</li>
+        <li>Quizzing ("Show me ___")</li>
+        <li>Speaking for them when they can respond</li>
+        <li>Moving or deleting buttons</li>
+        <li>Saving the device for "speech time" only</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <section id="myths">
+    <h2>Myths and facts</h2>
+    <div class="myths">
+      <div class="myth"><div class="m"><span class="label">Myth</span>If they use a device, they will stop trying to talk.</div><div class="f"><span class="label">Fact</span>AAC does not reduce speech. For many people it supports more spoken words.</div></div>
+      <div class="myth"><div class="m"><span class="label">Myth</span>They need to be ready before they get a device.</div><div class="f"><span class="label">Fact</span>There are no prerequisite skills. Access to AAC is how readiness is built.</div></div>
+      <div class="myth"><div class="m"><span class="label">Myth</span>They are too old to learn something new.</div><div class="f"><span class="label">Fact</span>Adults learn AAC. Language keeps growing with good models and real reasons to talk.</div></div>
+      <div class="myth"><div class="m"><span class="label">Myth</span>The device is for asking for things.</div><div class="f"><span class="label">Fact</span>AAC is for all communication: comments, questions, jokes, opinions, and saying no.</div></div>
+    </div>
+  </section>
+
+  <section id="resources">
+    <h2>Free resources</h2>
+    <ul class="resources">
+      <li><a href="https://www.assistiveware.com/support/proloquo2go" target="_blank" rel="noopener">Proloquo2Go support</a><span>AssistiveWare's how-to articles and videos for every part of the app.</span></li>
+      <li><a href="https://www.assistiveware.com/learn-aac" target="_blank" rel="noopener">Learn AAC (AssistiveWare)</a><span>Short, free articles for families and staff on modeling and getting started.</span></li>
+      <li><a href="https://praacticalaac.org" target="_blank" rel="noopener">PrAACtical AAC</a><span>Practical strategies and activity ideas for supporting AAC users.</span></li>
+      <li><a href="https://www.project-core.com" target="_blank" rel="noopener">Project Core</a><span>Free professional development modules on core vocabulary and modeling.</span></li>
+      <li><a href="https://www.asha.org/public/speech/disorders/aac/" target="_blank" rel="noopener">ASHA: What is AAC?</a><span>A plain-language overview from the American Speech-Language-Hearing Association.</span></li>
+      <li><a href="https://www.asha.org/njc/communication-bill-of-rights/" target="_blank" rel="noopener">Communication Bill of Rights</a><span>The basic communication rights every person has, from the National Joint Committee.</span></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div>
+    <strong>Questions?</strong>
+    <p>Reach out to your classroom teacher or the program's speech-language pathologist.</p>
+    <p>Jerry Butanda, M.S.-SLP, ATAC, AAC<br>Speech-Language Pathologist and District AAC Specialist<br>Rialto Unified School District<br>jbutanda@rialtousd.org</p>
+  </div>
+</footer>
+
+</body>
+</html>
