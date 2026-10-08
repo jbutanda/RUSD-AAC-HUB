@@ -7,34 +7,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&display=swap">
 <style>
-/* Layout: single readable column, district-blue header, section blocks with jump links; tool-sheet feel for families and staff */
+/* Dark-only design. Layout: single readable column, district-blue header, section blocks with jump links; tool-sheet feel for families and staff */
 :root {
-  --blue: #064997;
-  --blue-deep: #04366F;
-  --gold: #F2B53A;
-  --coral: #C9502F;
-  --green: #2E7D4F;
-  --bg: #F7F9FC;
-  --surface: #FFFFFF;
-  --tint: #E8F0F9;
-  --fg: #1C2633;
-  --muted: #566274;
-  --line: #D6DEEA;
+  --blue: #7FB0EE;
+  --blue-deep: #0B2A52;
+  --gold: #F2C25A;
+  --coral: #F08A6C;
+  --green: #6FCB97;
+  --bg: #0E1621;
+  --surface: #152131;
+  --tint: #1A2B42;
+  --fg: #E6ECF4;
+  --muted: #A3B0C2;
+  --line: #2A3A52;
   --on-blue: #FFFFFF;
-  --chip: #FFFFFF;
+  --chip: #1F3049;
   --font: "Lexend", "Segoe UI", system-ui, -apple-system, sans-serif;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --blue: #7FB0EE; --blue-deep: #0B2A52; --gold: #F2C25A; --coral: #F08A6C; --green: #6FCB97;
-    --bg: #0E1621; --surface: #152131; --tint: #1A2B42; --fg: #E6ECF4; --muted: #A3B0C2; --line: #2A3A52;
-    --on-blue: #FFFFFF; --chip: #1F3049; color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --blue: #7FB0EE; --blue-deep: #0B2A52; --gold: #F2C25A; --coral: #F08A6C; --green: #6FCB97;
-  --bg: #0E1621; --surface: #152131; --tint: #1A2B42; --fg: #E6ECF4; --muted: #A3B0C2; --line: #2A3A52;
-  --on-blue: #FFFFFF; --chip: #1F3049; color-scheme: dark;
+  color-scheme: dark;
 }
 * { box-sizing: border-box; }
 body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 1rem; line-height: 1.6; }
@@ -131,6 +120,23 @@ footer { border-top: 1px solid var(--line); padding-inline: 16px; }
 footer div { max-width: 880px; margin: 0 auto; padding-block: 20px 28px; display: grid; gap: 4px; font-size: 0.92rem; color: var(--muted); }
 footer strong { color: var(--fg); }
 
+
+.cards3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.vcard { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: center; text-decoration: none; color: var(--fg); }
+.vcard:hover { border-color: var(--blue); }
+.vcard:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.play { width: 44px; height: 44px; border-radius: 50%; background: #064997; display: grid; place-items: center; }
+.play::before { content: ""; border-left: 14px solid #fff; border-top: 9px solid transparent; border-bottom: 9px solid transparent; margin-left: 4px; }
+.vcard b { display: block; color: var(--blue); font-size: 1rem; }
+.vcard span { font-size: 0.88rem; color: var(--muted); }
+.vc-orange .play { background: #E07B1A; } .vc-teal .play { background: #1E9BB8; } .vc-black .play { background: #333; }
+.board { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: grid; gap: 6px; align-content: start; }
+.board h3 { font-size: 1.02rem; color: var(--blue); }
+.board p { font-size: 0.92rem; color: var(--muted); }
+.board a.btn { justify-self: start; margin-top: 4px; background: #064997; color: #fff; text-decoration: none; padding: 7px 14px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; }
+.note { font-size: 0.9rem; color: var(--muted); background: var(--tint); border-radius: 10px; padding: 10px 14px; }
+.cards2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 640px) { .cards3 { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 640px) {
   .voice-wrap, .trio, .settings, .shots, .twocol, .resources, .myth { grid-template-columns: minmax(0, 1fr); }
 }
@@ -158,6 +164,8 @@ footer strong { color: var(--fg); }
     <li><a href="#words">Words to model</a></li>
     <li><a href="#settings">Every setting</a></li>
     <li><a href="#p2g">Proloquo2Go how-to</a></li>
+    <li><a href="#videos">How-to videos</a></li>
+    <li><a href="#boards">Core boards</a></li>
     <li><a href="#helps">What helps</a></li>
     <li><a href="#myths">Myths and facts</a></li>
     <li><a href="#resources">Free resources</a></li>
@@ -285,6 +293,30 @@ footer strong { color: var(--fg); }
         <p>Ask your team's editing point person how backups are handled for this device. A current backup protects every word that has been added if the iPad is lost, broken, or reset.</p>
       </details>
     </div>
+  </section>
+
+  <section id="videos">
+    <h2>Proloquo2Go how-to videos</h2>
+    <p class="lede">Short videos that walk through the editing basics. Tap any one to watch.</p>
+    <div class="cards3">
+      <a class="vcard vc-orange" href="https://youtu.be/AkvCzObgMj4" target="_blank" rel="noopener"><span class="play" aria-hidden="true"></span><div><b>Overview</b><span>The home screen and how the app is set up</span></div></a>
+      <a class="vcard vc-orange" href="https://youtu.be/S7F6GVvjraQ" target="_blank" rel="noopener"><span class="play" aria-hidden="true"></span><div><b>Edit a Button</b><span>Change a label, message, or picture</span></div></a>
+      <a class="vcard vc-black" href="https://youtu.be/7CwDajjXUV8" target="_blank" rel="noopener"><span class="play" aria-hidden="true"></span><div><b>Add Button/Folder</b><span>Add new words and folders</span></div></a>
+      <a class="vcard vc-teal" href="https://youtu.be/4wBKf2d2KAA" target="_blank" rel="noopener"><span class="play" aria-hidden="true"></span><div><b>Word Finder</b><span>Find where any word lives</span></div></a>
+      <a class="vcard vc-teal" href="https://youtu.be/7Z87bZbOKsA" target="_blank" rel="noopener"><span class="play" aria-hidden="true"></span><div><b>Progressive Vocab</b><span>Show more words as the person grows</span></div></a>
+      <a class="vcard vc-black" href="https://youtu.be/lPiTd1awpEc" target="_blank" rel="noopener"><span class="play" aria-hidden="true"></span><div><b>Hide Buttons</b><span>Hide words without moving anything</span></div></a>
+    </div>
+    <p class="note">Want a copy for the fridge or the classroom? Print the <a href="https://jbutanda.github.io/rusd_aac_staff/Basics_for_Proloquo2Go.pdf" target="_blank" rel="noopener">Basics for Proloquo2Go QR sheet</a>. Each QR code on it opens one of these videos.</p>
+  </section>
+
+  <section id="boards">
+    <h2>Printable core boards</h2>
+    <p class="lede">A paper board is the backup for when the iPad is charging, at the pool, or out of reach. Keep one at home and one in the classroom. These match the words and colors on the device.</p>
+    <div class="cards3 cards2">
+      <div class="board"><h3>Proloquo2Go core word board</h3><p>The core words from Proloquo2Go on one page, with an alphabet. Free from AssistiveWare.</p><a class="btn" href="https://download.assistiveware.com/aac/Proloquo2Go_CWB_EN_USA_UK_v1.pdf" target="_blank" rel="noopener">Open PDF</a></div>
+      <div class="board"><h3>Crescendo quick communication boards</h3><p>Core words plus topic boards like Food, Places, Feelings, and Help, with spaces to add your own words.</p><a class="btn" href="https://download.assistiveware.com/aac/quick-communication-boards.pdf" target="_blank" rel="noopener">Open PDF</a></div>
+    </div>
+    <p class="tip">More boards, including Spanish versions, are on <a href="https://www.assistiveware.com/learn-aac/quick-communication-boards" target="_blank" rel="noopener">AssistiveWare's core word board page</a>.</p>
   </section>
 
   <section id="helps">
