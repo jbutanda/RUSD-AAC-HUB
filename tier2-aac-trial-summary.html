@@ -164,10 +164,11 @@
     </div>
     <div class="row">
       <div><label>Functions currently used</label><div class="checks col" data-k="cur_functions" id="curFns"></div></div>
-      <div><label>Partners understood by</label><div class="checks col" data-k="partners">
+      <div><label>Student is understood by</label><div class="checks col" data-k="partners">
         <label><input type="checkbox" value="familiar adults">Familiar adults</label>
         <label><input type="checkbox" value="peers">Peers</label>
         <label><input type="checkbox" value="unfamiliar listeners">Unfamiliar listeners</label>
+        <label><input type="checkbox" value="__none">Not yet consistently understood by any partner</label>
       </div></div>
     </div>
     <label>Speech intelligibility</label>
@@ -376,7 +377,7 @@ function render(){
   setOut('current_comm_f',join([
     d.modes?`Communicates using ${d.modes}`:'',
     d.cur_functions?`primarily to ${d.cur_functions.toLowerCase()}`:'',
-    d.partners?`understood by ${d.partners}`:'',
+    d.partners==='__none'?'not yet consistently understood by communication partners':d.partners?`understood by ${d.partners}`:'',
     d.intellig?`Speech: ${d.intellig.toLowerCase()}`:''
   ],'; ')+(d.modes||d.cur_functions||d.partners||d.intellig?'.':''));
   document.querySelector('[data-wrap="current_comm"]').style.display=d.current_comm?'':'none';
@@ -428,6 +429,12 @@ function fitToPage(){
   }
   return z;
 }
+// "Not yet understood" is exclusive with the partner boxes
+document.querySelector('[data-k="partners"]').addEventListener('change',e=>{
+  const box=e.target, all=[...e.currentTarget.querySelectorAll('input')];
+  if(!box.checked)return;
+  all.forEach(i=>{ if(i!==box && (box.value==='__none' || i.value==='__none')) i.checked=false; });
+});
 document.getElementById('entry').addEventListener('input',render);
 document.getElementById('entry').addEventListener('change',render);
 render();
