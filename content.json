@@ -346,7 +346,7 @@
               "sub": "Serial, tag, app settings, backup, charging, contacts · Fill in, save as PDF",
               "icon": "📱",
               "color": "indigo",
-              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/aac-device-info.html"
+              "url": "https://jbutanda.github.io/aac-support/staff/device-info.html"
             }
           ]
         },
@@ -360,7 +360,7 @@
               "sub": "Review of existing data and a classroom device trial · Fill in, preview, save as PDF",
               "icon": "📝",
               "color": "indigo",
-              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/aac-trial-summary.html"
+              "url": "https://jbutanda.github.io/aac-support/staff/trial-summary.html"
             },
             {
               "type": "tile",
@@ -465,7 +465,7 @@
               "sub": "Goals, present levels, service descriptions · Searchable",
               "icon": "📚",
               "color": "blue",
-              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/RUSD_AAC_IEP_Language_Bank.html"
+              "url": "https://jbutanda.github.io/aac-support/staff/language-bank.html"
             },
             {
               "type": "tile",
@@ -473,7 +473,7 @@
               "sub": "Special Factors, present levels, goals, accommodations, other supports · From the Language Bank",
               "icon": "🧩",
               "color": "blue",
-              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/aac-iep-generator.html"
+              "url": "https://jbutanda.github.io/aac-support/staff/iep-generator.html"
             },
             {
               "type": "tile",
