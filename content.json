@@ -364,16 +364,16 @@
             },
             {
               "type": "tile",
-              "label": "When a Trial Needs More Input",
-              "sub": "Bringing OT, PT, TVI and others into a trial",
+              "label": "After the Trial: When to Refer",
+              "sub": "Areas a trial can't speak to, like motor or vision · formal AT/AAC evaluation referral",
               "icon": "🔍",
               "color": "blue",
-              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/When_a_Trial_Needs_More_Input.pdf"
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/After_the_Trial_When_to_Refer.pdf"
             },
             {
               "type": "tile",
               "label": "Trial and Feature Matching Worksheet",
-              "sub": "Fill-in Word worksheet to compare systems during a trial",
+              "sub": "Compare systems during a trial · trial record for a formal evaluation",
               "icon": "🧪",
               "color": "indigo",
               "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/AAC_Trial_and_Feature_Matching_Worksheet.docx"
