@@ -57,7 +57,7 @@
               "sub": "Reach the AAC team · Bilingual · EN + ES",
               "icon": "📬",
               "color": "green",
-              "url": "https://forms.gle/iWxvHnWrPn5M2YAt7",
+              "url": "https://docs.google.com/forms/d/e/1FAIpQLScHTMt_Zo2oq1x-jS3AmG8CcvsWxTjbI1qhtCEMPO1UnWY0ag/viewform",
               "tag": "Google Form"
             },
             {
@@ -70,11 +70,11 @@
             },
             {
               "type": "tile",
-              "label": "Family Orientation Letter",
-              "sub": "Program launch letter · EN + ES",
-              "icon": "📄",
-              "color": "orange",
-              "url": "https://drive.google.com/file/d/1N6sfSmsnkfyFThv-3hcbDIzDJy6hgEAE/view?usp=sharing"
+              "label": "Family Letters",
+              "sub": "Welcome and trying a communication system · English and Spanish",
+              "icon": "✉️",
+              "color": "teal",
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/Family_Letters_Bilingual.pdf"
             }
           ]
         },
@@ -85,36 +85,34 @@
             {
               "type": "tile",
               "label": "AAC Family Handbook",
-              "sub": "Complete family guide to AAC · English",
+              "sub": "AAC at home, what to expect, how to help",
               "icon": "📘",
-              "color": "blue",
-              "url": "https://docs.google.com/document/d/1BV532z7c0ry1geaU8FtMLOyg_K0bzAXz/edit?usp=sharing"
+              "color": "teal",
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/AAC_Family_Handbook_EN.pdf"
             },
             {
               "type": "tile",
-              "label": "AAC Family Handbook — Español",
-              "sub": "Guía completa de CAA para familias · Español",
-              "icon": "📙",
-              "color": "purple",
-              "url": "https://docs.google.com/document/d/1Py8Vv1ifViE6t7eJdOiIBAUYPr4_RBbt/edit?usp=sharing"
+              "label": "Manual de CAA para familias",
+              "sub": "La CAA en casa · Español",
+              "icon": "📗",
+              "color": "teal",
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/AAC_Family_Handbook_ES.pdf"
             },
             {
               "type": "tile",
-              "label": "AAC Funding Pathways",
-              "sub": "How to access AAC funding · District, insurance, Regional Center, grants",
-              "icon": "💰",
-              "color": "green",
-              "url": "https://docs.google.com/document/d/1MBKBmQdD0G2hbYcF4SsPB2yCchDa2iSd/edit?usp=sharing",
-              "new": true
+              "label": "AAC Funding Guide",
+              "sub": "Paying for a personal device: insurance, Medi-Cal, state programs",
+              "icon": "💳",
+              "color": "gold",
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/AAC_Funding_Guide_EN.pdf"
             },
             {
               "type": "tile",
-              "label": "Vías de Financiamiento para CAA",
-              "sub": "Cómo acceder al financiamiento de CAA · Distrito, seguro, Centro Regional",
-              "icon": "💰",
-              "color": "purple",
-              "url": "https://docs.google.com/document/d/1vHbrJkyPrBoT8ySRFZ5vpqNQAWuZxq4d/edit?usp=sharing",
-              "new": true
+              "label": "Guía de financiamiento para CAA",
+              "sub": "Cómo pagar un dispositivo personal · Español",
+              "icon": "💳",
+              "color": "gold",
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/AAC_Funding_Guide_ES.pdf"
             }
           ]
         }
@@ -136,19 +134,11 @@
           "items": [
             {
               "type": "tile",
-              "label": "Sub Protocol Card",
-              "sub": "What to do on substitute days · Laminated card",
-              "icon": "📋",
+              "label": "Classroom iPad Card",
+              "sub": "For subs, plus quick fixes when something goes wrong",
+              "icon": "📱",
               "color": "blue",
-              "url": "https://drive.google.com/file/d/10imPGM1ikyGcyBXGbG7NxuHHlSCT_I1F/view?usp=sharing"
-            },
-            {
-              "type": "tile",
-              "label": "Troubleshooting Card",
-              "sub": "What to do when things go wrong · 6 scenarios",
-              "icon": "🔧",
-              "color": "teal",
-              "url": "https://drive.google.com/file/d/1owednPkb5zA81r8lmb4kVAH3Jf8q1V_F/view?usp=sharing"
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/Classroom_iPad_Card.pdf"
             },
             {
               "type": "tile",
@@ -176,21 +166,11 @@
           "items": [
             {
               "type": "tile",
-              "label": "Para Onboarding Card",
-              "sub": "First-week survival card for new paraeducators · What to do, what never to do",
-              "icon": "🆕",
-              "color": "green",
-              "url": "https://docs.google.com/document/d/18YTIxrXsGqzZp0RJKhDp3VCyq-4ICsKx/edit?usp=sharing",
-              "new": true
-            },
-            {
-              "type": "tile",
-              "label": "Gen Ed Quick Card",
-              "sub": "One-page brief for gen ed teachers receiving an AAC user · Read the day before",
-              "icon": "🆕",
+              "label": "Quick Start Cards",
+              "sub": "One page each for paraeducators and general education teachers",
+              "icon": "🚀",
               "color": "teal",
-              "url": "https://docs.google.com/document/d/1HOdfFmCFQS-sHsd0flliQ2axzAICGB8P/edit?usp=sharing",
-              "new": true
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/Quick_Start_Cards.pdf"
             }
           ]
         },
@@ -208,58 +188,33 @@
             },
             {
               "type": "tile",
-              "label": "P2G Quick Reference Card",
-              "sub": "Setup, folder structure, vocab guide · Landscape",
-              "icon": "📱",
-              "color": "teal",
-              "url": "https://drive.google.com/file/d/1KSI-dvZ8-hXP9s4wCDEWYGzz0V6Q3_It/view?usp=sharing"
+              "label": "AAC Team Handbook",
+              "sub": "Modeling, vocabulary, routines, and a chapter for each role",
+              "icon": "📖",
+              "color": "indigo",
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/AAC_Team_Handbook.pdf"
             },
             {
               "type": "tile",
-              "label": "AAC Educator Handbook",
-              "sub": "Comprehensive classroom implementation reference",
-              "icon": "📗",
-              "color": "indigo",
-              "url": "https://docs.google.com/document/d/1u4GW77rQ1DGoQ4d7Uw2RSgySWLljsL7k/edit?usp=sharing"
+              "label": "Proloquo2Go Setup Guide",
+              "sub": "Users, grid size, adding words, backups",
+              "icon": "⚙️",
+              "color": "blue",
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/Proloquo2Go_Setup_Guide.pdf"
             }
           ]
         },
         {
-          "title": "Monthly Tip Sheets",
+          "title": "Classroom Strategy Cards",
           "layout": "tile",
           "items": [
             {
               "type": "tile",
-              "label": "October Tip Sheet",
-              "sub": "Wait Time: the 10-second count",
-              "icon": "📅",
+              "label": "Classroom Strategy Cards",
+              "sub": "Wait time, temptations, modeling beyond requesting, core words",
+              "icon": "💡",
               "color": "gold",
-              "url": "https://docs.google.com/document/d/16c76XtHuf1LjSNQ--4VZ9pMcLla8qqV_/edit?usp=sharing"
-            },
-            {
-              "type": "tile",
-              "label": "November Tip Sheet",
-              "sub": "Communication Temptation",
-              "icon": "📅",
-              "color": "gold",
-              "url": "https://docs.google.com/document/d/18nMSDpJ6qcgtoWQEbta3dosJP0BGvkJl/edit?usp=sharing"
-            },
-            {
-              "type": "tile",
-              "label": "December Tip Sheet",
-              "sub": "Modeling Beyond Requesting",
-              "icon": "📅",
-              "color": "gold",
-              "url": "https://docs.google.com/document/d/12Hz3ry4VnikLbXgFyonHNpLznsZ-wuuX/edit?usp=sharing"
-            },
-            {
-              "type": "tile",
-              "label": "January Tip Sheet",
-              "sub": "Core Vocabulary: Why We Start Here",
-              "icon": "📅",
-              "color": "blue",
-              "url": "https://docs.google.com/document/d/1Mb4oVLlZulmJsNh1fH9N5fMEeM5L4Cem/edit?usp=sharing",
-              "new": true
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/Classroom_Strategy_Cards.pdf"
             }
           ]
         },
@@ -269,29 +224,35 @@
           "items": [
             {
               "type": "tile",
-              "label": "Tier 1 Weekly Data Sheet",
-              "sub": "Weekly classroom AAC tracking form",
+              "label": "Weekly Classroom AAC Snapshot",
+              "sub": "Fill-in Word sheet for the class AAC binder",
               "icon": "📊",
-              "color": "blue",
-              "url": "https://drive.google.com/file/d/1Gm4bMeWstPtQcdWT3DZYu09shvyjZfSwDqUiZFuxq-E/view?usp=sharing"
+              "color": "green",
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/Weekly_Classroom_AAC_Snapshot.docx"
             },
             {
               "type": "tile",
-              "label": "Classroom Self-Audit",
-              "sub": "Weekly self-check · Bring to coaching visits",
+              "label": "AACademy Sign-Up",
+              "sub": "Start AAC training at your own pace",
+              "icon": "🎓",
+              "color": "indigo",
+              "url": "https://docs.google.com/forms/d/e/1FAIpQLSdV8TxNrIFUcIBIQgvfbFfFzZ09WVMHHUuN4C9zvKd6DljwBw/viewform"
+            },
+            {
+              "type": "tile",
+              "label": "AACademy Check-In",
+              "sub": "Send a task, a log, or ask for a TeAACh visit",
               "icon": "✅",
-              "color": "purple",
-              "url": "https://forms.gle/e7Q6pY9M1TMbe5wq8",
-              "tag": "Google Form"
+              "color": "indigo",
+              "url": "https://docs.google.com/forms/d/e/1FAIpQLSfgV1gc7jxy3Q9dfNgkHOOE7wCR0tsZ0K7zoqmxn2dd3iWfvQ/viewform"
             },
             {
               "type": "tile",
-              "label": "Individualized Family Letter",
-              "sub": "Template for site SLP or case carrier · EN + ES",
-              "icon": "💌",
+              "label": "Family Letters (Word)",
+              "sub": "Fill in and send home · English and Spanish",
+              "icon": "✉️",
               "color": "teal",
-              "url": "https://forms.gle/9YbjnuNrKy1epLCo9",
-              "tag": "Google Form"
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/Family_Letters_Bilingual.docx"
             },
             {
               "type": "tile",
@@ -300,15 +261,6 @@
               "icon": "🏫",
               "color": "green",
               "url": "https://drive.google.com/file/d/1KgF9uVnMgLTMZ6Knaw-g83mpN-p924WW/view?usp=sharing"
-            },
-            {
-              "type": "tile",
-              "label": "Pre-Training Needs Assessment",
-              "sub": "Complete before Session 1 · Teachers and paras",
-              "icon": "📝",
-              "color": "indigo",
-              "url": "https://forms.gle/XHjuRZ3kmJLM4o1X6",
-              "tag": "Google Form"
             }
           ]
         },
@@ -317,52 +269,15 @@
           "layout": "guide",
           "role_groups": [
             {
-              "label": "Classroom Staff",
+              "label": "Classroom and School Staff",
               "items": [
                 {
                   "type": "guide",
-                  "label": "Paraeducator Guide",
-                  "sub": "Your role, modeling basics, daily checklist",
-                  "icon": "👥",
+                  "label": "AAC Team Handbook",
+                  "sub": "Shared basics plus chapters for paras, ESN, gen ed, APE and education specialists",
+                  "icon": "📖",
                   "color": "blue",
-                  "url": "https://docs.google.com/document/d/1_VDjuVIAXFK2U-B7vl7UKxgkQLKle53T/edit?usp=sharing"
-                },
-                {
-                  "type": "guide",
-                  "label": "ESN Teacher Guide",
-                  "sub": "Veteran and new teacher framing, data, modeling",
-                  "icon": "🏫",
-                  "color": "blue",
-                  "url": "https://docs.google.com/document/d/1VtpnYoQIzv0HBftHnxfYHezRnjSBhnTm/edit?usp=sharing"
-                }
-              ]
-            },
-            {
-              "label": "School Staff",
-              "items": [
-                {
-                  "type": "guide",
-                  "label": "General Education Teacher Guide",
-                  "sub": "When an AAC user is in your classroom",
-                  "icon": "🏳️",
-                  "color": "teal",
-                  "url": "https://docs.google.com/document/d/1YM8NKoc7QMCESsHik-n-Gx1v39WG-hKV/edit?usp=sharing"
-                },
-                {
-                  "type": "guide",
-                  "label": "Adapted PE Teacher Guide",
-                  "sub": "AAC in physical activity settings",
-                  "icon": "🏈",
-                  "color": "teal",
-                  "url": "https://docs.google.com/document/d/1n_xMFgeXdaAntSoqmIo7I5hQR9YOFy9d/edit?usp=sharing"
-                },
-                {
-                  "type": "guide",
-                  "label": "Education Specialist / RSP Guide",
-                  "sub": "Case carrier and inclusion roles",
-                  "icon": "📄",
-                  "color": "teal",
-                  "url": "https://docs.google.com/document/d/1hx7l8K0JzhGLB8TBWtDCFsalKPO9fMg-/edit?usp=sharing"
+                  "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/AAC_Team_Handbook.pdf"
                 },
                 {
                   "type": "guide",
@@ -389,69 +304,32 @@
       "lock_desc": "For site SLPs, SLPAs, school psychologists, OT, PT, OI Specialists, and BCBAs.",
       "subsections": [
         {
-          "title": "Referral & Authorization Forms",
+          "title": "Requests and Forms",
           "layout": "tile",
           "items": [
             {
               "type": "tile",
-              "label": "Tier 2 Referral Form",
-              "sub": "Initiate Tier 2 individualized plan",
-              "icon": "📝",
+              "label": "AAC Support Request",
+              "sub": "Staff request for AAC support for a student",
+              "icon": "📨",
               "color": "blue",
-              "url": "https://forms.gle/AkaNm5wA4AwQPgpf8",
-              "tag": "Google Form"
+              "url": "https://docs.google.com/forms/d/e/1FAIpQLSd1zdvoNbCvJStnsJPReMwvKTiM2iC9SfvBhUfWHswMyfQLVg/viewform"
             },
             {
               "type": "tile",
-              "label": "Tier 3 Referral Form",
-              "sub": "Initiate formal AAC evaluation",
-              "icon": "🔺",
-              "color": "red",
-              "url": "https://forms.gle/g3nvekf76YMod2H9A",
-              "tag": "Google Form"
+              "label": "AAC Handoff Summary",
+              "sub": "Fill-in Word form when a student changes schools, classes or SLPs",
+              "icon": "🔁",
+              "color": "indigo",
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/AAC_Handoff_Summary.docx"
             },
             {
               "type": "tile",
-              "label": "Tier 2 Clinical Authorization",
-              "sub": "Expedited device provision · Co-signed by Lead SLP",
-              "icon": "✍️",
-              "color": "amber",
-              "url": "https://drive.google.com/file/d/1yOMx9CcGqDhzihYpHREf32SLTWQElZBQ/view?usp=sharing"
-            },
-            {
-              "type": "tile",
-              "label": "Student Transfer Summary",
-              "sub": "AAC handoff at school transitions",
-              "icon": "🚌",
-              "color": "teal",
-              "url": "https://drive.google.com/file/d/1XYtFc5zrF3jKVCLyNJdzG6pZjBxzeGGf/view?usp=sharing"
-            },
-            {
-              "type": "tile",
-              "label": "Student Communication Profile",
-              "sub": "Submit or update a student AAC profile",
-              "icon": "👥",
-              "color": "purple",
-              "url": "https://forms.gle/h8vDsjUFEAotqory7",
-              "tag": "Google Form"
-            },
-            {
-              "type": "tile",
-              "label": "Private Procurement Coordination",
-              "sub": "Dual-purpose reports, FERPA, outside providers, privately owned devices",
-              "icon": "📋",
-              "color": "slate",
-              "url": "https://docs.google.com/document/d/1IMHGRmnUcRdTxDFrXbZMT0iuhbUyNV3z/edit?usp=sharing",
-              "new": true
-            },
-            {
-              "type": "tile",
-              "label": "Device Loan Agreement",
-              "sub": "Family signature form for devices going home · Tier 3 and Clinical Authorization",
-              "icon": "📝",
-              "color": "slate",
-              "url": "https://docs.google.com/document/d/1dcPGrqimgtxdPSLmcbNHgr9WLkmvbUd3/edit?usp=sharing",
-              "new": true
+              "label": "Private AAC Procurement: SLP Guide",
+              "sub": "Supporting families pursuing a personal device",
+              "icon": "💳",
+              "color": "gold",
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/Private_AAC_Procurement_SLP_Guide.pdf"
             },
             {
               "type": "tile",
@@ -478,22 +356,6 @@
           "items": [
             {
               "type": "tile",
-              "label": "Tier 3 Auto-Referral Criteria",
-              "sub": "5 triggers · Parallel access framing",
-              "icon": "🔍",
-              "color": "blue",
-              "url": "https://drive.google.com/file/d/1mDBBwD_TQll9xvYl2yJaQItkpLnHZHgP/view?usp=sharing"
-            },
-            {
-              "type": "tile",
-              "label": "Dynamic Assessment Template",
-              "sub": "Structured Tier 3 device trial documentation",
-              "icon": "🧪",
-              "color": "indigo",
-              "url": "https://drive.google.com/file/d/1efuc3KwQZE7re5GMY3WWAqMRIDs_Xk22/view?usp=sharing"
-            },
-            {
-              "type": "tile",
               "label": "AAC Trial Summary",
               "sub": "Review of existing data and a classroom device trial · Fill in, preview, save as PDF",
               "icon": "📝",
@@ -502,11 +364,19 @@
             },
             {
               "type": "tile",
-              "label": "Dismissal Criteria",
-              "sub": "Clinical + legal standards · IEP team framework",
-              "icon": "🚪",
-              "color": "red",
-              "url": "https://drive.google.com/file/d/1g20AVBzOuK29nt1LbD-9826vcUMQn6B3/view?usp=sharing"
+              "label": "When to Start a Formal AT/AAC Evaluation",
+              "sub": "Motor, sensory or multidisciplinary needs · timelines",
+              "icon": "🔍",
+              "color": "blue",
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/When_to_Start_a_Formal_AT_AAC_Evaluation.pdf"
+            },
+            {
+              "type": "tile",
+              "label": "Trial and Feature Matching Record",
+              "sub": "Fill-in Word record for formal AT/AAC evaluations",
+              "icon": "🧪",
+              "color": "indigo",
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/AT_AAC_Trial_and_Feature_Matching_Record.docx"
             }
           ]
         },
@@ -516,11 +386,11 @@
           "items": [
             {
               "type": "tile",
-              "label": "Session Progress Monitoring",
-              "sub": "Tier 2 direct session data sheet",
+              "label": "SLP AAC Session Data Sheet",
+              "sub": "Fill-in Word sheet · independent, after a model, no response",
               "icon": "📈",
               "color": "green",
-              "url": "https://drive.google.com/file/d/1xUBC_Idq_S6DxNo-8yIuN7QE6I8Kycug/view?usp=sharing"
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/SLP_Session_Data_Sheet.docx"
             },
             {
               "type": "tile",
@@ -529,15 +399,6 @@
               "icon": "👁️",
               "color": "teal",
               "url": "https://forms.gle/VimQ4c5aJ2ChPEsT6",
-              "tag": "Google Form"
-            },
-            {
-              "type": "tile",
-              "label": "Teacher Self-Assessment",
-              "sub": "10-item confidence scale · SLP reviews before coaching",
-              "icon": "📝",
-              "color": "teal",
-              "url": "https://forms.gle/hTR6zL3nMFLtZBet7",
               "tag": "Google Form"
             }
           ]
@@ -564,12 +425,11 @@
             },
             {
               "type": "tile",
-              "label": "Request a Coaching Visit",
-              "sub": "Schedule a classroom visit with the District AAC Specialist",
-              "icon": "🙋",
-              "color": "green",
-              "url": "https://forms.gle/nWWFR7SExfdzwaqZA",
-              "tag": "Google Form"
+              "label": "AACademy Check-In",
+              "sub": "Ask for a TeAACh visit or send AACademy work",
+              "icon": "✅",
+              "color": "indigo",
+              "url": "https://docs.google.com/forms/d/e/1FAIpQLSfgV1gc7jxy3Q9dfNgkHOOE7wCR0tsZ0K7zoqmxn2dd3iWfvQ/viewform"
             }
           ]
         },
@@ -579,35 +439,19 @@
           "items": [
             {
               "type": "tile",
-              "label": "Research Foundation",
-              "sub": "Evidence base, operational frameworks, legal grounding, equity commitment",
-              "icon": "📐",
+              "label": "AAC Program Evidence Base",
+              "sub": "Research, frameworks and law behind what we do",
+              "icon": "🔬",
               "color": "indigo",
-              "url": "https://docs.google.com/document/d/1oRS4jq9RKWMkgqoCJqXe9UZg_AfjqFhA/edit?usp=sharing"
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/Evidence_Base.pdf"
             },
             {
               "type": "tile",
-              "label": "Clinical Position Statements",
-              "sub": "GLP/NLA, physical prompting, presumption of competence",
-              "icon": "📋",
-              "color": "red",
-              "url": "https://docs.google.com/document/d/1HmYRU4jvu_FutrC0VdhlsjTPiPVRB3iV/edit?usp=sharing"
-            },
-            {
-              "type": "tile",
-              "label": "Echolalia, Scripting, and AAC",
-              "sub": "Clinical reference for site SLPs · Staging descriptions · Peer-review caveat · IEP implications",
-              "icon": "🏷️",
-              "color": "orange",
-              "url": "https://drive.google.com/file/d/13FDNo9lIe8ptkQYQJUCqdUcyy2WgWlq9/view?usp=sharing"
-            },
-            {
-              "type": "tile",
-              "label": "AAC Abandonment Response Protocol",
-              "sub": "When active AAC use decreases · 4-step environmental review",
-              "icon": "🔍",
-              "color": "orange",
-              "url": "https://docs.google.com/document/d/1iTklxSS4YiJyBiImAAs-PDljZlyCpBNO/edit?usp=sharing"
+              "label": "AAC Clinical Position Statements",
+              "sub": "Echolalia, no physical prompting, device never removed, and more",
+              "icon": "📌",
+              "color": "blue",
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/Clinical_Position_Statements.pdf"
             }
           ]
         },
@@ -633,11 +477,11 @@
             },
             {
               "type": "tile",
-              "label": "FERPA / IDEA Reference",
-              "sub": "Privacy, consent, records, procedural timelines",
+              "label": "FERPA and IDEA Quick Reference",
+              "sub": "Records, privacy, timelines and AI tools",
               "icon": "⚖️",
-              "color": "slate",
-              "url": "https://drive.google.com/file/d/1AijJndooRVw4eRzT04_hug54XHnD2Tfm/view?usp=sharing"
+              "color": "gold",
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/FERPA_and_IDEA_Quick_Reference.pdf"
             },
             {
               "type": "tile",
@@ -646,14 +490,6 @@
               "icon": "👥",
               "color": "purple",
               "url": "https://drive.google.com/file/d/11kZX2cX7ake8a0CTXyUTKYHj1SyAIrfDAm7gJwtFEzc/view?usp=sharing"
-            },
-            {
-              "type": "tile",
-              "label": "P2G Full Customization Guide",
-              "sub": "Vocabulary setup, backups, troubleshooting",
-              "icon": "📗",
-              "color": "indigo",
-              "url": "https://drive.google.com/file/d/1pfaNMZg-g8rfcS7MUKAlUsT1_mlerGqJ/view?usp=sharing"
             }
           ]
         },
@@ -662,23 +498,23 @@
           "layout": "guide",
           "role_groups": [
             {
-              "label": "Speech-Language",
+              "label": "SLPs and SLPAs",
               "items": [
                 {
                   "type": "guide",
                   "label": "Site SLP Guide",
-                  "sub": "Tier responsibilities, vocabulary coordination, IEP, consultation",
-                  "icon": "🩺",
+                  "sub": "Workflow, IEP responsibilities, when use drops, changing services",
+                  "icon": "🗣️",
                   "color": "blue",
-                  "url": "https://docs.google.com/document/d/1gGD5WvtdyT4qGNiwoMLonoCOUpnF_Naa/edit?usp=sharing"
+                  "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/Site_SLP_Guide.pdf"
                 },
                 {
                   "type": "guide",
                   "label": "SLPA Guide",
-                  "sub": "Scope of practice, supervision vs. service delivery",
-                  "icon": "💬",
-                  "color": "blue",
-                  "url": "https://docs.google.com/document/d/18g4VG-XqQGFUH5ep6jrCYGGwDRgeSkDD/edit?usp=sharing"
+                  "sub": "Your role, scope, and how to get support",
+                  "icon": "🤝",
+                  "color": "teal",
+                  "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/SLPA_Guide.pdf"
                 }
               ]
             },
@@ -687,64 +523,24 @@
               "items": [
                 {
                   "type": "guide",
-                  "label": "Occupational Therapist Guide",
-                  "sub": "Motor access evaluation, Tier 3 coordination",
-                  "icon": "🤙",
-                  "color": "teal",
-                  "url": "https://docs.google.com/document/d/1i5-BID71Ge09kvOlZSVmpwG6-1ZdQwBE/edit?usp=sharing"
-                },
-                {
-                  "type": "guide",
-                  "label": "Physical Therapist Guide",
-                  "sub": "Positioning, mobility, device access",
-                  "icon": "🏃",
-                  "color": "teal",
-                  "url": "https://docs.google.com/document/d/1OGVMWiUMt1uR7PhpjrY1129J4ed79rUu/edit?usp=sharing"
-                },
-                {
-                  "type": "guide",
-                  "label": "OI Specialist Guide",
-                  "sub": "Equipment, positioning, Tier 3 consultation",
-                  "icon": "♿",
-                  "color": "teal",
-                  "url": "https://docs.google.com/document/d/1XHpBk_3YI1pFe2SKjsO1tTrIyBtU5rJq/edit?usp=sharing"
-                },
-                {
-                  "type": "guide",
-                  "label": "BCBA / Behaviorist Guide",
-                  "sub": "AAC and behavior plan coordination",
-                  "icon": "📋",
-                  "color": "orange",
-                  "url": "https://docs.google.com/document/d/1PkTyq69NUoa5NsXffUUBwDYlYPthcHrK/edit?usp=sharing"
-                },
-                {
-                  "type": "guide",
-                  "label": "School Psychologist Guide",
-                  "sub": "Assessment, eligibility, AAC intersections",
-                  "icon": "🧠",
-                  "color": "purple",
-                  "url": "https://docs.google.com/document/d/19iM1As-JHxO-sB4Bqg0lc1_XM3BIENw1/edit?usp=sharing"
+                  "label": "Related Services and AAC",
+                  "sub": "OT, PT, OI specialist, BCBA and school psychologist",
+                  "icon": "🧩",
+                  "color": "indigo",
+                  "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/Related_Services_and_AAC.pdf"
                 }
               ]
             },
             {
-              "label": "Family Guides",
+              "label": "Classroom",
               "items": [
                 {
                   "type": "guide",
-                  "label": "Family Guide — General",
-                  "sub": "Bilingual EN/ES · Introduction to the program",
-                  "icon": "👪",
-                  "color": "green",
-                  "url": "https://docs.google.com/document/d/1Ea7VR0qo5Y2Jo1VBfWwA-tg7WRWB-NVs/edit?usp=sharing"
-                },
-                {
-                  "type": "guide",
-                  "label": "Family Guide — Experienced Families",
-                  "sub": "Bilingual EN/ES · For families who have been through the system",
-                  "icon": "💬",
-                  "color": "green",
-                  "url": "https://docs.google.com/document/d/1am4I-c1_p_eVx5lcXAAiF-DIWkB_N89Q/edit?usp=sharing"
+                  "label": "Proloquo2Go Setup Guide",
+                  "sub": "Users, grid size, adding words, backups",
+                  "icon": "⚙️",
+                  "color": "blue",
+                  "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/Proloquo2Go_Setup_Guide.pdf"
                 }
               ]
             }
