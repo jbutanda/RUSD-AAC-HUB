@@ -229,7 +229,7 @@ function init(data) {
   document.getElementById('header-contact').innerHTML =
     data.site.contact_label + '<br><a href="mailto:' + data.site.contact_email + '">' + data.site.contact_email + '</a>';
   document.getElementById('site-footer').innerHTML =
-    '<strong>' + data.site.footer + '</strong><br>District Lead AAC SLP: ' +
+    '<strong>' + data.site.footer + '</strong><br>District AAC Specialist: ' +
     '<a href="mailto:' + data.site.contact_email + '">' + data.site.contact_email + '</a> &middot; 2026&ndash;2027';
 
   // ── Build sections ─────────────────────────────────────────
@@ -450,7 +450,7 @@ function openModal(accessLevel, sectionId) {
     },
     admin: {
       title: 'Program Administration',
-      desc: 'This section is for the District Lead AAC SLP and Special Education Director only.',
+      desc: 'This section is for the District AAC Specialist and Special Education Director only.',
       ctx: 'Admin Section',
       ctxClass: 'ctx-admin',
       emoji: '\uD83D\uDD11'
