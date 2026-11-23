@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IEP Language Bank | RUSD AAC Program</title>
+<title>IEP Language Bank | Rialto AAC</title>
 <style>
   :root {
     --blue: #1A5294;
@@ -96,8 +96,8 @@
 <div class="page">
 
   <div class="intro">
-    <strong>How to use this page:</strong> Browse by category or search by keyword. Click <strong>Copy</strong> to copy any passage to your clipboard. All language is written within a <strong>total communication framework</strong> — goals and descriptions address communication functions across all modalities, not device use alone. Adjust student name, pronouns, tier, and specific details before using. Brackets [ ] indicate fields to fill in. Every goal opens with a <b>Baseline</b> line: fill it in before you fill in the criterion. Where a passage rests on a specific statute or study, the citation appears beneath it.
-    <br><br>Language marked <span style="background:#e0f4f4;color:#005f5f;font-weight:bold;padding:1px 6px;border-radius:3px;font-size:12px;">TOTAL COMM</span> is explicitly multimodal in framing. Language marked <span style="background:#e8f5e9;color:#2D6A2D;font-weight:bold;padding:1px 6px;border-radius:3px;font-size:12px;">TIER 2</span> is appropriate for students with individualized plans. Language marked <span style="background:#fff3e0;color:#7A5000;font-weight:bold;padding:1px 6px;border-radius:3px;font-size:12px;">TIER 3</span> is appropriate for or following a formal evaluation.
+    <strong>How to use this page:</strong> Browse by category or search by keyword. Click <strong>Copy</strong> to copy any passage to your clipboard. All language is written within a <strong>total communication framework</strong>: goals and descriptions address communication functions across all modalities, not device use alone. Adjust student name, pronouns, and specific details before using. Brackets [ ] indicate fields to fill in. Every goal opens with a <b>Baseline</b> line: fill it in before you fill in the criterion. Where a passage rests on a specific statute or study, the citation appears beneath it.
+    <br><br>Language marked <span style="background:#e0f4f4;color:#005f5f;font-weight:bold;padding:1px 6px;border-radius:3px;font-size:12px;">TOTAL COMM</span> is explicitly multimodal in framing. Language marked <span style="background:#e8f5e9;color:#2D6A2D;font-weight:bold;padding:1px 6px;border-radius:3px;font-size:12px;">DEVICE IN PLACE</span> is for students with an individual device or a device trial. Language marked <span style="background:#fff3e0;color:#7A5000;font-weight:bold;padding:1px 6px;border-radius:3px;font-size:12px;">FORMAL EVAL</span> is for students referred for, or following, a formal AT/AAC evaluation (motor, sensory or multidisciplinary needs).
   </div>
 
   <div class="search-bar">
@@ -168,7 +168,7 @@ function renderAll(items, query = "") {
       const displayLabel = query ? highlight(item.label, query) : escHtml(item.label);
       const tagHtml = item.tags.map(t => {
         const cls = t === 'tier2' ? 'tag tier2' : t === 'tier3' ? 'tag tier3' : t === 'goal' ? 'tag goal' : t === 'total-comm' ? 'tag total-comm' : 'tag';
-        const label = t === 'tier2' ? 'TIER 2' : t === 'tier3' ? 'TIER 3' : t === 'goal' ? 'GOAL' : t === 'total-comm' ? 'TOTAL COMM' : t === 'plaafp' ? 'PLAAFP' : t === 'at-factors' ? 'AT FACTORS' : t === 'profile' ? 'PROFILE' : t === 'family' ? 'FAMILY' : t === 'tier1' ? 'TIER 1' : t === 'accommodations' ? 'ACCOMMODATION' : t === 'other-supports' ? 'OTHER SUPPORTS' : t.toUpperCase();
+        const label = t === 'tier2' ? 'DEVICE IN PLACE' : t === 'tier3' ? 'FORMAL EVAL' : t === 'goal' ? 'GOAL' : t === 'total-comm' ? 'TOTAL COMM' : t === 'plaafp' ? 'PLAAFP' : t === 'at-factors' ? 'AT FACTORS' : t === 'profile' ? 'PROFILE' : t === 'family' ? 'FAMILY' : t === 'tier1' ? 'CLASSROOM AAC' : t === 'accommodations' ? 'ACCOMMODATION' : t === 'other-supports' ? 'OTHER SUPPORTS' : t.toUpperCase();
         return `<span class="${cls}">${label}</span>`;
       }).join('');
 
