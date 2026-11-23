@@ -5,7 +5,7 @@
     "badge": "Rialto Unified School District · AAC Program · 2026–27",
     "hero_title": "AAC Program Resource Hub",
     "hero_desc": "Resources for families, classroom staff, clinical staff, and program administration. Staff sections require a password.",
-    "contact_label": "District Lead AAC SLP",
+    "contact_label": "District AAC Specialist",
     "contact_email": "jbutanda@rialtousd.org",
     "footer": "RUSD AAC Program · Special Education Department · Rialto Unified School District"
   },
@@ -494,11 +494,11 @@
             },
             {
               "type": "tile",
-              "label": "Tier 2 AAC Trial Summary",
-              "sub": "Review of existing data + device trial · Fill in, preview, save as PDF",
+              "label": "AAC Trial Summary",
+              "sub": "Review of existing data and a classroom device trial · Fill in, preview, save as PDF",
               "icon": "📝",
               "color": "indigo",
-              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/tier2-aac-trial-summary.html"
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/aac-trial-summary.html"
             },
             {
               "type": "tile",
@@ -565,7 +565,7 @@
             {
               "type": "tile",
               "label": "Request a Coaching Visit",
-              "sub": "Schedule a classroom visit with the Lead AAC SLP",
+              "sub": "Schedule a classroom visit with the District AAC Specialist",
               "icon": "🙋",
               "color": "green",
               "url": "https://forms.gle/nWWFR7SExfdzwaqZA",
@@ -760,7 +760,7 @@
       "badge_text": "Admin password required",
       "badge_style": "admin",
       "lock_title": "Program Administration",
-      "lock_desc": "For the District Lead AAC SLP and Special Education Director only.",
+      "lock_desc": "For the District AAC Specialist and Special Education Director only.",
       "subsections": [
         {
           "title": "Program Documents & Data",
