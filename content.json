@@ -364,19 +364,19 @@
             },
             {
               "type": "tile",
-              "label": "When to Start a Formal AT/AAC Evaluation",
-              "sub": "Motor, sensory or multidisciplinary needs · timelines",
+              "label": "When a Trial Needs More Input",
+              "sub": "Bringing OT, PT, TVI and others into a trial",
               "icon": "🔍",
               "color": "blue",
-              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/When_to_Start_a_Formal_AT_AAC_Evaluation.pdf"
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/When_a_Trial_Needs_More_Input.pdf"
             },
             {
               "type": "tile",
-              "label": "Trial and Feature Matching Record",
-              "sub": "Fill-in Word record for formal AT/AAC evaluations",
+              "label": "Trial and Feature Matching Worksheet",
+              "sub": "Fill-in Word worksheet to compare systems during a trial",
               "icon": "🧪",
               "color": "indigo",
-              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/AT_AAC_Trial_and_Feature_Matching_Record.docx"
+              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/AAC_Trial_and_Feature_Matching_Worksheet.docx"
             }
           ]
         },
