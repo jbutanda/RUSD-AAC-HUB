@@ -318,10 +318,10 @@
             {
               "type": "tile",
               "label": "AAC Handoff Summary",
-              "sub": "Fill-in Word form when a student changes schools, classes or SLPs",
+              "sub": "Opens your own copy · when a student changes schools, classes or SLPs",
               "icon": "🔁",
               "color": "indigo",
-              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/AAC_Handoff_Summary.docx"
+              "url": "https://docs.google.com/document/d/1c3PYHhffDfCku7kq3R0oyGR70E3YmIHhYqEKI4fJBfg/copy"
             },
             {
               "type": "tile",
@@ -329,7 +329,7 @@
               "sub": "Supporting families pursuing a personal device",
               "icon": "💳",
               "color": "gold",
-              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/Private_AAC_Procurement_SLP_Guide.pdf"
+              "url": "https://docs.google.com/document/d/1PhqJE0ufem8Xg_wrEi4Tx42cEzF5FIAYnc6d24HzQkc/edit"
             },
             {
               "type": "tile",
@@ -368,15 +368,15 @@
               "sub": "Areas a trial can't speak to, like motor or vision · formal AT/AAC evaluation referral",
               "icon": "🔍",
               "color": "blue",
-              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/After_the_Trial_When_to_Refer.pdf"
+              "url": "https://docs.google.com/document/d/1J-ERXLrcCR4DiTuvHzLWQpz1ASVFnaAgFVdEfedkGZI/edit"
             },
             {
               "type": "tile",
               "label": "Trial and Feature Matching Worksheet",
-              "sub": "Compare systems during a trial · trial record for a formal evaluation",
+              "sub": "Opens your own copy · compare systems; trial record for a formal evaluation",
               "icon": "🧪",
               "color": "indigo",
-              "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/AAC_Trial_and_Feature_Matching_Worksheet.docx"
+              "url": "https://docs.google.com/document/d/1tGufp5f2WFs5JGrv1IP7yxpLAZ-RTnAuWCdZQ3L_7sg/copy"
             }
           ]
         },
@@ -506,7 +506,7 @@
                   "sub": "Workflow, IEP responsibilities, when use drops, changing services",
                   "icon": "🗣️",
                   "color": "blue",
-                  "url": "https://jbutanda.github.io/RUSD-AAC-HUB/docs/Site_SLP_Guide.pdf"
+                  "url": "https://docs.google.com/document/d/1h6wdR1MCgCdblzGNDJwjPblFx8g5xFiopCdD8Qyw5AY/edit"
                 },
                 {
                   "type": "guide",
